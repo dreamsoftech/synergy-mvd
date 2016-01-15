@@ -226,3 +226,19 @@ String.prototype.getInitials = function(glue){
 
     return  initials;
 };
+
+
+
+
+
+app.directive('tooltip', function () {
+    return {
+        restrict:'A',
+        link: function(scope, element, attrs)
+        {
+            $(element)
+                .attr('title',scope.$eval(attrs.tooltip))
+                .tooltip({placement: "right"});
+        }
+    }
+})

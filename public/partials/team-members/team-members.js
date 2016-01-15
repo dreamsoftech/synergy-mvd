@@ -1,5 +1,7 @@
 app.controller('TeamMembersCtrl',  ['$scope', '$stateParams', '$uibModal', function ($scope, $stateParams, $uibModal) {
 
+    $scope.test = "hello world";
+
     $scope.showInviteModal = function() {
         var modalInstance = $uibModal.open({
             templateUrl: 'partials/team-members/invite-modal.html',
