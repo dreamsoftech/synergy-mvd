@@ -15,10 +15,10 @@
                     <h2 class="heading">Create New Procurement</h2>
                     <input type="text" placeholder="This is My Procurement Name">
                     <div class="mt10 text-primary sub-title">
-                        Anderson Perkins LTD Shipping Center
+                        Wilmington 47
                     </div>
-                    <div class="text-muted small">1796 Prospective Avenue</div>
-                    <div class="text-muted small">Park City, Utah 84605</div>
+                    <div class="text-muted small">47 Wilmington Ave</div>
+                    <div class="text-muted small">Arlington, VA 90125</div>
                 </div>
                 <div class="col-md-4 pt30 mt20 additional-info">
                     <div class="details">
@@ -47,11 +47,11 @@
                 <div class="row mt20 form-group">
                     <div class="col-md-2">
                         <label for="">Type of Procurement</label>
-                        <ui-select ng-select="changeOption()" placeholder="Choose" selected-item="process.scope_of_work" options="scopeOfWorks"></ui-select>
+                        <ui-select ng-select="changeOption()" placeholder="Choose" selected-item="selectedItem" options="procurement"></ui-select>
                     </div>
                     <div class="col-md-2">
                         <label for="">Category</label>
-                        <ui-select ng-select="changeOption()" placeholder="Choose" selected-item="process.scope_of_work" options="scopeOfWorks"></ui-select>
+                        <ui-select ng-select="changeOption()" placeholder="Choose" selected-item="selectedItem" options="category"></ui-select>
                     </div>
                     <div class="col-md-2">
                         <label for="">Location</label>
@@ -67,7 +67,7 @@
                 <div class="row mt20 form-group">
                     <div class="col-md-2">
                         <label for="">Scope of Work</label>
-                        <ui-select ng-select="changeOption()" placeholder="Choose" selected-item="process.scope_of_work" options="scopeOfWorks"></ui-select>
+                        <ui-select ng-select="changeOption()" placeholder="Choose" selected-item="selectedItem" options="sow"></ui-select>
                     </div>
                     <div class="col-md-2">
                         <label for="">Due Date</label>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="col-md-2">
                         <label for="">Selection By</label>
-                        <ui-select ng-select="changeOption()" placeholder="Choose" selected-item="process.scope_of_work" options="scopeOfWorks"></ui-select>
+                        <ui-select ng-select="changeOption()" placeholder="Choose" selected-item="selectedItem" options="teamMembers"></ui-select>
                     </div>
                     <div class="col-md-2">
                         <label for="">Due Date</label>
@@ -86,7 +86,7 @@
                 <div class="row mt20 form-group">
                     <div class="col-md-2">
                         <label for="">Approved By</label>
-                        <ui-select ng-select="changeOption()" placeholder="Choose" selected-item="process.scope_of_work" options="scopeOfWorks"></ui-select>
+                        <ui-select ng-select="changeOption()" placeholder="Choose" selected-item="selectedItem" options="teamMembers"></ui-select>
                     </div>
                     <div class="col-md-2">
                         <label for="">Due Date</label>
@@ -94,7 +94,7 @@
                     </div>
                     <div class="col-md-2">
                         <label for="">Order by</label>
-                        <ui-select ng-select="changeOption()" placeholder="Choose" selected-item="process.scope_of_work" options="scopeOfWorks"></ui-select>
+                        <ui-select ng-select="changeOption()" placeholder="Choose" selected-item="selectedItem" options="teamMembers"></ui-select>
                     </div>
                     <div class="col-md-2">
                         <label for="">Due Date</label>
