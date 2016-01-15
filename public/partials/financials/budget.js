@@ -1,27 +1,7 @@
 app.controller('FinancialsBudgetCtrl',
-    ['$scope', '$state', '$timeout', function ($scope, $state, $timeout) {
+    ['$scope', '$state', '$timeout', '$uibModal', function ($scope, $state, $timeout, $uibModal) {
 
         $scope.$parent.setCurrentTab($state.current.name);
-
-        // Stats
-        $timeout(function(){
-            $scope.$parent.stats = {
-                estimated: 52,
-                contractual: 30,
-                direct: 12,
-                pending: 0,
-                unbudgeted: 0,
-                amount: {
-                    total: '2,788,284.48',
-                    funds_disbursed: '903,347.67',
-                    est_budget: '1,451,937',
-                    contractual: '829,181.07',
-                    direct: '322,166.41',
-                    pending: ' -',
-                    unbudgeted: ' -'
-                }
-            };
-        }, 300);
 
         $scope.budgets = [{
             id: _.uniqueId(),
@@ -60,6 +40,7 @@ app.controller('FinancialsBudgetCtrl',
                     status: '',
                     cpsf: 13.46,
                     percent_of_project: 8,
+                    depth: 3,
                     children: [{
                         id: _.uniqueId(),
                         labor: 123,
@@ -112,6 +93,7 @@ app.controller('FinancialsBudgetCtrl',
                     status: '',
                     cpsf: 13.46,
                     percent_of_project: 8,
+                    depth: 3,
                     children: [{
                         id: _.uniqueId(),
                         labor: 123,
@@ -362,4 +344,50 @@ app.controller('FinancialsBudgetCtrl',
                 }]
             }]
         }];
+
+        $scope.showBudgetAdditionModal = function() {
+            var modalInstance = $uibModal.open({
+                templateUrl: 'budget-addition-modal.html',
+                controller: 'BudgetAdditionModalCtrl',
+                windowClass: 'buget-addition-modal'
+            });
+
+            modalInstance.result.then(function(result) {
+
+            }, function() {
+
+            });
+        };
+
+    }]);
+
+app.controller('BudgetAdditionModalCtrl',
+    ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
+
+        $scope.divisions = [
+            {id: _.uniqueId(), name: 'Lorem Ipsum - 03124'}
+        ];
+
+        $scope.costCodes = [
+            {id: _.uniqueId(), name: '01234'}
+        ];
+
+        $scope.sows = [
+            {id: _.uniqueId(), name: 'Purus Egestas Ligula'}
+        ];
+
+        $scope.$watchGroup(['labor', 'materials', 'equipment', 'misc'], function(n, o, scope) {
+            $scope.total = _.sum(n);
+        });
+
+        $scope.labor = $scope.materials = $scope.equipment = $scope.misc = 1234456;
+
+
+        $scope.ok = function() {
+            $uibModalInstance.close();
+        }
+
+        $scope.cancel = function() {
+            $uibModalInstance.dismiss('cancel');
+        }
     }]);
