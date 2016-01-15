@@ -75,6 +75,9 @@ th.initiator {
 .rfi-table td.status .draft {
   color: #2a2d33; }
 
+.rfi-table td.status .completed {
+  color: #3aabd5; }
+
 .rfi-table td.flag span {
   margin: 4px; }
 

@@ -140,9 +140,11 @@
                         <td class="initiator"><a href="#">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
                         <td class="sow">{{ row.sow }}</td>
                         <td class="status">
-                            <span class="label" ng-class="{'in-process': row.status[0] == 'In Process',
+                            <span class="label" ng-class="{'in-process': row.status[0] == 'In Process'
+                                                           || row.status[0] == 'awating approval',
                                                            'draft': row.status[0] == 'Draft',
-                                                           'pending': row.status[0] == 'pending'}">
+                                                           'pending': row.status[0] == 'pending',
+                                                           'completed': row.status[0] == 'Completed'}">
                                 {{ row.status[0] }}
                             </span><br>
                             <small ng-show="row.status[1] != '-'">{{ row.status[1] * 100  }}% Completed</small>
@@ -186,9 +188,11 @@
                         <td class="initiator"><a href="#">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
                         <td class="sow">{{ row.sow }}</td>
                         <td class="status">
-                            <span class="label" ng-class="{'in-process': row.status[0] == 'In Process',
+                            <span class="label" ng-class="{'in-process': row.status[0] == 'In Process'
+                                                           || row.status[0] == 'awating approval',
                                                            'draft': row.status[0] == 'Draft',
-                                                           'pending': row.status[0] == 'Pending'}">
+                                                           'pending': row.status[0] == 'pending',
+                                                           'completed': row.status[0] == 'Completed'}">
                                 {{ row.status[0] }}
                             </span><br>
                             <small ng-show="row.status[1] != '-'">{{ row.status[1] * 100 }}% Completed</small>
@@ -232,9 +236,11 @@
                         <td class="initiator"><a href="#">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
                         <td class="sow">{{ row.sow }}</td>
                         <td class="status">
-                            <span class="label" ng-class="{'in-process': row.status[0] == 'In Process',
+                            <span class="label" ng-class="{'in-process': row.status[0] == 'In Process'
+                                                           || row.status[0] == 'awating approval',
                                                            'draft': row.status[0] == 'Draft',
-                                                           'pending': row.status[0] == 'Pending'}">
+                                                           'pending': row.status[0] == 'pending',
+                                                           'completed': row.status[0] == 'Completed'}">
                                 {{ row.status[0] }}
                             </span><br>
                             <small ng-show="row.status[1] != '-'">{{ row.status[1] * 100 }}% Completed</small>
@@ -278,9 +284,11 @@
                         <td class="initiator"><a href="#">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
                         <td class="sow">{{ row.sow }}</td>
                         <td class="status">
-                            <span class="label" ng-class="{'in-process': row.status[0] == 'In Process',
+                            <span class="label" ng-class="{'in-process': row.status[0] == 'In Process'
+                                                           || row.status[0] == 'awating approval',
                                                            'draft': row.status[0] == 'Draft',
-                                                           'pending': row.status[0] == 'Pending'}">
+                                                           'pending': row.status[0] == 'pending',
+                                                           'completed': row.status[0] == 'Completed'}">
                                 {{ row.status[0] }}
                             </span><br>
                             <small ng-show="row.status[1] != '-'">{{ row.status[1] * 100 }}% Completed</small>
