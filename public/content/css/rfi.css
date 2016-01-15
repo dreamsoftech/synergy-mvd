@@ -231,25 +231,25 @@ th.initiator {
     border: 1px solid #eee; }
     .rfi-in-process-wrapper .info-section a.add {
       color: #3aabd5; }
-    .rfi-in-process-wrapper .info-section .info .col-md-3 span.title {
+    .rfi-in-process-wrapper .info-section .info .col-md-3 span.title, .rfi-in-process-wrapper .info-section .info .col-md-2 span.title {
       display: block; }
-    .rfi-in-process-wrapper .info-section .info .col-md-3 span.text-default {
+    .rfi-in-process-wrapper .info-section .info .col-md-3 span.text-default, .rfi-in-process-wrapper .info-section .info .col-md-2 span.text-default {
       font-family: AvenirNextLTPro-Regular; }
     @media (min-width: 992px) {
-      .rfi-in-process-wrapper .info-section .info .col-md-3:not(:first-child) {
+      .rfi-in-process-wrapper .info-section .info .col-md-3:not(:first-child), .rfi-in-process-wrapper .info-section .info .col-md-2:not(:first-child) {
         border-left: 1px solid #eee;
         text-align: center; }
-        .rfi-in-process-wrapper .info-section .info .col-md-3:not(:first-child) div {
+        .rfi-in-process-wrapper .info-section .info .col-md-3:not(:first-child) div, .rfi-in-process-wrapper .info-section .info .col-md-2:not(:first-child) div {
           display: table;
           margin: auto;
           text-align: left; } }
     @media (max-width: 992px) {
-      .rfi-in-process-wrapper .info-section .info .col-md-3 {
+      .rfi-in-process-wrapper .info-section .info .col-md-3, .rfi-in-process-wrapper .info-section .info .col-md-2 {
         margin-bottom: 15px;
         text-align: left; } }
-    .rfi-in-process-wrapper .info-section .info .col-md-3 a {
+    .rfi-in-process-wrapper .info-section .info .col-md-3 a, .rfi-in-process-wrapper .info-section .info .col-md-2 a {
       color: #3aabd5; }
-      .rfi-in-process-wrapper .info-section .info .col-md-3 a + span {
+      .rfi-in-process-wrapper .info-section .info .col-md-3 a + span, .rfi-in-process-wrapper .info-section .info .col-md-2 a + span {
         margin-left: 15px;
         font-family: AvenirNextLTPro-Regular;
         font-size: 15px; }

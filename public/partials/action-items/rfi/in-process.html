@@ -12,10 +12,10 @@
         <div class="pull-left rfi-page-title">
             <div class="col-md-7 pl20">
                 <h2 class="text-default">RFI</h2>
-                <input type="text" placeholder="RFI Name Appears Here"></input>
+                <input type="text" placeholder="RFI Name Appears Here" ng-model="rfiName"></input>
                 <div class="project-info">
-                    <h3 class="text-primary">Anderson Perkins LTD Shipping Center</h3>
-                    <span class="text-muted">1796 Prospector Avenue<br/>Arlington, VA 90125</span>
+                    <h3 class="text-primary">Wilmington 47</h3>
+                    <span class="text-muted">47 Wilmington Ave<br/>Arlington, VA 90125</span>
                 </div>
             </div>
 
@@ -24,20 +24,20 @@
                     <div class="row">
                         <span class="col-xs-9 text-right">RFI#</span>
                         <span class="col-xs-3 text-left">
-                            <label class="label label-info">193</label>
+                            <label class="label label-info">1244</label>
                         </span>
                     </div>
                     <div class="row mt5">
                         <span class="col-xs-9 text-right">Date Initiated</span>
-                        <span class="col-xs-3 text-left">8/23/14</span>
+                        <span class="col-xs-3 text-left">8/11/14</span>
                     </div>
                     <div class="row mt5">
                         <span class="col-xs-9 text-right">Initiated By</span>
-                        <span class="col-xs-3 text-left">Bruce Wayne</span>
+                        <span class="col-xs-3 text-left">Dale Guerra</span>
                     </div>
                     <div class="row mt5">
                         <span class="col-xs-9 text-right">Status</span>
-                        <span class="col-xs-3 text-left text-success">IN PROGRESS</span>
+                        <span class="col-xs-3 text-left text-success">AWAITING APPROVAL</span>
                     </div>
 
                 </div>
@@ -63,33 +63,39 @@
                 <hr/>
 
                 <div class="row info">
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div>
                             <span class="title">Recipient</span>
-                            <a href="javascript:void(0)">Bob Jones</a>
-                            <span class="company">ABC Inc</span>
+                            <a href="javascript:void(0)">Jane Smith</a>
+                            <span class="company"></span>
                         </div>
                     </div>
 
                     <div class="col-md-3">
                         <div>
                             <span class="title">CC</span>
-                            <a href="javascript:void(0)">Eric Hoffman</a>
-                            <span class="company">Flora Corp</span>
+                            <a href="javascript:void(0)">Bruce Wayne</a>
+                            <span class="company">Synerge Construction</span>
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div>
                             <span class="title">Dicipline</span>
-                            <span class="text-default">Mechanical</a>
+                            <div class="text-default">Marterials</div>
                         </div>
                     </div>
 
                     <div class="col-md-3">
                         <div>
                             <span class="title">Scope of Work</span>
-                            <a href="javascript:void(0)">Fire Place</a>
+                            <a href="javascript:void(0)">Concrete Flatwork</a>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div>
+                            <span class="title">Due Date</span>
+                            <div class="text-default">Aug 17, 2015</div>
                         </div>
                     </div>
                 </div>
@@ -98,12 +104,12 @@
 
                 <div class="form-group">
                     <label>Description of Requested Information</label>
-                    <textarea class="form-control" placeholder="Provide any additional information here...">Curabiter alemelens tyoborers</textarea>
+                    <textarea class="form-control" ng-model="desInfo" placeholder="Provide any additional information here..."></textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Suggested Solution</label>
-                    <textarea class="form-control" placeholder="Provide any additional information here..."></textarea>
+                    <textarea class="form-control" ng-model="solution" placeholder="Provide any additional information here..."></textarea>
                 </div>
 
                 <div class="form-group">
@@ -128,7 +134,7 @@
 
                 <div class="form-group">
                     <label>Clarifications</label>
-                    <textarea class="form-control" placeholder="Provide any additional information here..."></textarea>
+                    <textarea class="form-control" ng-model="clarify" placeholder="Provide any additional information here..."></textarea>
                 </div>
 
                 <div class="form-group">
@@ -156,7 +162,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+<!--                 <div class="row">
                     <div class="col-md-2">
                         <div class="form-group">
                             <label>Signature</label><br/>
@@ -169,7 +175,7 @@
                             <span class="date">Aug 23, 2015</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
 
             </div>
