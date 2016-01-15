@@ -4,6 +4,7 @@
 app.controller('BidsPackageCtrl',
     ['$scope', '$state', function($scope, $state) {
 
+        $scope.bidName = "Wilmington 47 - Hardwood Floors";
         $scope.users = [
             {
                 id: _.uniqueId(),
@@ -30,99 +31,69 @@ app.controller('BidsPackageCtrl',
 
         $scope.projectEstimates = [
             {
-                scopeOfWork: 'Lorem Dapibus Vestibulum',
-                quantity: 500,
-                measurement: 'Cubic Feet',
-                material: '#300 Concrete',
-                materialLink: 'http://loremipsum.net',
-                details: 'Concrete should be Color #57F'
-            }, {
-                scopeOfWork: 'Cras Consectetur',
+                scopeOfWork: 'Hardwood Floor Main',
                 quantity: 3000,
-                measurement: 'Cubic Feet',
-                material: '#300 Concrete',
-                materialLink: 'http://loremipsum.net',
-                details: 'Nulla vitae elit libero, a pharetra augue.'
+                measurement: 'Square Feet',
+                material: 'Bruce Antique Oak',
+                materialLink: 'www.smokeymthardwood.com',
+                details: '3/4 in. Thick x 3-1/4 in. Wide x Random Length Solid Hardwood Flooring (22 sq. ft./case) $7.18 Sq. Ft.'
             }, {
-                scopeOfWork: 'Cursus Nullam Parturient',
-                quantity: 519,
-                measurement: 'Cubic Feet',
-                material: '#300 Concrete',
-                materialLink: 'http://loremipsum.net',
-                details: 'Nullam id dolor id nibh ultricies vehicula  indura...'
+                scopeOfWork: 'Hardwood Floor Basement',
+                quantity: 1500,
+                measurement: 'Square Feet',
+                material: 'Millstead Red Oak',
+                materialLink: 'www.smokeymthardwood.com',
+                details: '3/4 in. Thick x 3-1/4 in. Wide x Random Length Solid Hardwood Flooring (20 sq. ft./case) $5.99 Sq. Ft.'
             }
         ];
 
         $scope.costScheduledBreakdown = [
             {
                 scopeOfWork: {
-                    title: 'Firstplace',
-                    division: 'Division 3'
+                    title: 'Hardwood Floor Main',
+                    division: 'Division 5'
                 },
                 costCode: {
-                    code: '03050',
-                    title: 'Basic Concrete Materials and Methods'
+                    code: '582',
+                    title: 'Wood Flooring'
                 },
                 phase: {
-                    parent: '9- Interior Finishes',
-                    sub: '9.8- Fireplace'
+                    parent: '9 - Interior Finishes',
+                    sub: '9.8 - Flooring'
                 },
-                duration: '1 week',
-                labor: 123456,
-                material: 123456,
-                equipment: 123456,
-                misc: 123456,
-                total: 123456,
+                duration: '2 weeks',
+                labor: 17250.00,
+                material: 21540.00,
+                equipment: 2000.00,
+                misc: 1035.00,
+                total: 41825.00,
                 requireSelection: true,
                 responsibleToSelection: 'Interior Designer',
                 requireOrder: true,
                 responsibleToSelection2: 'Subcontractor'
             }, {
                 scopeOfWork: {
-                    title: 'Pool',
-                    division: 'Division 2'
+                    title: 'Hardwood Floor Basement',
+                    division: 'Division 5'
                 },
                 costCode: {
-                    code: '03010',
-                    title: 'Concrete Forms and Accessories'
+                    code: '582',
+                    title: 'Wood Flooring'
                 },
                 phase: {
-                    parent: '6- Exterior',
-                    sub: '6.3- Pool'
+                    parent: '9 - Interior Finishes',
+                    sub: '9.2 - Flooring'
                 },
-                duration: '5 weeks',
-                labor: 123456,
-                material: 123456,
-                equipment: 123456,
-                misc: 123456,
-                total: 123456,
+                duration: '2 weeks',
+                labor: 9100.00,
+                material: 8985.00,
+                equipment: 2000.00,
+                misc: 890,
+                total: 20975.00,
                 requireSelection: false,
                 responsibleToSelection: '',
                 requireOrder: true,
                 responsibleToSelection2: 'Subcontractor'
-            }, {
-                scopeOfWork: {
-                    title: 'Cursus Nullam Parturient',
-                    division: 'Division 5'
-                },
-                costCode: {
-                    code: '03010',
-                    title: 'Concrete Forms Accessories'
-                },
-                phase: {
-                    parent: '6- Exterior',
-                    sub: '6.3- Pool'
-                },
-                duration: '3 weeks',
-                labor: 123456,
-                material: 123456,
-                equipment: 123456,
-                misc: 123456,
-                total: 123456,
-                requireSelection: true,
-                responsibleToSelection: 'General Contractor',
-                requireOrder: true,
-                responsibleToSelection2: 'General Contractor'
             }
         ];
 
