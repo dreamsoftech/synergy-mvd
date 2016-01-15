@@ -71,75 +71,75 @@ app.controller('GAINewModalCtrl',
                 name: "Door Frames"
             },
             {
-                id: 1,
+                id: 2,
                 name: "Drywall"
             },
             {
-                id: 1,
+                id: 3,
                 name: "Fireplace Install"
             },
             {
-                id: 1,
+                id: 4,
                 name: "Fire Sprikler Rough In"
             },
             {
-                id: 1,  
+                id: 5,  
                 name: "Form Footings"
             },
             {
-                id: 1,
+                id: 6,
                 name: "Form Foundation Walls"
             },
             {
-                id: 1,
+                id: 7,
                 name: "Frame 2nd Story"
             },
             {
-                id: 1,
+                id: 8,
                 name: "Insulation"
             },
             {
-                id: 1,
+                id: 9,
                 name: "Main Floor Overhead Lighting"
             },
             {
-                id: 1,
+                id: 10,
                 name: "Plumbing Rough In"
             },
             {
-                id: 1,
+                id: 11,
                 name: "Pour Foundation"
             },
             {
-                id: 1,
+                id: 12,
                 name: "Prime"
             },
             {
-                id: 1,
+                id: 13,
                 name: "Roof Dry-In"
             },
             {
-                id: 1,
+                id: 14,
                 name: "Rough Electrical"
             },
             {
-                id: 1,
+                id: 15,
                 name: "Rough Mechanical"
             },
             {
-                id: 1,
+                id: 16,
                 name: "Rough Plumbing"
             },
             {
-                id: 1,
+                id: 17,
                 name: "Set Steel"
             },
             {
-                id: 1,
+                id: 18,
                 name: "Stairway Floor Lighting"
             },
             {
-                id: 1,
+                id: 19,
                 name: "Snow Removal"
             }
         ];
