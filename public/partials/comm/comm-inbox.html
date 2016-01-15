@@ -38,58 +38,58 @@
         </div>
         <div class="col-lg-8 no-r-pad" ng-modal="messages">
             <div slim-scroll box-height="650px">
-            <div class="comm-msg-wrapper">
-                <div class="comm-msg">
-                    <div class="comm-msg-title">
-                        <div class="row no-margin">
-                            <div class="pull-left">
-                                <a href="#">
-                                    <img ng-src="{{messages.img_url}}" class="img-circle prj-sch-photo" alt="image">
-                                </a>
+                <div class="comm-msg-wrapper">
+                    <div class="comm-msg">
+                        <div class="comm-msg-title">
+                            <div class="row no-margin">
+                                <div class="pull-left">
+                                    <a href="#">
+                                        <img ng-src="{{messages.img_url}}" class="img-circle prj-sch-photo" alt="image">
+                                    </a>
+                                </div>
+                                <div class="pull-left comm-msg-name">
+                                    <strong>{{ messages.receiver }}</strong>
+                                    <span>{{ messages.time_full }}</span>
+                                    
+                                    <p>{{ messages.project }}</p>
+                                </div>
                             </div>
-                            <div class="pull-left comm-msg-name">
-                                <strong>{{ messages.receiver }}</strong>
-                                <span>{{ messages.time_full }}</span>
-                                
-                                <p>{{ messages.project }}</p>
-                            </div>
+                            <hr>
                         </div>
-                        <hr>
+                        <div class="comm-msg-cont">
+                            <p>{{ messages.replies }}</p>
+                        </div>
                     </div>
-                    <div class="comm-msg-cont">
-                        <p>{{ messages.replies }}</p>
+                    <hr>
+                </div>
+                <div class="comm-msg-wrapper" ng-repeat="receive in messages.receives track by $index">
+                    <div class="comm-msg">
+                        <div class="comm-msg-title" ng-click="toggleMsg($index)">
+                            <div class="row no-margin">
+                                <div class="pull-left">
+                                    <a href="#">
+                                        <img ng-src="{{receive.img_url}}" class="img-circle prj-sch-photo" alt="image">
+                                    </a>
+                                </div>
+                                <div class="pull-left comm-msg-name" ng-class="{'comm-msg-checked': showMsg[$index]}">
+                                    <strong>{{ receive.from }}</strong> to
+                                    <strong>{{ receive.to }}</strong>
+                                    <span>{{ receive.time_full }}</span>
+                                    <p class="msg-abs" ng-hide="showMsg[$index]">{{ receive.msg | limitTo:50 }}...</p>
+                                </div>
+                                <div class="pull-right comm-msg-tab">
+                                    <span ng-hide="showMsg[$index]"><i class="fa fa-caret-right"></i></span>
+                                    <span ng-show="showMsg[$index]"><i class="fa fa-caret-down"></i></span>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="comm-msg-cont" ng-show="showMsg[$index]">
+                            <p>{{ receive.msg }}</p>
+                            <hr>
+                        </div>
                     </div>
                 </div>
-                <hr>
-            </div>
-            <div class="comm-msg-wrapper" ng-repeat="receive in messages.receives track by $index">
-                <div class="comm-msg">
-                    <div class="comm-msg-title" ng-click="toggleMsg($index)">
-                        <div class="row no-margin">
-                            <div class="pull-left">
-                                <a href="#">
-                                    <img ng-src="{{receive.img_url}}" class="img-circle prj-sch-photo" alt="image">
-                                </a>
-                            </div>
-                            <div class="pull-left comm-msg-name" ng-class="{'comm-msg-checked': showMsg[$index]}">
-                                <strong>{{ receive.from }}</strong> to
-                                <strong>{{ receive.to }}</strong>
-                                <span>{{ receive.time_full }}</span>
-                                <p class="msg-abs" ng-hide="showMsg[$index]">{{ receive.msg | limitTo:50 }}...</p>
-                            </div>
-                            <div class="pull-right comm-msg-tab">
-                                <span ng-hide="showMsg[$index]"><i class="fa fa-caret-right"></i></span>
-                                <span ng-show="showMsg[$index]"><i class="fa fa-caret-down"></i></span>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
-                    <div class="comm-msg-cont" ng-show="showMsg[$index]">
-                        <p>{{ receive.msg }}</p>
-                        <hr>
-                    </div>
-                </div>
-            </div>
             </div>
         </div>
 

@@ -770,3 +770,9 @@ th.flag {
         width: inherit;
     }
 }
+
+
+.change-order-descript {
+    font-size: 12px;
+    padding: 15px 10px !important;
+}
