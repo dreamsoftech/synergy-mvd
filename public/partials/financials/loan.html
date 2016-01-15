@@ -78,88 +78,90 @@
 
 
 <div class="row mt30 loan-bottom-section p15">
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Description</th>
-                    <th class="sow">Cost Code</th>
-                    <th>Loan Amount</th>
-                    <th>Drawn to Date</th>
-                    <th>Pending Draws</th>
-                    <th>Amount Remaining to be Drawn</th>
-                    <th>Drawn</th>
-                    <th class="gear">
-                        <div uib-dropdown dropdown-append-to-body>
-                            <a href="javascript:void(0)" uib-dropdown-toggle class="text-muted">
-                                <i class="fa fa-gear"></i>
-                                <i class="fa fa-chevron-down"></i>
-                            </a>
-                            <ul class="uib-dropdown-menu loan-dropdown dropdown-menu-right chevron-down-menu" aria-labelledby="simple-dropdown">
-                                <li><a>Upload Budget</a></li>
-                                <li><a ng-click="isEdit = true;">Edit</a></li>
-                                <li><a ng-click="showDeletionModal()">Delete</a></li>
-                                <li><a>Create Working Budget Estimates from Loan</a></li>
-                             </ul>
-                        </div>
-                    </th>
-                </tr>
-            </thead>
+    <div slim-scroll box-height="600px">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th class="sow">Cost Code</th>
+                        <th>Loan Amount</th>
+                        <th>Drawn to Date</th>
+                        <th>Pending Draws</th>
+                        <th>Amount Remaining to be Drawn</th>
+                        <th>Drawn</th>
+                        <th class="gear">
+                            <div uib-dropdown dropdown-append-to-body>
+                                <a href="javascript:void(0)" uib-dropdown-toggle class="text-muted">
+                                    <i class="fa fa-gear"></i>
+                                    <i class="fa fa-chevron-down"></i>
+                                </a>
+                                <ul class="uib-dropdown-menu loan-dropdown dropdown-menu-right chevron-down-menu" aria-labelledby="simple-dropdown">
+                                    <li><a>Upload Budget</a></li>
+                                    <li><a ng-click="isEdit = true;">Edit</a></li>
+                                    <li><a ng-click="showDeletionModal()">Delete</a></li>
+                                    <li><a>Create Working Budget Estimates from Loan</a></li>
+                                 </ul>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
 
-            <tbody>
-                <tr ng-repeat="row in data">
-                    <td>
-                        <input type="text" ng-model="row.desc" ng-if="isEdit"></input>
-                        <span ng-if="!isEdit">{{row.desc}}</span>
-                    </td>
-                    <td>
-                        <ui-select options="sows" selected-item="row.sow" ng-if="isEdit"></ui-select>
-                        <span ng-if="!isEdit">{{row.sow.name}}</span>
-                    </td>
-                    <td>
-                        <input type="text" ui-money-mask="2" placeholder="$" ng-model="row.loan_amount" ng-if="isEdit"></input>
-                        <span ng-if="!isEdit">{{row.loan_amount | currency:'$':2}}</span>
-                    </td>
-                    <td><span>{{row.drawn_date | currency:'$':2}}</span></td>
-                    <td><span>{{row.pending_draws | currency:'$':2}}</span></td>
-                    <td><span>{{row.amount_remaining | currency:'$':2}}</span></td>
-                    <td><span>{{row.percent_drawn}}%</span></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td colspan="8">
-                        <a href="javascript:void(0)" class="text-primary add-line" ng-click="addLine()"><i class="fa fa-plus"></i>Add  Additional Line</a>
-                    </td>
-                </tr>
-            </tbody>
+                <tbody>
+                    <tr ng-repeat="row in data">
+                        <td>
+                            <input type="text" ng-model="row.desc" ng-if="isEdit"></input>
+                            <span ng-if="!isEdit">{{row.desc}}</span>
+                        </td>
+                        <td>
+                            <ui-select options="sows" selected-item="row.sow" ng-if="isEdit"></ui-select>
+                            <span ng-if="!isEdit">{{row.sow.name}}</span>
+                        </td>
+                        <td>
+                            <input type="text" ui-money-mask="2" placeholder="$" ng-model="row.loan_amount" ng-if="isEdit"></input>
+                            <span ng-if="!isEdit">{{row.loan_amount | currency:'$':2}}</span>
+                        </td>
+                        <td><span>{{row.drawn_date | currency:'$':2}}</span></td>
+                        <td><span>{{row.pending_draws | currency:'$':2}}</span></td>
+                        <td><span>{{row.amount_remaining | currency:'$':2}}</span></td>
+                        <td><span>{{row.percent_drawn}}%</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="8">
+                            <a href="javascript:void(0)" class="text-primary add-line" ng-click="addLine()"><i class="fa fa-plus"></i>Add  Additional Line</a>
+                        </td>
+                    </tr>
+                </tbody>
 
-            <tfoot>
-                <tr>
-                    <td colspan="2"></td>
+                <tfoot>
+                    <tr>
+                        <td colspan="2"></td>
 
-                    <td>
-                        <h4>Total</h4>
-                        <span>$123,456,789.00</span>
-                    </td>
-                    <td>
-                        <h4>Total</h4>
-                        <span>$123,456,789.00</span>
-                    </td>
-                    <td>
-                        <h4>Total</h4>
-                        <span>$123,456,789.00</span>
-                    </td>
-                    <td>
-                        <h4>Total</h4>
-                        <span>$123,456,789.00</span>
-                    </td>
-                    <td colspan="2">
-                        <h4>Total</h4>
-                        <span>52%</span>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
+                        <td>
+                            <h4>Total</h4>
+                            <span>$2,860,509.00</span>
+                        </td>
+                        <td>
+                            <h4>Total</h4>
+                            <span>$903,347.67</span>
+                        </td>
+                        <td>
+                            <h4>Total</h4>
+                            <span>$181,266.84</span>
+                        </td>
+                        <td>
+                            <h4>Total</h4>
+                            <span>$1,957,161.33</span>
+                        </td>
+                        <td colspan="2">
+                            <h4>Total</h4>
+                            <span>68.4%</span>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     </div>
 
     <div class="mt10 text-right">
