@@ -113,19 +113,19 @@
                                     <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
                                 </span>
                             </td>
-                            <td class="title"><a ui-sref="pay-application.preview">{{ row.title }}</></a><br><small>{{ row.type}}</small></td>
+                            <td class="title"><a ui-sref="purchase-orders.in-process">{{ row.title }}</></a><br><small>{{ row.type}}</small></td>
                             <td class="order-by-date">{{ row.due_date }}</td>
                             <td class="responsible"><a href="">{{ row.responsible.name }}</a><br><small>{{ row.responsible.company }}</small></td>
                             <td class="initiator"><a href="">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
                             <td class="sow">{{ row.sow }}</td>
                             <td class="amount">${{ row.amount | number:2 }}</td>
                             <td class="status">
-                                <span class="label" ng-class="{'in-process': row.status[0] == 'In Process' 
+                                <span class="label" ng-class="{'in-process': row.status[0] == 'In Process'
                                                                  || row.status[0] == 'approved awaiting payment',
                                                                'draft': row.status[0] == 'Draft',
-                                                               'pending': row.status[0] == 'pending' 
+                                                               'pending': row.status[0] == 'pending'
                                                                  || row.status[0] == 'pending approval',
-                                                               'completed': row.status[0] == 'Completed' 
+                                                               'completed': row.status[0] == 'Completed'
                                                                  || row.status[0] == 'Final' }">
                                     {{ row.status[0] }}
                                 </span><br>
@@ -175,19 +175,19 @@
                                     <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
                                 </span>
                             </td>
-                            <td class="title"><a ui-sref="pay-application.preview">{{ row.title }}</></a><br><small>{{ row.type}}</small></td>
+                            <td class="title"><a ui-sref="purchase-orders.in-process">{{ row.title }}</></a><br><small>{{ row.type}}</small></td>
                             <td class="order-by-date">{{ row.due_date }}</td>
                             <td class="responsible"><a href="">{{ row.responsible.name }}</a><br><small>{{ row.responsible.company }}</small></td>
                             <td class="initiator"><a href="">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
                             <td class="sow">{{ row.sow }}</td>
                             <td class="amount">${{ row.amount | number:2 }}</td>
                             <td class="status">
-                                <span class="label" ng-class="{'in-process': row.status[0] == 'In Process' 
+                                <span class="label" ng-class="{'in-process': row.status[0] == 'In Process'
                                                                  || row.status[0] == 'approved awaiting payment',
                                                                'draft': row.status[0] == 'Draft',
-                                                               'pending': row.status[0] == 'pending' 
+                                                               'pending': row.status[0] == 'pending'
                                                                  || row.status[0] == 'pending approval',
-                                                               'completed': row.status[0] == 'Completed' 
+                                                               'completed': row.status[0] == 'Completed'
                                                                  || row.status[0] == 'Final' }">
                                     {{ row.status[0] }}
                                 </span><br>
@@ -237,19 +237,19 @@
                                     <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
                                 </span>
                             </td>
-                            <td class="title"><a ui-sref="pay-application.preview">{{ row.title }}</></a><br><small>{{ row.type}}</small></td>
+                            <td class="title"><a ui-sref="purchase-orders.in-process">{{ row.title }}</></a><br><small>{{ row.type}}</small></td>
                             <td class="order-by-date">{{ row.due_date }}</td>
                             <td class="responsible"><a href="">{{ row.responsible.name }}</a><br><small>{{ row.responsible.company }}</small></td>
                             <td class="initiator"><a href="">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
                             <td class="sow">{{ row.sow }}</td>
                             <td class="amount">${{ row.amount | number:2 }}</td>
                             <td class="status">
-                                <span class="label" ng-class="{'in-process': row.status[0] == 'In Process' 
+                                <span class="label" ng-class="{'in-process': row.status[0] == 'In Process'
                                                                  || row.status[0] == 'approved awaiting payment',
                                                                'draft': row.status[0] == 'Draft',
-                                                               'pending': row.status[0] == 'pending' 
+                                                               'pending': row.status[0] == 'pending'
                                                                  || row.status[0] == 'pending approval',
-                                                               'completed': row.status[0] == 'Completed' 
+                                                               'completed': row.status[0] == 'Completed'
                                                                  || row.status[0] == 'Final' }">
                                     {{ row.status[0] }}
                                 </span><br>
@@ -299,19 +299,19 @@
                                     <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
                                 </span>
                             </td>
-                            <td class="title"><a ui-sref="pay-application.preview">{{ row.title }}</></a><br><small>{{ row.type}}</small></td>
+                            <td class="title"><a ui-sref="purchase-orders.in-process">{{ row.title }}</></a><br><small>{{ row.type}}</small></td>
                             <td class="order-by-date">{{ row.due_date }}</td>
                             <td class="responsible"><a href="">{{ row.responsible.name }}</a><br><small>{{ row.responsible.company }}</small></td>
                             <td class="initiator"><a href="">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
                             <td class="sow">{{ row.sow }}</td>
                             <td class="amount">${{ row.amount | number:2 }}</td>
                             <td class="status">
-                                <span class="label" ng-class="{'in-process': row.status[0] == 'In Process' 
+                                <span class="label" ng-class="{'in-process': row.status[0] == 'In Process'
                                                                  || row.status[0] == 'approved awaiting payment',
                                                                'draft': row.status[0] == 'Draft',
-                                                               'pending': row.status[0] == 'pending' 
+                                                               'pending': row.status[0] == 'pending'
                                                                  || row.status[0] == 'pending approval',
-                                                               'completed': row.status[0] == 'Completed' 
+                                                               'completed': row.status[0] == 'Completed'
                                                                  || row.status[0] == 'Final' }">
                                     {{ row.status[0] }}
                                 </span><br>
