@@ -1,5 +1,5 @@
-app.controller('GAINewModalCtrl',
-    ['$scope', '$state', '$uibModalInstance', function($scope, $state, $uibModalInstance) {
+app.controller('TaskModalCtrl',
+    ['$scope', '$uibModalInstance', 'currentTask', function($scope, $uibModalInstance, currentTask) {
         $scope.cancel = function() {
             $uibModalInstance.dismiss('cancel');
         };
@@ -7,6 +7,7 @@ app.controller('GAINewModalCtrl',
         $scope.distribute = function () {
             $uibModalInstance.close();
         }
+        $scope.task = currentTask;
 
         $scope.isShowDatePicker = false;
         $scope.selectedDate = new Date(2015, 7, 18);
