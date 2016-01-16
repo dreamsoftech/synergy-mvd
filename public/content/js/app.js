@@ -394,6 +394,15 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 pageName: 'Project Start'
             }
         })
+        .state('items-requiring-approval', {
+            url: '/items-requiring-approval',
+            templateUrl: 'partials/projects/items-requiring-approval.html',
+            controller: 'ItemsRequiringApprovalCtrl',
+            data: {
+                isHeaderHidden: true,
+                pageName: 'Items Requiring Approval'
+            }
+        })
         .state('documents', {
             url: '/documents',
             abstract: true,
