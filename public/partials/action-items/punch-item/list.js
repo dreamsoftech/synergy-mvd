@@ -1,5 +1,5 @@
 app.controller('PunchItemListCtrl',
-    ['$scope', function($scope) {
+    ['$scope', '$uibModal', function($scope, $uibModal) {
         $scope.punchItem = {
             state: "action-items.rfi.main",
             title: "RFI",
@@ -44,4 +44,23 @@ app.controller('PunchItemListCtrl',
                 {flag: 'completed', title: 'North Side Area Dimensions', sTitle: '', due_date: '1/27/2015', responsible: {name: 'Bruce Wayne', company: 'Synergy Construction'},initiator: {name: 'Dan Meyer', company: 'Redoubt Excava...'}, sow: ['Site Excavation'].join(', '), status: ['Completed', 1]}
             ]
         };
+
+        $scope.showPunchItemDetailModal = function(item) {
+            var modalInstance = $uibModal.open({
+                templateUrl: 'partials/action-items/punch-item/detail-modal.html',
+                controller: 'PunchItemDetailModalCtrl',
+                windowClass: 'tm-modal-main',
+                resolve: {
+                    currentItem: function() {
+                        return item;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (res) {
+            }, function () {
+
+            });
+        }
+
     }]);

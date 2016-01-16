@@ -81,14 +81,14 @@
   font-size: 17px; }
 
 .aii-inspection-info .item-title {
-  font-family: "AvenirNextLTPro-Regular";
+  font-family: "AvenirNextLTPro-Medium";
   text-align: left; }
   .aii-inspection-info .item-title .fa {
     margin-left: 10px;
     color: #aaa; }
 
 .aii-inspection-info .item-value {
-  font-family: "AvenirNextLTPro-Medium"; }
+  font-family: "AvenirNextLTPro-Demi"; }
 
 .aii-inspection-info .breadcrumbv22x {
   display: inline; }
