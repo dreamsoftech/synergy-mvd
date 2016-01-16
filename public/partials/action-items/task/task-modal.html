@@ -88,6 +88,21 @@
         </div>
     </div>
     <textarea class="form-control mt15 text-default" placeholder="Provide any additional information here..."></textarea>
+
+    <div class="bids-package-wrapper" ng-if="!isNewModal">
+        <div class="row bp-tabs-section" style="background-color: white; padding: 15px">
+            <div class="bp-tabs-content">
+                <uib-tabset>
+                    <uib-tab heading="Comments">
+                        <div ng-include="'partials/bids/package/comments.html'"></div>
+                    </uib-tab>
+                    <uib-tab heading="Access">Access</uib-tab>
+                    <uib-tab heading="Activity">Activity</uib-tab>
+                    <uib-tab heading="Attachments">Attachments</uib-tab>
+                </uib-tabset>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-cancel btn-lg" ng-click="cancel()">Cancel</button>
