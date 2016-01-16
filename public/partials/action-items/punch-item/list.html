@@ -37,13 +37,13 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <span class="text-muted">Estimated Completion Date </span>
-            <span class="heading">Jan 12, 2016</span>
+            <span class="heading">Dec 14, 2015</span>
             <div>Progress</div>
             <div class="row">
                 <div class="col-md-10" ng-cloak>
-                    <uib-progressbar value="55" class="progress-small"></uib-progressbar>
+                    <uib-progressbar value="50" class="progress-small"></uib-progressbar>
                 </div>
-                <div class="col-md-2">5 of 12 completed</div>
+                <div class="col-md-2">1 of 2 completed</div>
             </div>
         </div>
     </div>
@@ -102,7 +102,7 @@
                 <th class=""></th>
             </thead>
             <tbody>
-              <tr ng-repeat="row in punchItem.listRequiredByMe" ng-click="go('action-items.punchItem.in-process')">
+              <tr ng-repeat="row in punchItem.listCompleted" ng-click="go('action-items.punchItem.in-process')">
                 <td class="flag">
                     <span>
                         <img ng-show="row.flag == 'red'" src="assets/img/red_icon.png">
