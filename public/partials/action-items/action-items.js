@@ -138,23 +138,23 @@ app.controller('ActionItemsCtrl',
         $scope.changeOrder = {
             state: "action-items.change-order.main",
             title: "Change Order",
-            total: 419,
-            green: 171,
-            orange: 155,
-            red: 92,
+            total: 3,
+            green: 3,
+            orange: 0,
+            red: 0,
             completed: {
-                total: 419,
-                done: 140
+                total: 3,
+                done: 2
             },
             overview: {
-                total: 1234567,
+                total: 129772,
                 in_process: {
-                    count: 8,
-                    amount: 2345
+                    count: 1,
+                    amount: 1200
                 },
                 completed: {
-                    count: 11,
-                    amount: 32345876
+                    count: 2,
+                    amount: 128572
                 }
             },
             chart_data: [
@@ -178,44 +178,36 @@ app.controller('ActionItemsCtrl',
             },
             assignedMe: {
                 green: {
-                    total: 61,
-                    done: 40
+                    total: 1,
+                    done: 1
                 },
                 orange: {
-                    total: 49,
-                    done: 20,
+                    total: 0,
+                    done: 0,
                 },
                 red: {
-                    total: 33,
-                    done: 28
+                    total: 0,
+                    done: 0
                 }
             },
             listRequiredByMe: [
-                    {flag: 'red', title: 'Confirm Progress on Fireplace', type: "Secure Ledger Board", due_date: '8/16/2015', responsible: {name: 'Bruce Wayne', company: 'ABC Inc'},initiator: {name: 'Bruce Wayne', company: 'ABC Inc'}, sow: ['Fireplace Install'].join(", "), sow_completed: 24, amount: 56678, status: ['In Process', 0]},
-                    {flag: 'red', title: 'Need Stairs Ready for Floor Lights', type: "Secure Ledger Board", due_date: '8/17/2015', responsible: {name: 'Bruce Wayne', company: 'ABC Inc'},initiator: {name: 'Mary Beroset', company: 'ABC Inc'}, sow: ['Stairway Floor Lighting'].join(", "), sow_completed: 24, amount: 45766, status: ['In Process', 0.3]},
-                    {flag: 'red', title: 'Close Garage Roof', due_date: '8/17/2015', responsible: {name: 'Dave Gebo', company: ''},initiator: {name: 'Bruce Wayne', company: ''}, sow: [''].join(', '), amount: 35654, status: ['In Process', 0.95]},
-                    {flag: 'yellow', title: 'Decision on Ventilation ', type: "Secure Ledger Board", due_date: '8/18/2015', responsible: {name: 'Bruce Wayne', company: 'ABC Inc'},initiator: {name: 'Dave Musgrove', company: 'ABC Inc'}, sow: [''].join(", "), sow_completed: 24, amount: 12234, status: ['In Process', 0]},
-                    {flag: 'yellow', title: 'Confirm Completion of Dry-In', type: "Secure Ledger Board", due_date: '8/18/2015', responsible: {name: 'Bruce Wayne', company: 'ABC Inc'},initiator: {name: 'Jeff Price', company: 'ABC Inc'}, sow: ['Roof Dry-In'].join(", "), sow_completed: 24, amount: 9089, status: ['pending', 0.25]},
-                    {flag: 'yellow', title: 'Initiate Bid Process for Drywall', type: "Secure Ledger Board", due_date: '8/19/2015', responsible: {name: 'Bruce Wayne', company: 'ABC Inc'},initiator: {name: 'Bruce Wayne', company: 'ABC Inc'}, sow: ['Drywall'].join(", "), sow_completed: 24, amount: 61893, status: ['pending', 0]},
-                    {flag: 'green', title: 'Clean Job Site', due_date: '-', type: "Secure Ledger Board", responsible: {name: 'Bruce Wayne', company: 'ABC Inc'},initiator: {name: 'Bruce Wayne', company: 'ABC Inc'}, sow: ['-'].join(", "), sow_completed: 24, amount: 98731, status: ['In Process', 0]}
+                {flag: 'green', title: 'Plumbing Additions', due_date: 'Aug 24, 2015', type: "", responsible: {name: 'Bruce Wayne', company: ''},initiator: {name: 'Christine Spendlove', company: ''}, sow: ['Plumbing'].join(", "), sow_completed: 24, amount: 1200, status: ['Distrubuted', 0]}
             ],
             listRequiredByOthers: [
-                {flag: 'red', title: 'Submit Invoice for Additional Lumber', type: "Secure Ledger Board", due_date: '8/14/2015', responsible: {name: 'Dave Gebo', company: 'ABC Inc'},initiator: {name: 'Jeff Price', company: 'ABC Inc'}, sow: ['Roof Dry-In'].join(', '), sow_completed: 32, amount: 454543, status: ['In Process', 0.2]},
-                {flag: 'red', title: 'Discuss Ventilation Options', due_date: '8/16/2015', responsible: {name: 'Dave Musgrove', company: 'ABC Inc'},initiator: {name: 'Bruce Wayne', company: 'ABC Inc'}, sow: ['Fireplace Install'].join(', '), sow_completed: 32, amount: 12342, status: ['In Process', 0]},
-                {flag: 'red', title: 'Complete Fireplace Framing', due_date: '8/17/2015', responsible: {name: 'John Steel', company: 'ABC Inc'},initiator: {name: 'John Steel', company: ''}, sow: ['Fireplace Install'].join(', '), sow_completed: 32, amount: 875656, status: ['In Process', 0.8]},
-                {flag: 'yellow', title: 'Electrical Overview', due_date: '8/18/2015', responsible: {name: 'Mike Riley', company: ''},initiator: {name: 'Mary Beroset', company: 'ABC Inc'}, sow: ['Main Floor Overhead Lighting'].join(', '), sow_completed: 32, amount: 7633, status: ['In Process', 0.3]}
+                // {flag: 'red', title: 'Submit Invoice for Additional Lumber', type: "Secure Ledger Board", due_date: '8/14/2015', responsible: {name: 'Dave Gebo', company: 'ABC Inc'},initiator: {name: 'Jeff Price', company: 'ABC Inc'}, sow: ['Roof Dry-In'].join(', '), sow_completed: 32, amount: 454543, status: ['In Process', 0.2]},
+                // {flag: 'red', title: 'Discuss Ventilation Options', due_date: '8/16/2015', responsible: {name: 'Dave Musgrove', company: 'ABC Inc'},initiator: {name: 'Bruce Wayne', company: 'ABC Inc'}, sow: ['Fireplace Install'].join(', '), sow_completed: 32, amount: 12342, status: ['In Process', 0]},
+                // {flag: 'red', title: 'Complete Fireplace Framing', due_date: '8/17/2015', responsible: {name: 'John Steel', company: 'ABC Inc'},initiator: {name: 'John Steel', company: ''}, sow: ['Fireplace Install'].join(', '), sow_completed: 32, amount: 875656, status: ['In Process', 0.8]},
+                // {flag: 'yellow', title: 'Electrical Overview', due_date: '8/18/2015', responsible: {name: 'Mike Riley', company: ''},initiator: {name: 'Mary Beroset', company: 'ABC Inc'}, sow: ['Main Floor Overhead Lighting'].join(', '), sow_completed: 32, amount: 7633, status: ['In Process', 0.3]}
             ],
             listDrafts: [
-                {flag: 'draft', title: 'Discuss Schedule for September', due_date: '9/12/2015', responsible: {name: 'Earnie Rutland', company: ''},initiator: {name: 'Bruce Wayne', company: ''}, sow: ['Base '].join(', '), sow_completed: 32, amount: 278907, status: ['Draft', '-']},
-                {flag: 'draft', title: 'Follow Up on Code', due_date: '-', responsible: {name: '-', company: ''},initiator: {name: 'Bruce Wayne', company: 'ABC Inc'}, sow: ['Fire Sprinker Rough In'].join(', '), sow_completed: 32, amount: 9765, status: ['Draft', '-']},
-                {flag: 'draft', title: 'Reminder to Input Bid', type: "Secure Ledger Board", due_date: '', responsible: {name: 'Brad Harrison', company: 'ABC Inc'},initiator: {name: 'Bruce Wayne', company: 'ABC Inc'}, sow: ['Drywall'].join(', '), sow_completed: 32, amount: 34566, status: ['Draft', '-']},
-                {flag: 'draft', title: 'Required Primer', due_date: '-', responsible: {name: 'Mark Stevens', company: 'ABC Inc'},initiator: {name: 'Bruce Wayne', company: 'ABC Inc'}, sow: ['Prime'].join(', '), sow_completed: 32, amount: 2097, status: ['Draft', '-']}
+                // {flag: 'draft', title: 'Discuss Schedule for September', due_date: '9/12/2015', responsible: {name: 'Earnie Rutland', company: ''},initiator: {name: 'Bruce Wayne', company: ''}, sow: ['Base '].join(', '), sow_completed: 32, amount: 278907, status: ['Draft', '-']},
+                // {flag: 'draft', title: 'Follow Up on Code', due_date: '-', responsible: {name: '-', company: ''},initiator: {name: 'Bruce Wayne', company: 'ABC Inc'}, sow: ['Fire Sprinker Rough In'].join(', '), sow_completed: 32, amount: 9765, status: ['Draft', '-']},
+                // {flag: 'draft', title: 'Reminder to Input Bid', type: "Secure Ledger Board", due_date: '', responsible: {name: 'Brad Harrison', company: 'ABC Inc'},initiator: {name: 'Bruce Wayne', company: 'ABC Inc'}, sow: ['Drywall'].join(', '), sow_completed: 32, amount: 34566, status: ['Draft', '-']},
+                // {flag: 'draft', title: 'Required Primer', due_date: '-', responsible: {name: 'Mark Stevens', company: 'ABC Inc'},initiator: {name: 'Bruce Wayne', company: 'ABC Inc'}, sow: ['Prime'].join(', '), sow_completed: 32, amount: 2097, status: ['Draft', '-']}
             ],
             listCompleted: [
-                {flag: 'completed', title: 'Follow Up on Steel Support', type: "Secure Ledger Board", due_date: '7/21/2015', responsible: {name: 'Bruce Wayne', company: 'ABC Inc'},initiator: {name: 'Bruce Wayne', company: 'ABC Inc'}, sow: ['Set Steel'].join(', '), sow_completed: 32, amount: 7634, status: ['Completed', 1]},
-                {flag: 'completed', title: 'Need to Install Sewer Pump', due_date: '7/14/2015', responsible: {name: 'Christine Spendlove', company: 'ABC Inc'},initiator: {name: 'Bruce Wayne', company: 'ABC Inc'}, sow: ['Rough Plumbing'].join(', '), sow_completed: 32, amount: 54656, status: ['Completed', 1]},
-                {flag: 'completed', title: 'Complete Rough Electical', type: "Secure Ledger Board", due_date: '7/9/2015', responsible: {name: 'Mike Riley', company: ''},initiator: {name: 'Mike Riley', company: 'ABC Inc'}, sow: ['Rough Electrical'].join(', '), sow_completed: 32, amount: 87533, status: ['Completed', 1]},
-                {flag: 'canceled', title: 'What is a Submittal', due_date: '6/26/2015', responsible: {name: 'Josh Kimball', company: ''},initiator: {name: 'Steven Phillips', company: 'ABC Inc'}, sow: ['Submittals'].join(', '), sow_completed: 32, amount: 1230, status: ['Canceled', '-']}
+                {flag: 'completed', title: 'Carpentry Addition', type: "", due_date: 'Jun 14, 2015', responsible: {name: 'Bruce Wayne', company: ''},initiator: {name: 'Skylar Widdison', company: ''}, sow: ['Rough Carpentry'].join(', '), sow_completed: 32, amount: 80000, status: ['Approved', 1]},
+                {flag: 'completed', title: 'Custom Metal Work', due_date: 'Feb 2, 2015', responsible: {name: 'Beth Wiseman', company: ''},initiator: {name: 'John Steel', company: ''}, sow: ['Metal Framing'].join(', '), sow_completed: 32, amount: 48572, status: ['Approved', 1]}
             ]
         };
 

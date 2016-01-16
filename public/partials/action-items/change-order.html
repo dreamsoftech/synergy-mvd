@@ -16,9 +16,9 @@
                         <h2 class="heading">CHANGE ORDERS</h2>
                         <ul class="topSubtitle">
                             <li>
-                                <a href="#">Anderson Perkins LTD Shipping Center <i class="ace-icon fa fa-angle-down"></i></a>
+                                <a href="#">Wilmington 47<i class="ace-icon fa fa-angle-down"></i></a>
                             </li>
-                            <li><span>1796 Prospector AvenuePark City,<br /> Utah 84605</span></li>
+                            <li><span>47 Wilmington Ave<br />Arlington, VA 90125</span></li>
                         </ul>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                                 <div class="">
                                     <span class="action-item-text">ITEMS ASSIGNED TO ME</span><br>
                                     <span class="action-item-value">
-                                        {{ changeOrder.assignedMe.green.total + changeOrder.assignedMe.orange.total + changeOrder.assignedMe.red.total }} Items
+                                        1 Items
                                     </span>
                                 </div>
                             </div>
@@ -124,11 +124,11 @@
                             <div class="row">
                                 <div class="col-xs-4">
                                     <div class="text-muted font-regular">Count</div>
-                                    <div class="value font-regular">8</div>
+                                    <div class="value font-regular">1</div>
                                 </div>
                                 <div class="col-xs-8">
                                     <div class="text-muted font-regular">Amount</div>
-                                    <div class="value font-regular">$2,345</div>
+                                    <div class="value font-regular">$1,200</div>
                                 </div>
                             </div>
                         </div>
@@ -138,11 +138,11 @@
                             <div class="row">
                                 <div class="col-xs-4">
                                     <div class="text-muted font-regular">Count</div>
-                                    <div class="value font-regular">11</div>
+                                    <div class="value font-regular">2</div>
                                 </div>
                                 <div class="col-xs-8">
                                     <div class="text-muted font-regular">Amount</div>
-                                    <div class="value font-regular">$32,345,876</div>
+                                    <div class="value font-regular">$128,572</div>
                                 </div>
                             </div>
                         </div>
@@ -195,7 +195,7 @@
                                     <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
                                 </span>
                             </td>
-                            <td class="title"><a href="javascript:void(0)" ui-sref="action-items.change-order.in-process">{{ row.title }}</></a><br><small>{{ row.type}}</small></td>
+                            <td class="title"><a href="javascript:void(0)" ui-sref="action-items.change-order.in-process">{{ row.title }}</a><br><small>{{ row.type}}</small></td>
                             <td class="order-by-date">{{ row.due_date }}</td>
                             <td class="responsible"><a href="">{{ row.responsible.name }}</a><br><small>{{ row.responsible.company }}</small></td>
                             <td class="initiator"><a href="">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
@@ -204,8 +204,10 @@
                             <td class="status">
                                 <span class="label" ng-class="{'in-process': row.status[0] == 'In Process',
                                                                'draft': row.status[0] == 'Draft',
-                                                               'pending': row.status[0] == 'pending',
-                                                               'completed': row.status[0] == 'Completed' }">
+                                                               'pending': row.status[0] == 'pending'
+                                                               || row.status[0] == 'Distrubuted',
+                                                               'completed': row.status[0] == 'Completed' 
+                                                               || row.status[0] == 'Approved'}">
                                     {{ row.status[0] }}
                                 </span><br>
                                 <!-- <small ng-show="row.status[1] != '-'">{{ row.status[1] * 100  }}% Completed</small> -->
@@ -217,7 +219,7 @@
                                 <td colspan="6"></td>
                                 <td>
                                     <span>Total</span>
-                                    <p>$1,119,234.00</p>
+                                    <p>$0</p>
                                 </td>
                                 <td></td>
                             </tr>
@@ -254,7 +256,7 @@
                                     <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
                                 </span>
                             </td>
-                            <td class="title"><a href="javascript:void(0)" ui-sref="action-items.change-order.in-process">{{ row.title }}</></a><br><small>{{ row.type}}</small></td>
+                            <td class="title"><a href="javascript:void(0)" ui-sref="action-items.change-order.in-process">{{ row.title }}</a><br><small>{{ row.type}}</small></td>
                             <td class="order-by-date">{{ row.due_date }}</td>
                             <td class="responsible"><a href="">{{ row.responsible.name }}</a><br><small>{{ row.responsible.company }}</small></td>
                             <td class="initiator"><a href="">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
@@ -263,8 +265,10 @@
                             <td class="status">
                                 <span class="label" ng-class="{'in-process': row.status[0] == 'In Process',
                                                                'draft': row.status[0] == 'Draft',
-                                                               'pending': row.status[0] == 'pending',
-                                                               'completed': row.status[0] == 'Completed' }">
+                                                               'pending': row.status[0] == 'pending'
+                                                               || row.status[0] == 'Distrubuted',
+                                                               'completed': row.status[0] == 'Completed' 
+                                                               || row.status[0] == 'Approved'}">
                                     {{ row.status[0] }}
                                 </span><br>
                                 <!-- <small ng-show="row.status[1] != '-'">{{ row.status[1] * 100  }}% Completed</small> -->
@@ -276,7 +280,7 @@
                                 <td colspan="6"></td>
                                 <td>
                                     <span>Total</span>
-                                    <p>$2,652,904.00</p>
+                                    <p>$0</p>
                                 </td>
                                 <td></td>
                             </tr>
@@ -313,7 +317,7 @@
                                     <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
                                 </span>
                             </td>
-                            <td class="title"><a href="javascript:void(0)" ui-sref="action-items.change-order.in-process">{{ row.title }}</></a><br><small>{{ row.type}}</small></td>
+                            <td class="title"><a href="javascript:void(0)" ui-sref="action-items.change-order.in-process">{{ row.title }}</a><br><small>{{ row.type}}</small></td>
                             <td class="order-by-date">{{ row.due_date }}</td>
                             <td class="responsible"><a href="">{{ row.responsible.name }}</a><br><small>{{ row.responsible.company }}</small></td>
                             <td class="initiator"><a href="">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
@@ -322,8 +326,10 @@
                             <td class="status">
                                 <span class="label" ng-class="{'in-process': row.status[0] == 'In Process',
                                                                'draft': row.status[0] == 'Draft',
-                                                               'pending': row.status[0] == 'pending',
-                                                               'completed': row.status[0] == 'Completed' }">
+                                                               'pending': row.status[0] == 'pending'
+                                                               || row.status[0] == 'Distrubuted',
+                                                               'completed': row.status[0] == 'Completed' 
+                                                               || row.status[0] == 'Approved'}">
                                     {{ row.status[0] }}
                                 </span><br>
                                 <!-- <small ng-show="row.status[1] != '-'">{{ row.status[1] * 100  }}% Completed</small> -->
@@ -335,7 +341,7 @@
                                 <td colspan="6"></td>
                                 <td>
                                     <span>Total</span>
-                                    <p>$452,904.00</p>
+                                    <p>$0</p>
                                 </td>
                                 <td></td>
                             </tr>
@@ -372,7 +378,7 @@
                                     <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
                                 </span>
                             </td>
-                            <td class="title"><a href="javascript:void(0)" ui-sref="action-items.change-order.in-process">{{ row.title }}</></a><br><small>{{ row.type}}</small></td>
+                            <td class="title"><a href="javascript:void(0)" ui-sref="action-items.change-order.in-process">{{ row.title }}</a><br><small>{{ row.type}}</small></td>
                             <td class="order-by-date">{{ row.due_date }}</td>
                             <td class="responsible"><a href="">{{ row.responsible.name }}</a><br><small>{{ row.responsible.company }}</small></td>
                             <td class="initiator"><a href="">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
@@ -381,8 +387,10 @@
                             <td class="status">
                                 <span class="label" ng-class="{'in-process': row.status[0] == 'In Process',
                                                                'draft': row.status[0] == 'Draft',
-                                                               'pending': row.status[0] == 'pending',
-                                                               'completed': row.status[0] == 'Completed' }">
+                                                               'pending': row.status[0] == 'pending'
+                                                               || row.status[0] == 'Distrubuted',
+                                                               'completed': row.status[0] == 'Completed' 
+                                                               || row.status[0] == 'Approved'}">
                                     {{ row.status[0] }}
                                 </span><br>
                                 <!-- <small ng-show="row.status[1] != '-'">{{ row.status[1] * 100  }}% Completed</small> -->
@@ -394,7 +402,7 @@
                                 <td colspan="6"></td>
                                 <td>
                                     <span>Total</span>
-                                    <p>$932,323.00</p>
+                                    <p>$128,572.00</p>
                                 </td>
                                 <td></td>
                             </tr>
