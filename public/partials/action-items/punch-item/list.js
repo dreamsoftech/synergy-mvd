@@ -1,30 +1,6 @@
 app.controller('PunchItemListCtrl',
     ['$scope', '$uibModal', function($scope, $uibModal) {
         $scope.punchItem = {
-            state: "action-items.rfi.main",
-            title: "RFI",
-            total: 10,
-            green: 3,
-            orange: 2,
-            red: 2,
-            completed: {
-                total: 10,
-                done: 2
-            },
-            assignedMe: {
-                green: {
-                    total: 1,
-                    done: 1
-                },
-                orange: {
-                    total: 1,
-                    done: 1,
-                },
-                red: {
-                    total: 1,
-                    done: 1
-                }
-            },
             listRequiredByMe: [
                 {flag: 'red', title: 'Exposed Roof Section', sTitle: '', due_date: '8/17/2015', responsible: {name: 'Bruce Wayne', company: 'Synergy Construction'},initiator: {name: 'Dave Gebo', company: 'On Top Roofing'}, sow: ['Roof Dry-In'].join(", "), status: ['awating approval', 0]},
                 {flag: 'yellow', title: 'Plumbing', sTitle: '', due_date: '8/19/2015', responsible: {name: 'Bruce Wayne', company: 'Synergy Construction'},initiator: {name: 'Christine Spendlove', company: 'Spendlove Plumbing'}, sow: ['Plumbing'].join(", "), status: ['awating approval', 0.3]},
@@ -44,6 +20,13 @@ app.controller('PunchItemListCtrl',
                 {flag: 'completed', title: 'North Side Area Dimensions', sTitle: '', due_date: '1/27/2015', responsible: {name: 'Bruce Wayne', company: 'Synergy Construction'},initiator: {name: 'Dan Meyer', company: 'Redoubt Excava...'}, sow: ['Site Excavation'].join(', '), status: ['Completed', 1]}
             ]
         };
+
+        $scope.leadList = [
+            { id: 1, name: 'Bob Jones'},
+            { id: 2, name: 'Darcy Bertrand'},
+            { id: 3, name: 'Bryan Lloyd'},
+            { id: 3, name: 'Anrew Klein'}
+        ];
 
         $scope.showPunchItemDetailModal = function(item) {
             var modalInstance = $uibModal.open({
