@@ -24,12 +24,12 @@ app.controller('BankDrawShowCtrl',
 
         $scope.percentChartData = [
             {
-                value: 75,
+                value: 30,
                 color: "#3aabd5",
                 text: ''
             },
             {
-                value: 50,
+                value: 64,
                 color: "#79c485",
                 text: ''
             }

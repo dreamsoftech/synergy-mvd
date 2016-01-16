@@ -1,34 +1,8 @@
 app.controller('PunchItemListCtrl',
     ['$scope', '$uibModal', function($scope, $uibModal) {
         $scope.punchItem = {
-            state: "action-items.rfi.main",
-            title: "RFI",
-            total: 10,
-            green: 3,
-            orange: 2,
-            red: 2,
-            completed: {
-                total: 10,
-                done: 2
-            },
-            assignedMe: {
-                green: {
-                    total: 1,
-                    done: 1
-                },
-                orange: {
-                    total: 1,
-                    done: 1,
-                },
-                red: {
-                    total: 1,
-                    done: 1
-                }
-            },
             listRequiredByMe: [
-                {flag: 'red', title: 'Exposed Roof Section', sTitle: '', due_date: '8/17/2015', responsible: {name: 'Bruce Wayne', company: 'Synergy Construction'},initiator: {name: 'Dave Gebo', company: 'On Top Roofing'}, sow: ['Roof Dry-In'].join(", "), status: ['awating approval', 0]},
-                {flag: 'yellow', title: 'Plumbing', sTitle: '', due_date: '8/19/2015', responsible: {name: 'Bruce Wayne', company: 'Synergy Construction'},initiator: {name: 'Christine Spendlove', company: 'Spendlove Plumbing'}, sow: ['Plumbing'].join(", "), status: ['awating approval', 0.3]},
-                {flag: 'green', title: 'Hardwood Floor', sTitle: '', due_date: '9/25/2015', responsible: {name: 'Bruce Wayne', company: 'Synergy Construction'},initiator: {name: 'David Sokol', company: 'Rocky Mountain Ha...'}, sow: ['Hardwood Flooring'].join(", "), status: ['awating approval', 0.3]}
+                {flag: 'green', title: 'Tree Missing', sTitle: '', due_date: '-', responsible: {name: 'Torben Moench', company: ''},initiator: {name: '', company: ''}, sow: ['Landscaping'].join(", "), status: ['awating Start', 0]}
             ],
 
             listRequiredByOthers: [
@@ -41,9 +15,16 @@ app.controller('PunchItemListCtrl',
                 {flag: 'draft', title: 'Landscaping Up-keep', sTitle: '', due_date: '-', responsible: {name: '-', company: ''},initiator: {name: 'Beth Wiseman', company: 'Synergy Construction'}, sow: ['Landscaping'].join(', '), status: ['Draft', '-']}
             ],
             listCompleted: [
-                {flag: 'completed', title: 'North Side Area Dimensions', sTitle: '', due_date: '1/27/2015', responsible: {name: 'Bruce Wayne', company: 'Synergy Construction'},initiator: {name: 'Dan Meyer', company: 'Redoubt Excava...'}, sow: ['Site Excavation'].join(', '), status: ['Completed', 1]}
+                {flag: 'completed', title: 'Excavation Clean Up', sTitle: '', due_date: 'Feb 10, 2015', responsible: {name: 'Bruce Wayne', company: 'Synergy Construction'},initiator: {name: 'Dan Meyer', company: ''}, sow: ['Excavation'].join(', '), status: ['Completed', 1]}
             ]
         };
+
+        $scope.leadList = [
+            { id: 1, name: 'Bob Jones'},
+            { id: 2, name: 'Darcy Bertrand'},
+            { id: 3, name: 'Bryan Lloyd'},
+            { id: 3, name: 'Anrew Klein'}
+        ];
 
         $scope.showPunchItemDetailModal = function(item) {
             var modalInstance = $uibModal.open({

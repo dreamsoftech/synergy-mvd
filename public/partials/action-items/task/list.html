@@ -99,7 +99,7 @@
             </div>
             <div class="col-md-1">
                 <div class="btns mt25">
-                    <a class="btn btn-success btn-lg" ng-click="showGaiNewModal()">
+                    <a class="btn btn-success btn-lg" ng-click="showNewTaskModal()">
                         <i class="fa fa-plus"></i> Add New
                     </a>
                 </div>
@@ -134,7 +134,7 @@
                                 <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
                             </span>
                         </td>
-                        <td class="title"><span>{{ row.title }}<span><br><small>{{ row.sTitle }}</small></td>
+                        <td class="title"><a class="text-primary" ng-click="showTaskDetailModal(row)"><div>{{ row.title }}</div><small>{{ row.sTitle }}</small></a></td>
                         <td class="due-date">{{ row.due_date }}</td>
                         <td class="responsible"><a href="#">{{ row.responsible.name }}</a><br><small>{{ row.responsible.company }}</small></td>
                         <td class="initiator"><a href="#">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
@@ -180,7 +180,7 @@
                                 <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
                             </span>
                         </td>
-                        <td class="title"><span>{{ row.title }}<span><br><small>{{ row.sTitle }}</small></td>
+                        <td class="title"><a class="text-primary" ng-click="showTaskDetailModal(row)"><div>{{ row.title }}</div><small>{{ row.sTitle }}</small></a></td>
                         <td class="due-date">{{ row.due_date }}</td>
                         <td class="responsible"><a href="#">{{ row.responsible.name }}</a><br><small>{{ row.responsible.company }}</small></td>
                         <td class="initiator"><a href="#">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
@@ -226,7 +226,7 @@
                                 <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
                             </span>
                         </td>
-                        <td class="title"><span>{{ row.title }}<span><br><small>{{ row.sTitle }}</small></td>
+                        <td class="title"><a class="text-primary" ng-click="showTaskDetailModal(row)"><div>{{ row.title }}</div><small>{{ row.sTitle }}</small></a></td>
                         <td class="due-date">{{ row.due_date }}</td>
                         <td class="responsible"><a href="#">{{ row.responsible.name }}</a><br><small>{{ row.responsible.company }}</small></td>
                         <td class="initiator"><a href="#">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
@@ -272,7 +272,7 @@
                                 <img ng-show="row.flag == 'draft'" src="assets/img/edit_circle.png">
                             </span>
                         </td>
-                        <td class="title"><span>{{ row.title }}<span><br><small>{{ row.sTitle }}</small></td>
+                        <td class="title"><a class="text-primary" ng-click="showTaskDetailModal(row)"><div>{{ row.title }}</div><small>{{ row.sTitle }}</small></a></td>
                         <td class="due-date">{{ row.due_date }}</td>
                         <td class="responsible"><a href="#">{{ row.responsible.name }}</a><br><small>{{ row.responsible.company }}</small></td>
                         <td class="initiator"><a href="#">{{ row.initiator.name }}</a><br><small>{{ row.initiator.company }}</small></td>
