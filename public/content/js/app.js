@@ -101,6 +101,24 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 pageName: 'Create New Purchase Order'
             }
         })
+        .state('purchase-orders.in-process', {
+            url: '/in-process',
+            templateUrl: "partials/financials/purchase-order/in-process.html",
+            controller: "PurchaseOrdersCtrl",
+            data: {
+                isHeaderHidden: true,
+                pageName: 'Purchase Order'
+            }
+        })
+        .state('purchase-orders.in-process-edit', {
+            url: '/in-process-edit',
+            templateUrl: "partials/financials/purchase-order/in-process-edit.html",
+            controller: "PurchaseOrdersCtrl",
+            data: {
+                isHeaderHidden: true,
+                pageName: 'Purchase Order'
+            }
+        })
         .state('bankdraw', {
             url: '/financials/bankdraw',
             abstract: true,
