@@ -326,12 +326,15 @@
             > div:nth-child(2),
             > div:nth-child(3),
             > div:nth-child(4) {
-                text-align: center;
 
-                > div {
-                    display: table;
-                    margin: 0 auto;
-                    text-align: left;
+                @media(min-width: 992px) {
+                    text-align: center;
+
+                    > div {
+                        display: table;
+                        margin: 0 auto;
+                        text-align: left;
+                    }
                 }
             }
 
