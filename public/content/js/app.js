@@ -339,19 +339,26 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 pageName: 'Inspections'
             }
         })
-        .state('action-items.punch-list', {
-            url: '/punch-list',
+        .state('action-items.punch-items', {
+            url: '/punch-items',
+            abstract: true,
             template: "<ui-view></ui-view>",
+        })
+        .state('action-items.punch-items.list', {
+            url: '/',
+            templateUrl: "partials/action-items/punch-item/list.html",
+            controller: "PunchItemListCtrl",
             data: {
-                pageName: 'Punch List Item'
+                isHeaderHidden: true,
+                pageName: 'Punch List Items'
             }
         })
-        .state('action-items.punch-list-new', {
-            url: '/punch-list/new',
+        .state('action-items.punch-items.new', {
+            url: '/new',
             templateUrl: "partials/action-items/punch-item/new.html",
             data: {
                 isHeaderHidden: true,
-                pageName: 'Punch List Item'
+                pageName: 'New Punch List Item'
             }
         })
         .state('projects', {

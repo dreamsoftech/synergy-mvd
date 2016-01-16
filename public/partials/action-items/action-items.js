@@ -225,6 +225,7 @@ app.controller('ActionItemsCtrl',
             green: 3,
             orange: 1,
             red: 1,
+            state: "action-items.punch-items.list",
             completed: {
                 total: 5,
                 done: 0
