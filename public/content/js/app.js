@@ -231,10 +231,10 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             templateUrl: "partials/action-items/action-items.html",
             controller: "ActionItemsCtrl"
         })
-        .state('action-items.general-action-items', {
-            url: '/general-action-items',
-            templateUrl: "partials/action-items/general-action-items.html",
-            controller: "ActionItemsCtrl",
+        .state('action-items.tasks', {
+            url: '/tasks',
+            templateUrl: 'partials/action-items/task/list.html',
+            controller: 'TaskListCtrl',
             data: {
                 isHeaderHidden: true,
                 pageName: 'Tasks'
