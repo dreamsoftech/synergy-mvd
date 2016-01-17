@@ -11,24 +11,24 @@
             <div class="col-lg-10">
                 <div class="row">
                     <div class="col-lg-2">
-                        <span class="text-uppercase text-muted">Change Order#</span><br>
-                        GAI1483
+                        <span class="text-uppercase text-muted">Task#</span><br>
+                        {{task.no}}
                     </div>
                     <div class="col-lg-2">
                         <span class="text-uppercase text-muted">Date</span><br>
-                        8/10/2015
+                        {{task.date}}
                     </div>
                     <div class="col-lg-2">
                         <span class="text-uppercase text-muted">Initiated By</span><br>
-                        Bruce Wayne
+                        {{task.initiator.name}}
                     </div>
                     <div class="col-lg-2">
                         <span class="text-uppercase text-muted">Company</span><br>
-                        Synergy Construction
+                        {{task.company}}
                     </div>
                     <div class="col-lg-2">
                         <span class="text-uppercase text-muted">Role</span><br>
-                        General Contractor
+                        {{task.role}}
                     </div>
                 </div>
             </div>
@@ -37,27 +37,27 @@
     <div class="row">
         <div class="col-lg-6 form-group">
             <label>Select Project</label>
-            <ui-select ng-select="changeOption()" placeholder="Wilmington 47" options="projects"></ui-select>
+            <ui-select ng-select="changeOption()" placeholder="Wilmington 47" options="projects" selected-item="projects[task.project]"></ui-select>
         </div>
         <div class="col-lg-6 form-group">
             <label>Assignee</label>
-            <ui-select ng-select="changeOption()" selected-item="assignee[0]" options="assignee"></ui-select>
+            <ui-select selected-item="assignee[task.assignee]" options="assignee"></ui-select>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-6 form-group">
             <label>Scope of Work</label>
-            <ui-select multiple="true" ng-select="changeOption()" options="sow" placeholder="Select SOW"></ui-select>
+            <ui-select multiple="true" ng-select="changeOption()" options="sow" placeholder="Select SOW" selected-item="sow[task.sow]"></ui-select>
         </div>
         <div class="form-group" ng-class="{'col-lg-6': isMoreOptionsShow, 'col-lg-4': !isMoreOptionsShow}">
             <label>&nbsp;</label>
             <div class="due-date" ng-click="isShowDatePicker = !isShowDatePicker">
                 <span class="text-default pull-left">Due Date</span>
-                <span class="text-muted pull-right">{{ selectedDate | date: 'MMM dd, yyyy'}}</span>
+                <span class="text-muted pull-right">{{ task.due_date | date: 'MMM dd, yyyy'}}</span>
                 <div class="clearfix"></div>
             </div>
             <div class="inline-calendar" ng-show="isShowDatePicker">
-              <uib-datepicker ng-model="selectedDate" min-date="minDate" show-weeks="false" class="well well-sm" ng-click="isShowDatePicker = false;"></uib-datepicker>
+              <uib-datepicker ng-model="task.due_date" min-date="minDate" show-weeks="false" class="well well-sm" ng-click="isShowDatePicker = false;"></uib-datepicker>
             </div>
         </div>
         <div ng-class="{'col-lg-2': !isMoreOptionsShow}" ng-hide="isMoreOptionsShow">
@@ -87,7 +87,7 @@
             </div>
         </div>
     </div>
-    <textarea class="form-control mt15 text-default" placeholder="Provide any additional information here..."></textarea>
+    <textarea class="form-control mt15 text-default" placeholder="Provide any additional information here...">{{task.desc}}</textarea>
 
     <div class="bids-package-wrapper" ng-if="!isNewModal">
         <div class="row bp-tabs-section" style="background-color: white; padding: 15px">

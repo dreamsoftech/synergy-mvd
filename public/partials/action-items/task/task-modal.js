@@ -20,20 +20,24 @@ app.controller('TaskModalCtrl',
                 name: "Wilmington 45"
             },
             {
-                id: 1,
+                id: 2,
                 name: "Wilmington 46"
             },
             {
-                id: 1,
+                id: 3,
                 name: "Wilmington 47"
             },
             {
-                id: 1,
+                id: 4,
                 name: "Wilmington 48"
             }
         ];
 
         $scope.assignee = [
+            {
+                id: 0,
+                name: 'Myself'
+            },
             {
                 id: 1,
                 name: "Bruce Wayne"
@@ -85,7 +89,7 @@ app.controller('TaskModalCtrl',
                 name: "Fire Sprikler Rough In"
             },
             {
-                id: 5,  
+                id: 5,
                 name: "Form Footings"
             },
             {
