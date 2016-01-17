@@ -10,15 +10,15 @@
             <div class="row no-margin pr15 pl15">
                 <div class="col-md-7">
                     <h2 class="heading">Pay Application</h2>
-                    <input type="text" class="pay-app-name-input" placeholder="A Long Pay Application Name Goes Here">
+                    <input type="text" class="pay-app-name-input" ng-model="payApplyName" placeholder="A Long Pay Application Name Goes Here">
                     <ul class="topSubtitle mt10">
                         <li>
-                            <a href="javascript:void(0)">Anderson Perkins LTD Shipping Center</a>
+                            <a href="javascript:void(0)">Wilmington 47</a>
                         </li>
                         <li>
-                            <span>1796 Prospector Avenue</span>
+                            <span>47 Wilmington Ave</span>
                             <br />
-                            <span>Park City, Utah 84605</span>
+                            <span>Arlington, VA 90125</span>
                         </li>
                     </ul>
                 </div>
@@ -27,19 +27,19 @@
                         <table class="pull-right">
                             <tr>
                                 <td class="item-title">Bid Number</td>
-                                <td><span class="label label-black">193</span></td>
+                                <td><span class="label label-black">1135</span></td>
                             </tr>
                             <tr>
                                 <td class="item-title">Date Initiated</td>
-                                <td class="item-value">8/23/14</td>
+                                <td class="item-value">8/16/2015</td>
                             </tr>
                             <tr>
                                 <td class="item-title">Initiate By</td>
-                                <td class="item-value">Eric Hoffman</td>
+                                <td class="item-value">Mike Riley</td>
                             </tr>
                             <tr>
                                 <td class="item-title">Status</td>
-                                <td class="item-value"><span class="text-success">IN PROGRESS</span></td>
+                                <td class="item-value"><span class="text-success">PENDING APPROVAL</span></td>
                             </tr>
                         </table>
                     </div>
@@ -94,7 +94,7 @@
                                 <tr>
                                     <td class="item-title">Contracted Amount</td>
                                     <td ng-repeat="item in itemList">{{ item.contractedAmount | currency }}</td>
-                                    <td class="item-total">$123</td>
+                                    <td class="item-total">$157,938.00</td>
                                 </tr>
                                 <tr>
                                     <td class="item-title">% Completed</td>
@@ -104,27 +104,27 @@
                                 <tr>
                                     <td class="item-title">Earned (less Retainage)</td>
                                     <td ng-repeat="item in itemList">{{ item.earned | currency }}</td>
-                                    <td class="item-total">$123</td>
+                                    <td class="item-total">$74,449.86</td>
                                 </tr>
                                 <tr class="previously-paid">
                                     <td class="item-title">Previously Paid</td>
                                     <td ng-repeat="item in itemList">{{ item.previouslyPaid | currency }}</td>
-                                    <td class="item-total">$123</td>
+                                    <td class="item-total">$14,000.00</td>
                                 </tr>
                                 <tr>
                                     <td class="item-title">Amount Due</td>
                                     <td ng-repeat="item in itemList">{{ item.amountDue | currency }}</td>
-                                    <td class="item-total"></td>
+                                    <td class="item-total">$60,449.86</td>
                                 </tr>
                                 <tr class="current-invoice">
                                     <td class="item-title">Current Invoice</td>
                                     <td ng-repeat="item in itemList">{{ item.currentInvoice | currency }}</td>
-                                    <td class="item-total">$123</td>
+                                    <td class="item-total">$59,832.00</td>
                                 </tr>
                                 <tr>
                                     <td class="item-title">Variance</td>
                                     <td ng-repeat="item in itemList"><span class="text-danger">{{ item.variance | currency }}</span></td>
-                                    <td class="item-total">$123</td>
+                                    <td class="item-total">$617.86</td>
                                 </tr>
                                 <tr class="empty">
                                     <td class="item-title" colspan="{{itemList.length + 2}}">&nbsp;</td>
@@ -167,7 +167,7 @@
                                     <label>&nbsp;</label>
                                     <div>
                                         Total Amount of Pay Application
-                                        <div class="summary-total-value mt5">$123,000</div>
+                                        <div class="summary-total-value mt5">$59,832.00</div>
                                     </div>
                                 </div>
                             </div>

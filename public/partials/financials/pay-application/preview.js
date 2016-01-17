@@ -1,64 +1,63 @@
 app.controller('PayPreviewCtrl',
     ['$scope', '$stateParams', function ($scope, $stateParams) {
 
+        $scope.payApplyName = "Electrical";
+
         $scope.leadList = [
-            { id: 1, name: 'Bob Jones'},
-            { id: 2, name: 'Darcy Bertrand'},
-            { id: 3, name: 'Bryan Lloyd'},
-            { id: 3, name: 'Anrew Klein'}
+            { id: 1, name: 'Bruce Wayne'}
         ];
 
         $scope.itemList = [
             {
-                project: 'Project Name Goes Here',
-                contract: 'Bob Jones',
-                scope: 'Elit Ridiculus Commodo',
-                contractedAmount: 123,
-                completed: 13,
-                earned: 123,
-                previouslyPaid: 123,
-                amountDue: 123,
-                currentInvoice: 123,
-                variance: 123,
-                estimatedDuration: 'Aug 23 2015',
-                retainage: 10,
-                scheduledCompletion: 'Aug 23 2015',
-                estimatedCompletion: 'Aug 23 2015',
-                varianceTotal: '4 days'
+                project: 'Wilmington 46',
+                contract: 'Electrical',
+                scope: 'Electrical',
+                contractedAmount: 55000,
+                completed: 25,
+                earned: 13750,
+                previouslyPaid: 10000,
+                amountDue: 3750,
+                currentInvoice: 3750,
+                variance: "-",
+                estimatedDuration: '13 Days',
+                retainage: 0,
+                scheduledCompletion: 'Aug 30 2015',
+                estimatedCompletion: 'Aug 29 2015',
+                varianceTotal: '-1 Days'
             },
             {
-                project: 'Project Name Goes Here',
-                contract: 'Bob Jones',
-                scope: 'Elit Ridiculus Commodo',
-                contractedAmount: 123,
-                completed: 13,
-                earned: 123,
-                previouslyPaid: 123,
-                amountDue: 123,
-                currentInvoice: 123,
-                variance: 123,
-                estimatedDuration: 'Aug 23 2015',
-                retainage: 10,
-                scheduledCompletion: 'Aug 23 2015',
-                estimatedCompletion: 'Aug 23 2015',
-                varianceTotal: '12 days'
+                project: 'Wilmington 47',
+                contract: 'Electrical',
+                scope: 'Electrical',
+                contractedAmount: 57938,
+                completed: 97,
+                earned: 56199.86,
+                previouslyPaid: '-',
+                amountDue: 56199.86,
+                currentInvoice: 55982,
+                variance: 217.86,
+                estimatedDuration: '13 Days',
+                retainage: 0,
+                scheduledCompletion: 'Aug 19 2015',
+                estimatedCompletion: 'Aug 18 2015',
+                varianceTotal: '-1 days'
             },
             {
-                project: 'Project Name Goes Here',
-                contract: 'Bob Jones',
-                scope: 'Elit Ridiculus Commodo',
-                contractedAmount: 123,
-                completed: 13,
-                earned: 123,
-                previouslyPaid: 123,
-                amountDue: 123,
-                currentInvoice: 123,
-                variance: 123,
-                estimatedDuration: 'Aug 23 2015',
-                retainage: 10,
-                scheduledCompletion: 'Aug 23 2015',
-                estimatedCompletion: 'Aug 23 2015',
-                varianceTotal: '1 day'
+                project: 'Wilmington 48',
+                contract: 'Electrical',
+                scope: 'Electrical',
+                contractedAmount: 45000,
+                completed: 10,
+                earned: 4500,
+                previouslyPaid: 4000,
+                amountDue: 500,
+                currentInvoice: 100,
+                variance: 400,
+                estimatedDuration: '11 Days',
+                retainage: 0,
+                scheduledCompletion: 'Sep 7, 2015',
+                estimatedCompletion: 'Sep 5, 2015',
+                varianceTotal: '+2 Days'
             }
         ];
 
