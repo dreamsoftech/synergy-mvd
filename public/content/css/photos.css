@@ -79,8 +79,6 @@
 
 .photos .panel-body .photo {
   position: relative; }
-  .photos .panel-body .photo .selected {
-    border-color: #e25c5c !important; }
   .photos .panel-body .photo .overlay {
     background: rgba(0, 0, 0, 0.5);
     text-align: center;

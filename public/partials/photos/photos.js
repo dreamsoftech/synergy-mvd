@@ -183,9 +183,11 @@ app.controller('PhotosCtrl',
             // 4-Way Inspection Folder : 0
         ];
 
-        _.each($scope.photos, function(photo) {
-            photo.selected = false;
-        });
+        // _.each($scope.photos, function(photo) {
+        //     photo.selected = false;
+        // });
+
+        $scope.selectedPhotos = $scope.photos;
 
         _.each($scope.folders, function(folder) {
             folder.thumbnail = _.result(_.find($scope.photos, function(photo) { return _.indexOf(photo.folders, folder.id) != -1}), 'name');
@@ -199,12 +201,14 @@ app.controller('PhotosCtrl',
 
         $scope.selectFolder = function(folder) {
             $scope.isFolderSelected = true;
-            _.each($scope.photos, function(p) {
-                if (_.indexOf(p.folders, folder.id) != -1)
-                    p.selected = true;
-                else
-                    p.selected = false;
-            });
+
+            $scope.selectedPhotos = _.filter($scope.photos, function(p) {return _.indexOf(p.folders, folder.id) != -1;});
+            // _.each($scope.photos, function(p) {
+            //     if (_.indexOf(p.folders, folder.id) != -1)
+            //         p.selected = true;
+            //     else
+            //         p.selected = false;
+            // });
         };
 
         $scope.showPreviewModal = function() {
