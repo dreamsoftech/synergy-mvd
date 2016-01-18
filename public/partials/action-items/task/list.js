@@ -32,8 +32,8 @@ app.controller('TaskListCtrl',
                 }
             },
             listRequiredByMe: [
-                    {flag: 'red', title: 'Confirm Progress on Fireplace', due_date: '8/16/2015', responsible: {name: 'Bruce Wayne', company: ''},initiator: {name: 'Bruce Wayne', company: ''}, sow: ['Fireplace Install'].join(", "), status: ['In Process', 0]},
-                    {flag: 'red', title: 'Need Stairs Ready for Floor Lights', due_date: '8/17/2015', responsible: {name: 'Bruce Wayne', company: ''},initiator: {name: 'Mary Beroset', company: ''}, sow: ['Stairway Floor Lighting'].join(", "), status: ['In Process', 0.3]},
+                    {flag: 'red', title: 'Confirm Progress on Fireplace', due_date: '8/16/2015', responsible: {name: 'Bruce Wayne', company: ''},initiator: {name: 'Bruce Wayne', company: ''}, sow: ['Fireplace Install'].join(", "), status: ['In Process', 0], no: 1247, date: '8/10/2015', company: 'Synergy Construction', role: 'General Contractor', project: 2, sow: 2, desc: 'Need to follow up on the 16th on the progress made on the fire place. They need to be close to 50% finished with the install to complete on schedule.', assignee: 0},
+                    {flag: 'red', title: 'Need Stairs Ready for Floor Lights', due_date: '8/17/2015', responsible: {name: 'Bruce Wayne', company: ''},initiator: {name: 'Mary Beroset', company: ''}, sow: ['Stairway Floor Lighting'].join(", "), status: ['In Process', 0.3], no: 1234, date: '8/6/2015', company: 'Wasatch Lighting, Inc.', role: 'General Contractor', project: 2, sow: 17, desc: 'Stairways need to be finished and secure in order to install lighting. I will be walking through with you on the 18th to discuss the lighting options for the stairs, including all requirements. Please have stairs ready for walk through.', assignee: 1},
                     {flag: 'yellow', title: 'Decision on Ventilation ', due_date: '8/18/2015', responsible: {name: 'Bruce Wayne', company: ''},initiator: {name: 'Dave Musgrove', company: ''}, sow: [''].join(", "), status: ['In Process', 0]},
                     {flag: 'yellow', title: 'Confirm Completion of Dry-In', due_date: '8/18/2015', responsible: {name: 'Bruce Wayne', company: ''},initiator: {name: 'Jeff Price', company: ''}, sow: ['Roof Dry-In'].join(", "), status: ['In Process', 0.25]},
                     {flag: 'yellow', title: 'Contact Inspector to Set Up 4-Way', due_date: '8/18/2015', responsible: {name: 'Bruce Wayne', company: ''},initiator: {name: 'Bruce Wayne', company: ''}, sow: ['-'].join(", "), status: ['In Process', 0]},
@@ -93,7 +93,7 @@ app.controller('TaskListCtrl',
                 windowClass: 'gai-modal',
                 resolve: {
                     currentTask: function () {
-                        return {};
+                        return {no: '1483', date: '8/10/2015', initiator: {name: 'Bruce Wayne'}, company: 'Synergy Construction', role: 'General Contractor', assignee: 1};
                     }
                 }
             });
