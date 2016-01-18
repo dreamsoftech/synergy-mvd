@@ -68,7 +68,7 @@
         </div>
         <ol ui-tree-nodes ng-model="item.children" ng-class="{hidden: collapsed}">
             <li ng-repeat="item in item.children" has-child="{{item.children!=null}}" data-collapsed="true" ui-tree-node ng-include="'budget-item-template.html'"></li>
-            <li data-collapsed="true" ui-tree-node ng-if="item.depth == 3">
+            <li data-collapsed="true" ui-tree-node ng-if="item.depth == 2">
                 <div ui-tree-handle class="tree-node tree-node-content table-tree">
                     <div class="text-muted font-regular">
                         <div data-nodrag ng-click="toggle(this)" class="text-primary font-semibold">
