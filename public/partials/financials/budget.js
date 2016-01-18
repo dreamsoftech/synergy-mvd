@@ -458,6 +458,7 @@ app.controller('FinancialsBudgetCtrl',
                     "items": "",
                     "cpsf": 19.67,
                     "percent_of_project": 6.9,
+                    "depth": 2,
                     children: [
                       {
                         "name": "SOW:  Foundation",
@@ -3287,6 +3288,7 @@ app.controller('FinancialsBudgetCtrl',
                     "items": "",
                     "cpsf": 2.81,
                     "percent_of_project": 1.0,
+                    "depth": 2,
                     children: [
                       {
                         "name": "SOW:  Interior Lighting",
