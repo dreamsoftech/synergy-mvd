@@ -40,7 +40,7 @@ app.controller('PayPreviewCtrl',
                 retainage: 0,
                 scheduledCompletion: 'Aug 19 2015',
                 estimatedCompletion: 'Aug 18 2015',
-                varianceTotal: '-1 days'
+                varianceTotal: '-1 Days'
             },
             {
                 project: 'Wilmington 48',
