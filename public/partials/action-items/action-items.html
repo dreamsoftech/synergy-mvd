@@ -68,7 +68,7 @@
                                 <div class="col-md-8 col-sm-6">
                                     <div class="progress progress-medium">
                                         <div class="progress-bar progress-bar-success"
-                                             style="width: {{item.assignedMe.green.done / item.assignedMe.green.total * 100}}%;">
+                                             style="width: {{item.assignedMe.green.total / (item.assignedMe.green.total + item.assignedMe.orange.total + item.assignedMe.red.total) * 100}}%;">
                                          </div>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                 <div class="col-md-8 col-sm-6">
                                     <div class="progress progress-medium">
                                         <div class="progress-bar progress-bar-warning"
-                                             style="width: {{item.assignedMe.orange.done / item.assignedMe.orange.total * 100}}%;">
+                                             style="width: {{item.assignedMe.orange.total / (item.assignedMe.green.total + item.assignedMe.orange.total + item.assignedMe.red.total) * 100}}%;">
                                          </div>
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@
                                 <div class="col-md-8 col-sm-6">
                                     <div class="progress progress-medium">
                                         <div class="progress-bar progress-bar-danger"
-                                             style="width: {{item.assignedMe.red.done / item.assignedMe.red.total * 100}}%;"></div>
+                                             style="width: {{item.assignedMe.red.total / (item.assignedMe.green.total + item.assignedMe.orange.total + item.assignedMe.red.total) * 100}}%;"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-6 action-item-progress-text">
