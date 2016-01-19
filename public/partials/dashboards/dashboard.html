@@ -61,7 +61,7 @@
                         </div>
                         <div class="row no-margin dash-updates-section">
                             <span><i class="fa fa-envelope-o"></i></span>
-                            <span>Unread Messages</span>
+                            <a ui-sref="comm.main({filter: 'View All'})" class="text-default"><span>Unread Messages</span></a>
                             <span class="pull-right"><a class="btn btn-warning btn-xs" ui-sref="comm">7 Items</a></span>
                         </div>
                         <div class="row no-margin dash-updates-section">
@@ -93,7 +93,7 @@
                             <table class="table no-border-top">
                                 <tbody>
                                     <tr ng-repeat="item in todayItemList">
-                                        <td class="td-number"><a href="#">{{ item.number }}</a></td>
+                                        <td class="td-number"><a ui-sref="action-items.rfi.in-process">{{ item.number }}</a></td>
                                         <td><p>{{ item.name }}</p></td>
                                         <td><span>{{ item.project }}</span></td>
                                     </tr>

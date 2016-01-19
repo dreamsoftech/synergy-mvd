@@ -1,5 +1,5 @@
 app.controller('BankDrawShowCtrl',
-    ['$scope', '$filter', function ($scope, $filter) {
+    ['$scope', '$filter', '$uibModal', function ($scope, $filter, $uibModal) {
         $scope.currentStep = 'summary';
         $scope.steps = [{
             state: 'summary',
@@ -21,6 +21,15 @@ app.controller('BankDrawShowCtrl',
             state: 'draw-details',
             name: 'Draw Details'
         }];
+
+        $scope.users = [
+            { id: 1, name: 'Bruce Wayne'},
+            { id: 2, name: 'Mike Riley'},
+            { id: 3, name: 'Mary Beroset'},
+            { id: 3, name: 'Dabe Gebo'}
+        ];
+
+        $scope.currentResponsible = $scope.users[0];
 
         $scope.percentChartData = [
             {
@@ -99,17 +108,17 @@ app.controller('BankDrawShowCtrl',
         }];
 
         $scope.paymentApplications = [
-            {company_name: 'Synergy Construction', date: '08/05/2015', checked: true, project_name: 'Wilmington 47', amount: 20358, contact: 'Bruce Wayne', scheduled_at: '-', estimated_at: '-', cost: null, completed: null, sow: '-', phone_number: '801-580-5683'},
-            {company_name: 'Waste Disposal Inc', date: '08/06/2015', project_name: 'Wilmington 47', amount: 1219.55, contact: '-', scheduled_at: '-', estimated_at: '-', cost: null, completed: null, sow: '-', phone_number: '435-986-3452'},
-            {company_name: 'Summit County', date: '08/10/2015', project_name: 'Wilmington 47', amount: 729.64, contact: '-', scheduled_at: '-', estimated_at: '-', cost: null, completed: null, sow: '-', phone_number: '385-987-4326'},
-            {company_name: 'Ace Rentals', date: '07/29/2015', project_name: 'Wilmington 47', amount: 2500.3, contact: '-', scheduled_at: '-', estimated_at: '-', cost: null, completed: null, sow: '-', phone_number: '873-087-2345'},
-            {company_name: 'L&L Steel Erection', date: '07/29/2015', project_name: 'Wilmington 47', amount: 2139.01, contact: 'John Steel', scheduled_at: '9/18/2015', estimated_at: '9/18/2015', cost: 55000, completed: 5, sow: 'Steel Beems', phone_number: '861-518-1636'},
-            {company_name: 'Mountain Cabinetry, Inc', date: '07/29/2015', project_name: 'Wilmington 47', amount: 44543.5, contact: 'Skylar Widdison', scheduled_at: '11/1/2015', estimated_at: '11/1/2015', cost: 85000, completed: 0, sow: 'Cabinetry', phone_number: '835-671-8262'},
-            {company_name: 'On Top Roofing', date: '08/01/2015', project_name: 'Wilmington 47', amount: 35000, contact: 'Dave Gebo', scheduled_at: '9/12/2015', estimated_at: '9/12/2015', cost: 67500, completed: 70, sow: 'Roof', phone_number: '835-513-6185'},
-            {company_name: 'Old Mill Woodworking', date: '08/03/2015', project_name: 'Wilmington 47', amount: 35985, contact: "Bart O'Driscoll", scheduled_at: '9/23/2015', estimated_at: '9/23/2015', cost: 65000, completed: 15, sow: 'Windows', phone_number: '861-358-8818'},
-            {company_name: 'Spendlove Plumbing', date: '08/09/2015', project_name: 'Wilmington 47', amount: 23014.84, contact: 'Christine Spendlove', scheduled_at: '9/1/2015', estimated_at: '9/1/2015', cost: 90000, completed: 30, sow: 'Plumbing', phone_number: '861-288-2371'},
-            {company_name: 'Premier Heating & Air, Inc.', date: '08/02/2015', project_name: 'Wilmington 47', amount: 14580, contact: 'Dave Musgrove', scheduled_at: '8/25/2015', estimated_at: '8/25/2015', cost: 75000, completed: 4, sow: 'Rough HVAC', phone_number: '861-569-6688'},
-            {company_name: 'American First Insurance', date: '07/29/2015', project_name: 'Wilmington 47', amount: 1197, contact: '-', scheduled_at: '-', estimated_at: '-', cost: null, completed: null, sow: '-', phone_number: '801-234-7584'}
+            {company_name: 'Synergy Construction', date: '08/05/2015', checked: true, project_name: 'Synergy Invoice', application_id: 'INV #1042', amount: 20358, contact: 'Bruce Wayne', scheduled_at: '-', estimated_at: '-', cost: null, completed: null, sow: 'General Conditions', phone_number: '801-580-5683', documents: 1},
+            {company_name: 'Waste Disposal Inc', date: '08/06/2015', project_name: 'Waste Disposal August', application_id: 'INV #1045', amount: 1219.55, contact: '-', scheduled_at: '-', estimated_at: '-', cost: null, completed: null, sow: 'General Conditions', phone_number: '435-986-3452', documents: 1},
+            {company_name: 'Summit County', date: '08/10/2015', project_name: 'Inspection August', application_id: 'INV #1047', amount: 729.64, contact: '-', scheduled_at: '-', estimated_at: '-', cost: null, completed: null, sow: 'General Conditions', phone_number: '385-987-4326', documents: 1},
+            {company_name: 'Ace Rentals', date: '07/29/2015', project_name: 'Crane Rental July', application_id: 'INV #1048', amount: 2500.3, contact: '-', scheduled_at: '-', estimated_at: '-', cost: null, completed: null, sow: 'Framing', phone_number: '873-087-2345', documents: 3},
+            {company_name: 'L&L Steel Erection', date: '07/29/2015', project_name: 'Framing', application_id: 'PAY #1048', amount: 2139.01, contact: 'John Steel', scheduled_at: '9/18/2015', estimated_at: '9/18/2015', cost: 55000, completed: 5, sow: 'Framing', phone_number: '861-518-1636', documents: 3},
+            {company_name: 'Mountain Cabinetry, Inc', date: '07/29/2015', project_name: 'Cabinetry Deposit', application_id: 'PA #1052', amount: 44543.5, contact: 'Skylar Widdison', scheduled_at: '11/1/2015', estimated_at: '11/1/2015', cost: 85000, completed: 0, sow: 'Cabinetry', phone_number: '835-671-8262', documents: 3},
+            {company_name: 'On Top Roofing', date: '08/01/2015', project_name: 'Roofing Wilmington', application_id: 'PA #1054', amount: 35000, contact: 'Dave Gebo', scheduled_at: '9/12/2015', estimated_at: '9/12/2015', cost: 67500, completed: 70, sow: 'Roofing', phone_number: '835-513-6185', documents: 3},
+            {company_name: 'Old Mill Woodworking', date: '08/03/2015', project_name: 'Stairs W47', application_id: 'PA #1055', amount: 35985, contact: "Bart O'Driscoll", scheduled_at: '9/23/2015', estimated_at: '9/23/2015', cost: 65000, completed: 15, sow: 'Stairs', phone_number: '861-358-8818', documents: 3},
+            {company_name: 'Spendlove Plumbing', date: '08/09/2015', project_name: 'Rough Plumbing', application_id: 'PA #1060', amount: 23014.84, contact: 'Christine Spendlove', scheduled_at: '9/1/2015', estimated_at: '9/1/2015', cost: 90000, completed: 30, sow: 'Plumbing', phone_number: '861-288-2371', documents: 3},
+            {company_name: 'Premier Heating & Air, Inc.', date: '08/02/2015', project_name: 'HVAC W47', application_id: 'PA #1065', amount: 14580, contact: 'Dave Musgrove', scheduled_at: '8/25/2015', estimated_at: '8/25/2015', cost: 75000, completed: 4, sow: 'HVAC', phone_number: '861-569-6688', documents: 3},
+            {company_name: 'American First Insurance', date: '07/29/2015', project_name: 'Insurance Policy July', application_id: 'INV #1050', amount: 1197, contact: '-', scheduled_at: '-', estimated_at: '-', cost: null, completed: null, sow: 'General Conditions', phone_number: '801-234-7584', documents: 1}
         ];
 
         $scope.numberToCurrency = function(val) {
@@ -228,17 +237,17 @@ app.controller('BankDrawShowCtrl',
         ];
 
         $scope.paymentDetails = [
-            {contact: 'Bruce Wayne', avatar: 'assets/img/bruce-wayne.png', company_name: 'Synergy Construction', phone_number: '801-580-5683', role: 'General Contractor', project_name: 'Wilmington 47', approved_amount: 20358, split_payment: 'No', requested_amount: 20358, company_name: 'Synergy Construction', payment_form: 'Check', varience: 0, invoice: 'PO #1023'},
-            {contact: 'John Steel', avatar: 'assets/img/users/john.jpg', company_name: 'L&L Steel Erection ', phone_number: '861-518-1636', role: 'Subcontractor', project_name: 'Wilmington 47', approved_amount: 2139.01, split_payment: 'No', requested_amount: 2139.01, company_name: 'Steel Supplier Inc', payment_form: 'Check', varience: 0, description: 'Check written directly to Supplier until Insurance is corrected.', invoice: 'PO #1023'},
-            {contact: 'Skylar Widdison', company_name: 'Mountain Cabinetry, Inc', phone_number: '835-671-8262', role: 'Subcontractor', project_name: 'Wilmington 47', approved_amount: 44543.5, split_payment: 'No', requested_amount: 44543.5, company_name: 'Mountain Cabinetry, Inc', payment_form: 'Check', varience: 0, invoice: 'PO #1023'},
-            {contact: 'Dave Gebo', avatar: 'assets/img/users/dave_gebo.jpg', company_name: 'On Top Roofing', phone_number: '835-513-6185', role: 'Subcontractor', project_name: 'Wilmington 47', approved_amount: 35000, split_payment: 'No', requested_amount: 35000, company_name: 'On Top Roofing', payment_form: 'Check', varience: 0, invoice: 'PO #1023'},
-            {contact: "Bart O'Driscoll", company_name: 'Old Mill Woodworking', phone_number: '861-358-8818', role: 'Subcontractor', project_name: 'Wilmington 47', approved_amount: 35985, split_payment: 'No', requested_amount: 35985, company_name: 'Old Mill Woodworking', payment_form: 'Check', varience: 0, invoice: 'PO #1023'},
-            {contact: 'Christine Spendlove', company_name: 'Spendlove Plumbing', phone_number: '861-288-2371', role: 'Subcontractor', project_name: 'Wilmington 47', approved_amount: 23014.84, split_payment: 'No', requested_amount: 23014.84, company_name: 'Spendlove Plumbing', payment_form: 'Check', varience: 0, invoice: 'PO #1023'},
-            {contact: 'Dave Musgrove', avatar: 'assets/img/users/dave.jpg', company_name: 'Premier Heating & Air, Inc.', phone_number: '861-569-6688', role: 'Subcontractor', project_name: 'Wilmington 47', approved_amount: 14580, split_payment: 'No', requested_amount: 14580, company_name: 'Premier Heating & Air, Inc.', payment_form: 'Check', varience: 0, invoice: 'PO #1023'},
-            {contact: 'Waste Disposal', company_name: '356-345-5948', phone_number: '', role: null, project_name: 'Wilmington 47', approved_amount: 1219.55, split_payment: 'No', requested_amount: 1219.55, company_name: '356-345-5948', payment_form: 'Check', varience: 0, invoice: 'PO #1023'},
-            {contact: 'Summit County', company_name: '801-455-8394', phone_number: '', role: null, project_name: 'Wilmington 47', approved_amount: 729.64, split_payment: 'No', requested_amount: 729.64, company_name: '801-455-8394', payment_form: 'Check', varience: 0, invoice: 'PO #1023'},
-            {contact: 'Ace Rentals', company_name: '385-394-9455', phone_number: '', role: null, project_name: 'Wilmington 47', approved_amount: 2500.3, split_payment: 'No', requested_amount: 2500.3, company_name: '385-394-9455', payment_form: 'Check', varience: 0, invoice: 'PO #1023'},
-            {contact: 'American First Insurance', company_name: '801-234-7584', phone_number: '', role: null, project_name: 'Wilmington 47', approved_amount: 1197, split_payment: 'No', requested_amount: 1197, company_name: '801-234-7584', payment_form: 'Check', varience: 0, invoice: 'PO #1023'},
+            {contact: 'Bruce Wayne', avatar: 'assets/img/bruce-wayne.png', company_name: 'Synergy Construction', phone_number: '801-580-5683', role: 'General Contractor', project_name: 'Wilmington 47', approved_amount: 20358, split_payment: 'No', requested_amount: 20358, payment_form: 'Check', varience: 0, invoice: 'INV #1042'},
+            {contact: 'John Steel', avatar: 'assets/img/users/john.jpg', company_name: 'L&L Steel Erection', phone_number: '861-518-1636', role: 'Subcontractor', project_name: 'Wilmington 47', approved_amount: 2139.01, split_payment: 'No', requested_amount: 2139.01, payment_form: 'Check', varience: 0, description: 'Check written directly to Supplier until Insurance is corrected.', invoice: 'PAY #1048'},
+            {contact: 'Skylar Widdison', company_name: 'Mountain Cabinetry, Inc', phone_number: '835-671-8262', role: 'Subcontractor', project_name: 'Wilmington 47', approved_amount: 44543.5, split_payment: 'No', requested_amount: 44543.5, payment_form: 'Check', varience: 0, invoice: 'PA #1052'},
+            {contact: 'Dave Gebo', avatar: 'assets/img/users/dave_gebo.jpg', company_name: 'On Top Roofing', phone_number: '835-513-6185', role: 'Subcontractor', project_name: 'Wilmington 47', approved_amount: 35000, split_payment: 'No', requested_amount: 35000, payment_form: 'Check', varience: 0, invoice: 'PA #1054'},
+            {contact: "Bart O'Driscoll", company_name: 'Old Mill Woodworking', phone_number: '861-358-8818', role: 'Subcontractor', project_name: 'Wilmington 47', approved_amount: 35985, split_payment: 'No', requested_amount: 35985, payment_form: 'Check', varience: 0, invoice: 'PA #1055'},
+            {contact: 'Christine Spendlove', company_name: 'Spendlove Plumbing', phone_number: '861-288-2371', role: 'Subcontractor', project_name: 'Wilmington 47', approved_amount: 23014.84, split_payment: 'No', requested_amount: 23014.84, payment_form: 'Check', varience: 0, invoice: 'PA #1060'},
+            {contact: 'Dave Musgrove', avatar: 'assets/img/users/dave.jpg', company_name: 'Premier Heating & Air, Inc.', phone_number: '861-569-6688', role: 'Subcontractor', project_name: 'Wilmington 47', approved_amount: 14580, split_payment: 'No', requested_amount: 14580, payment_form: 'Check', varience: 0, invoice: 'PA #1065'},
+            {contact: '', company_name: 'Waste Disposal', phone_number: '356-345-5948', role: null, project_name: 'Wilmington 47', approved_amount: 1219.55, split_payment: 'No', requested_amount: 1219.55, payment_form: 'Check', varience: 0, invoice: 'INV #1045'},
+            {contact: '', company_name: 'Summit County', phone_number: '801-455-8394', role: null, project_name: 'Wilmington 47', approved_amount: 729.64, split_payment: 'No', requested_amount: 729.64, payment_form: 'Check', varience: 0, invoice: 'INV #1047'},
+            {contact: '', company_name: 'Ace Rentals', phone_number: '385-394-9455', role: null, project_name: 'Wilmington 47', approved_amount: 2500.3, split_payment: 'No', requested_amount: 2500.3, payment_form: 'Check', varience: 0, invoice: 'INV #1048'},
+            {contact: '', company_name: 'American First Insurance', phone_number: '801-234-7584', role: null, project_name: 'Wilmington 47', approved_amount: 1197, split_payment: 'No', requested_amount: 1197, payment_form: 'Check', varience: 0, invoice: 'INV #1050'},
         ];
         $scope.total_requested_payment_amount = _.sum($scope.paymentDetails, function(e){ return e.requested_amount; });
 
@@ -279,5 +288,20 @@ app.controller('BankDrawShowCtrl',
 
         $scope.convertDate = function(dt) {
             return moment(dt).format('MMM DD, YYYY');
+        }
+
+        $scope.showAttachment = function(category) {
+            $scope.category = category;
+
+            var modalInstance = $uibModal.open({
+                templateUrl: 'partials/team-members/risk-attachment.html',
+                controller: 'RiskAttachmentCtrl',
+                scope: $scope
+            });
+
+            modalInstance.result.then(function (res) {
+            }, function () {
+
+            });
         }
     }]);

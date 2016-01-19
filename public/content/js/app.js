@@ -467,7 +467,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             }
         })
         .state('comm.main', {
-            url: '/main',
+            url: '/main?filter',
             templateUrl: 'partials/comm/comm-main.html',
             controller: 'CommMainCtrl',
             data: {
