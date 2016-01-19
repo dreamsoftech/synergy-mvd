@@ -113,7 +113,7 @@ app.controller('SchedulesCtrl',
         }
         $scope.isEmptyDate = function(week, day) {
             var scheduled = _.filter($scope.schedulesInRange[week], function(e) {
-                return _.range(e.relativePos, e.relativePos + e.relativeLength).indexOf(day) >= 0;
+                return _.range(Math.max(1, e.relativePos), Math.min(6, e.relativePos + e.relativeLength)).indexOf(day) >= 0;
             });
             return scheduled.length == 0;
         }
@@ -179,10 +179,10 @@ app.controller('SchedulesCtrl',
                     _.each($scope.schedulesInRange[i], function(e) {
                         var startDate = moment($scope.startDate).add(i, 'w');
                         var relativePos = e.start_date.diff(startDate, 'd');
-                        e.relativePos = Math.max(relativePos, 0);
+                        e.relativePos = Math.max(relativePos, 1);
 
                         // calculate relative length
-                        e.relativeLength = Math.min(e.days_of_period + relativePos, 7) - e.relativePos;
+                        e.relativeLength = Math.min(e.days_of_period + relativePos, 6) - e.relativePos;
                     });
                 });
             }

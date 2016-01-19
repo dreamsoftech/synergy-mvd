@@ -22,6 +22,15 @@ app.controller('BankDrawShowCtrl',
             name: 'Draw Details'
         }];
 
+        $scope.users = [
+            { id: 1, name: 'Bruce Wayne'},
+            { id: 2, name: 'Mike Riley'},
+            { id: 3, name: 'Mary Beroset'},
+            { id: 3, name: 'Dabe Gebo'}
+        ];
+
+        $scope.currentResponsible = $scope.users[0];
+
         $scope.percentChartData = [
             {
                 value: 30,
