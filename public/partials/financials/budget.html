@@ -2,25 +2,25 @@
     <table class="table mb20" id="budget-stats">
         <tr>
             <td class="text-muted">Square footage</td>
-            <td class="font-bold">5,200</td>
+            <td class="font-bold">9,788</td>
         </tr>
         <tr>
-            <td class="text-muted">Goal Cost per Sqft</td>
-            <td class="font-bold">$300.00</td>
+            <td class="text-muted">Goal Cost per SF</td>
+            <td class="font-bold">$295.00</td>
             <td class="text-muted">Goal Construction Cost</td>
-            <td class="font-bold">$1,560.00</td>
+            <td class="font-bold">$2,887,460.00</td>
         </tr>
         <tr>
-            <td class="text-muted">Current Cost per Sqft</td>
-            <td class="font-bold">$309.00</td>
+            <td class="text-muted">Current Cost per SF</td>
+            <td class="font-bold">$308.00</td>
             <td class="text-muted">Current Construction Cost</td>
-            <td class="font-bold">$2,345.00</td>
+            <td class="font-bold">$3,016,059.00</td>
         </tr>
         <tr>
             <td class="text-muted">Variance</td>
-            <td class="font-bold text-danger">-$10</td>
+            <td class="font-bold text-danger">$13.14</td>
             <td class="text-muted">Variance</td>
-            <td class="font-bold text-danger">-$980.00</td>
+            <td class="font-bold text-danger">-$128,599.00</td>
         </tr>
     </table>
     <div class="budgets">
@@ -68,7 +68,7 @@
         </div>
         <ol ui-tree-nodes ng-model="item.children" ng-class="{hidden: collapsed}">
             <li ng-repeat="item in item.children" has-child="{{item.children!=null}}" data-collapsed="true" ui-tree-node ng-include="'budget-item-template.html'"></li>
-            <li data-collapsed="true" ui-tree-node ng-if="item.depth == 3">
+            <li data-collapsed="true" ui-tree-node ng-if="item.depth == 2">
                 <div ui-tree-handle class="tree-node tree-node-content table-tree">
                     <div class="text-muted font-regular">
                         <div data-nodrag ng-click="toggle(this)" class="text-primary font-semibold">

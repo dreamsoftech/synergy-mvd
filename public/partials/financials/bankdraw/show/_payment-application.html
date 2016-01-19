@@ -6,7 +6,7 @@
         <td>Amount</td>
         <td>Documents</td>
         <td>
-            Status 
+            Status
             <a ng-click="" class="text-primary"> Approve All</a>
         </td>
         <td>Comments</td>
@@ -32,7 +32,7 @@
             {{application.amount | currency}}
         </td>
         <td class="text-primary">
-            2 Documents
+            {{application.documents}} {{application.documents > 2 ? 'Documents': 'Document'}}
         </td>
         <td>
             <ui-select ng-select="changeOption()" selected-item="applicant.status" placeholder="Choose" options="statusOptions"></ui-select><br>
