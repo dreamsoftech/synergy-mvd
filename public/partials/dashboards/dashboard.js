@@ -4,13 +4,13 @@ app.controller('DashboardCtrl',
         $scope.flagProjectList = [
             {
                 name: 'Wilmington 47',
-                alert_count: 27,
-                red_value: 10,
-                red_percent: 10*100/27,
-                orange_value: 5,
-                orange_percent: 5*100/27,
-                green_value: 12,
-                green_percent: 12*100/27
+                alert_count: 113,
+                red_value: 23,
+                red_percent: 23*100/113,
+                orange_value: 32,
+                orange_percent: 32*100/113,
+                green_value: 58,
+                green_percent: 58*100/113
             },
             {
                 name: 'Wilmington 48',
