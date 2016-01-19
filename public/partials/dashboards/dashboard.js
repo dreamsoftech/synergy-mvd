@@ -353,13 +353,13 @@ app.controller('DashboardCtrl',
                 address2: 'Arlington, VA 90125',
                 role: 'General Contractor',
                 flag: {
-                    alert_count: 27,
-                    red_value: 10,
-                    red_percent: 10*100/27,
-                    orange_value: 5,
-                    orange_percent: 5*100/27,
-                    green_value: 12,
-                    green_percent: 12*100/27
+                    alert_count: 113,
+                    red_value: 23,
+                    red_percent: 23*100/113,
+                    orange_value: 32,
+                    orange_percent: 32*100/113,
+                    green_value: 58,
+                    green_percent: 58*100/113
                 },
                 user_list: [
                     {
@@ -398,58 +398,33 @@ app.controller('DashboardCtrl',
                 ],
                 estimated_date: 'Dec. 28, 2015',
                 original_date: 'Nov. 14, 2015',
-                funds_distributed: 903348,
+                funds_distributed: 3016059,
                 estimated_cost: 2788284 ,
                 items_completed: 30,
                 itemList: [
                     {
-                        number: 'BID#1031',
-                        name: 'Hardwood Flooring',
+                        number: 'GAI #10234',
+                        name: 'Need Stairs Ready for Floor Lights',
                         project: ''
                     },
                     {
-                        number: 'SOW#1092',
-                        name: 'Roof Dry-In',
-                        project: ''
-                    },
-                    {
-                        number: 'PRO#1012',
-                        name: 'Main Floor Fireplace',
-                        project: ''
-                    },
-                    {
-                        number: 'TSK#1982',
-                        name: 'Submit Invoice for Additional Lumber',
-                        project: ''
-                    },
-                    {
-                        number: 'TSK#1029',
-                        name: 'Discuss Ventilation Options',
-                        project: ''
-                    },
-                    {
-                        number: 'TSK#',
+                        number: 'GAI #10247',
                         name: 'Complete Fireplace Framing',
                         project: ''
                     },
                     {
-                        number: 'TSK#',
+                        number: 'GAI #10249',
                         name: 'Close Garage Roof',
                         project: ''
                     },
                     {
-                        number: 'TSK#',
+                        number: 'GAI #10252',
                         name: 'Finish Closing in Roof',
                         project: ''
                     },
                     {
-                        number: 'TSK#',
-                        name: 'Roof Dry-In',
-                        project: ''
-                    },
-                    {
-                        number: 'RFI#1923',
-                        name: 'Roofline Modification',
+                        number: 'PRO #10005',
+                        name: 'Owner to Select Kitchen Cabinets',
                         project: ''
                     }
                 ],
