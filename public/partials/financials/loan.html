@@ -115,7 +115,7 @@
                         </td>
                         <td>
                             <ui-select options="sows" selected-item="row.sow" ng-if="isEdit"></ui-select>
-                            <span ng-if="!isEdit">{{row.sow.name}}</span>
+                            <span ng-if="!isEdit">{{row.sow}}</span>
                         </td>
                         <td>
                             <input type="text" ui-money-mask="2" placeholder="$" ng-model="row.loan_amount" ng-if="isEdit"></input>
