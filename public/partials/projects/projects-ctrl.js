@@ -52,15 +52,15 @@ app.controller('ProjectsCtrl', function($scope, $state, $stateParams, $uibModal)
      */
     $scope.mineData = [
         {
-            value: 2,
+            value: 5,
             color:"#ed5565"
         },
         {
-            value: 5,
+            value: 4,
             color: "#f8ac59"
         },
         {
-            value: 12,
+            value: 6,
             color: "#79c485"
         }
     ];
@@ -81,15 +81,15 @@ app.controller('ProjectsCtrl', function($scope, $state, $stateParams, $uibModal)
 
     $scope.teamData = [
         {
-            value: 23,
+            value: 15,
             color:"#ed5565"
         },
         {
-            value: 32,
+            value: 10,
             color: "#f8ac59"
         },
         {
-            value: 58,
+            value: 17,
             color: "#79c485"
         }
     ];

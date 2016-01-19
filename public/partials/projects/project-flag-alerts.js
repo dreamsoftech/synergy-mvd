@@ -25,21 +25,21 @@ app.controller('ProjectFlagAlertsCtrl',
 
 		$scope.flagAlerts = {
 			total: 419,
-			green: 171,
-			orange: 155,
-			red: 92,
+			green: 23,
+			orange: 14,
+			red: 20,
 			completed: 140,
 			assignedMe: {
                 green: {
-                    total: 61,
+                    total: 6,
                     done: 0
                 },
                 orange: {
-                    total: 49,
+                    total: 4,
                     done: 0,
                 },
                 red: {
-                    total: 33,
+                    total: 5,
                     done: 0
                 }
             },

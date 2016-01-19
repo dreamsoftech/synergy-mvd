@@ -39,10 +39,10 @@
                             <div sparkline spark-data="[flagAlerts.completed, flagAlerts.total-flagAlerts.completed]" spark-options="pieOptions"></div>
                         </div>
                         <div>
-                            <span class="action-item-text">{{ round(flagAlerts.completed / flagAlerts.total * 100) }}% COMPLETED</span><br>
-                            <span class="action-item-value">{{ flagAlerts.completed }}</span>
+                            <span class="action-item-text">33% COMPLETED</span><br>
+                            <span class="action-item-value">114</span>
                             <span class="action-item-of">of</span>
-                            <span class="action-item-value">{{ flagAlerts.total }} items</span>
+                            <span class="action-item-value">171 items</span>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -51,7 +51,7 @@
                                 <div class="">
                                     <span class="action-item-text">ITEMS ASSIGNED TO ME</span><br>
                                     <span class="action-item-value">
-                                        {{ flagAlerts.assignedMe.green.total + flagAlerts.assignedMe.orange.total + flagAlerts.assignedMe.red.total }} Items
+                                        15 Items
                                     </span>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                                     <div class="col-md-8 col-sm-6">
                                         <div class="progress progress-medium">
                                             <div class="progress-bar progress-bar-success"
-                                                 style="width: {{flagAlerts.assignedMe.green.done / flagAlerts.assignedMe.green.total * 100}}%;">
+                                                 style="width: {{flagAlerts.assignedMe.green.total / 15 * 100}}%;">
                                              </div>
                                         </div>
                                     </div>
@@ -72,7 +72,7 @@
                                     <div class="col-md-8 col-sm-6">
                                         <div class="progress progress-medium">
                                             <div class="progress-bar progress-bar-warning"
-                                                 style="width: {{flagAlerts.assignedMe.orange.done / flagAlerts.assignedMe.orange.total * 100}}%;">
+                                                 style="width: {{flagAlerts.assignedMe.orange.total / 15 * 100}}%;">
                                              </div>
                                         </div>
                                     </div>
@@ -85,7 +85,7 @@
                                     <div class="col-md-8 col-sm-6">
                                         <div class="progress progress-medium">
                                             <div class="progress-bar progress-bar-danger"
-                                                 style="width: {{flagAlerts.assignedMe.red.done / flagAlerts.assignedMe.red.total * 100}}%;"></div>
+                                                 style="width: {{flagAlerts.assignedMe.red.total / 15  * 100}}%;"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-6 action-item-progress-text">
@@ -146,7 +146,7 @@
                 <uib-datepicker ng-model="endDate" min-date="minDate" show-weeks="false" class="well well-sm" ng-click="isShowEndDatePicker = false;"></uib-datepicker>
             </div>
         </div>
-        
+
     </div>
 </div>
 <div class="row no-margin animated fadeInRight flag-alert-content-result">
