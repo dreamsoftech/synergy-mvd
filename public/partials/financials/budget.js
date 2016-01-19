@@ -66,7 +66,18 @@ app.controller('FinancialsBudgetCtrl',
                     items: "EST #1002",
                     status: "Estimate",
                     cpsf: 0,
-                    percent_of_project: 0
+                    percent_of_project: 0,
+                    detail: {
+                        division: [
+                            {name: "Division 1 General Requirements"}
+                        ],
+                        cost_code: [
+                            "01300"
+                        ],
+                        sow: [
+                            "None"
+                        ]
+                    }
                   },
                   {
                     name: "",
@@ -458,6 +469,7 @@ app.controller('FinancialsBudgetCtrl',
                     "items": "",
                     "cpsf": 19.67,
                     "percent_of_project": 6.9,
+                    "depth": 2,
                     children: [
                       {
                         "name": "SOW:  Foundation",
@@ -479,7 +491,18 @@ app.controller('FinancialsBudgetCtrl',
                         "total": 34692,
                         "items": "EST #1015",
                         "cpsf": "",
-                        "percent_of_project": ""
+                        "percent_of_project": "",
+                        detail: {
+                            division: [
+                                {name: "Division 3 Concrete"}
+                            ],
+                            cost_code: [
+                                "03200"
+                            ],
+                            sow: [
+                                "Foundation"
+                            ]
+                        }
                       },
                       {
                         "name": "",
@@ -3385,29 +3408,81 @@ app.controller('FinancialsBudgetCtrl',
             });
         };
 
+        $scope.showBudgetEstimateModal = function(item) {
+            var modalInstance = $uibModal.open({
+                templateUrl: 'budget-estimate-modal.html',
+                controller: 'BudgetEstimateModalCtrl',
+                windowClass: 'buget-addition-modal',
+                resolve: {
+                    currentItem: function () {
+                        return item;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function(result) {
+
+            }, function() {
+
+            });
+        };
+
     }]);
 
 app.controller('BudgetAdditionModalCtrl',
     ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
 
         $scope.divisions = [
-            {id: _.uniqueId(), name: 'Lorem Ipsum - 03124'}
+            {id: _.uniqueId(), name: 'Division 1 General Requirements'}
         ];
 
         $scope.costCodes = [
-            {id: _.uniqueId(), name: '01234'}
+            {id: _.uniqueId(), name: '01300'}
         ];
 
         $scope.sows = [
-            {id: _.uniqueId(), name: 'Purus Egestas Ligula'}
+            {id: _.uniqueId(), name: 'None'}
         ];
 
         $scope.$watchGroup(['labor', 'materials', 'equipment', 'misc'], function(n, o, scope) {
             $scope.total = _.sum(n);
         });
 
-        $scope.labor = $scope.materials = $scope.equipment = $scope.misc = 1234456;
+        $scope.labor = 55532;
+        $scope.materials = $scope.equipment = $scope.misc = "";
 
+
+        $scope.ok = function() {
+            $uibModalInstance.close();
+        }
+
+        $scope.cancel = function() {
+            $uibModalInstance.dismiss('cancel');
+        }
+    }]);
+
+app.controller('BudgetEstimateModalCtrl',
+    ['$scope', '$uibModalInstance', 'currentItem', function($scope, $uibModalInstance, currentItem) {
+
+        var item = currentItem;
+
+        $scope.divisions = [];
+        $scope.costCodes = [];
+        $scope.sows = [];
+
+        if ( item.detail != null && item.detail != "" && typeof item.detail != "undefined" ) {
+            $scope.divisions.push({id: 1, name: item.detail.division[0].name});
+            $scope.costCodes.push({id: 1, name: item.detail.cost_code[0]});
+            $scope.sows.push({id: 1, name: item.detail.sow[0]});
+        }
+        $scope.labor = item.labor;
+        $scope.materials = item.materials;
+        $scope.equipment = item.equipment;
+        $scope.misc = item.misc;
+
+        $scope.$watchGroup(['labor', 'materials', 'equipment', 'misc'], function(n, o, scope) {
+            $scope.total = _.sum(n);
+        });
 
         $scope.ok = function() {
             $uibModalInstance.close();
