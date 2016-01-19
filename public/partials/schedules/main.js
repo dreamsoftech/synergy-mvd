@@ -100,6 +100,14 @@ app.controller('SchedulesCtrl',
             status: "in progress",
             completion_percentage: 0
         }];
+
+        $scope.statusToStyle = function(status) {
+            if (status == 'in progress')
+                return 'success';
+            else if (status == 'suspended')
+                return 'danger';
+        }
+
         _.each($scope.schedules, function(e) {
             e.days_of_period = e.end_date.diff(e.start_date, 'd') + 1;
         })
