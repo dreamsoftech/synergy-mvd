@@ -236,8 +236,8 @@ app.controller('ScheduleDetailCtrl',
         }
         $scope.showAddActionItemModal = function() {
             var modalInstance = $uibModal.open({
-                templateUrl: 'partials/action-items/gai-new-modal.html',
-                controller: 'GAINewModalCtrl',
+                templateUrl: 'partials/action-items/task/task-modal.html',
+                controller: 'TaskModalCtrl',
                 windowClass: 'gai-modal'
             });
         }

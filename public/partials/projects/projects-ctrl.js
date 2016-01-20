@@ -22,8 +22,8 @@ app.controller('ProjectsCtrl', function($scope, $state, $stateParams, $uibModal)
     // Action Main GAI New Modal
     $scope.showGaiNewModal = function() {
         var modalInstance = $uibModal.open({
-            templateUrl: 'partials/action-items/gai-new-modal.html',
-            controller: 'GAINewModalCtrl',
+            templateUrl: 'partials/action-items/task/task-modal.html',
+            controller: 'TaskModalCtrl',
             windowClass: 'gai-modal'
         });
 
