@@ -23,11 +23,14 @@ app.controller('ProjectsCtrl', function($scope, $state, $stateParams, $uibModal,
     };
 
     // Action Main GAI New Modal
-    $scope.showGaiNewModal = function() {
+    $scope.showNewTaskModal = function() {
         var modalInstance = $uibModal.open({
             templateUrl: 'partials/action-items/task/task-modal.html',
             controller: 'TaskModalCtrl',
-            windowClass: 'gai-modal'
+            windowClass: 'gai-modal',
+            resolve: {
+                currentTask: {}
+            }
         });
 
         modalInstance.result.then(function(res) {

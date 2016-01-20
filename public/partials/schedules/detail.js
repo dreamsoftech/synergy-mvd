@@ -238,7 +238,10 @@ app.controller('ScheduleDetailCtrl',
             var modalInstance = $uibModal.open({
                 templateUrl: 'partials/action-items/task/task-modal.html',
                 controller: 'TaskModalCtrl',
-                windowClass: 'gai-modal'
+                windowClass: 'gai-modal',
+                resolve: {
+                    currentTask: {}
+                }
             });
         }
         $scope.showAddDocumentModal = function() {
