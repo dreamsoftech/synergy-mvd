@@ -398,8 +398,8 @@ app.controller('DashboardCtrl',
                 ],
                 estimated_date: 'Dec. 28, 2015',
                 original_date: 'Nov. 14, 2015',
-                funds_distributed: 3016059,
-                estimated_cost: 2788284 ,
+                funds_distributed: 903348,
+                estimated_cost: 3016059 ,
                 items_completed: 30,
                 itemList: [
                     {

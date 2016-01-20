@@ -666,6 +666,39 @@ app.run (['$rootScope', function($rootScope) {
     });
 }]);
 
+app.value("projects", [{
+        id: _.uniqueId(),
+        name: "Wilmington 45",
+        address: "45 Wilmington Ave",
+        city: "Arlington",
+        state: "VA",
+        zipcode: "90125"
+    },
+    {
+        id: _.uniqueId(),
+        name: "Wilmington 46",
+        address: "46 Wilmington Ave",
+        city: "Arlington",
+        state: "VA",
+        zipcode: "90125"
+    },
+    {
+        id: _.uniqueId(),
+        name: "Wilmington 47",
+        address: "47 Wilmington Ave",
+        city: "Arlington",
+        state: "VA",
+        zipcode: "90125"
+    },
+    {
+        id: _.uniqueId(),
+        name: "Wilmington 48",
+        address: "48 Wilmington Ave",
+        city: "Arlington",
+        state: "VA",
+        zipcode: "90125"
+    }]);
+
 app.controller('AppCtrl',
     ['$scope', '$rootScope', function ($scope, $rootScope) {
 

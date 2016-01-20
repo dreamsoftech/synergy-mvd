@@ -1,9 +1,6 @@
 app.controller('CommMainCtrl',
     ['$scope', '$state', '$stateParams', '$timeout', function($scope, $state, $stateParams, $timeout) {
         $scope.filter = $stateParams.filter;
-        if (_.isUndefined($scope.filter))
-            $scope.filter = "Wilmington 47";
-
 
         $scope.comms = [
             {

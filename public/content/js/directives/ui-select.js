@@ -9,11 +9,13 @@ app.directive('uiSelect', function ($compile) {
             hasFilter: '@',
             placeholder: '@',
             isDropdown: '@',
-            searchPlaceholder: '@'
+            searchPlaceholder: '@',
+            flatStyle: '@'
         },
         templateUrl: 'content/js/directives/ui-select.html',
         link: function (scope, element, attrs) {
             scope.query = {};
+
             scope.selectVal = function(item, evt) {
                 if (evt && scope.multiple)
                     evt.stopPropagation();

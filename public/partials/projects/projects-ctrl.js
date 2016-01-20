@@ -3,7 +3,7 @@
  */
 'use strict'
 
-app.controller('ProjectsCtrl', function($scope, $state, $stateParams, $uibModal) {
+app.controller('ProjectsCtrl', function($scope, $state, $stateParams, $uibModal, projects) {
     $scope.schedule_completed = 0;
     $scope.project_completed = 0;
     $scope.doughnutOptions = {};
@@ -11,6 +11,9 @@ app.controller('ProjectsCtrl', function($scope, $state, $stateParams, $uibModal)
 
     $scope.schedule_completed = [60, 40, 90, 20, 100];
     $scope.project_completed = 33;
+
+    $scope.projects = projects;
+    $scope.currentProject = projects[2];
 
     $scope.goComm = function () {
         $state.go('comm.main');
