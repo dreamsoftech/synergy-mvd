@@ -424,7 +424,7 @@ app.controller('FinancialsBudgetCtrl',
                 "items": "",
                 "cpsf": 20.18,
                 "percent_of_project": 7.1,
-                children: 
+                children:
                 [
                   {
                     "name": "03050 Basic Concrete Materials and Methods",
@@ -619,7 +619,7 @@ app.controller('FinancialsBudgetCtrl',
                 "items": "",
                 "cpsf": 15.84,
                 "percent_of_project": 5.6,
-                children: 
+                children:
                 [
                   {
                     "name": "04050 Basic Masonry Materials and Methods",
@@ -3433,6 +3433,9 @@ app.controller('FinancialsBudgetCtrl',
 app.controller('BudgetAdditionModalCtrl',
     ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
 
+        $scope.isNameEdit = false;
+        $scope.name = '';
+
         $scope.divisions = [
             {id: _.uniqueId(), name: 'Division 1 General Requirements'}
         ];
@@ -3442,15 +3445,15 @@ app.controller('BudgetAdditionModalCtrl',
         ];
 
         $scope.sows = [
-            {id: _.uniqueId(), name: 'None'}
+            {id: _.uniqueId(), name: 'Pros Egis Laus'}
         ];
 
         $scope.$watchGroup(['labor', 'materials', 'equipment', 'misc'], function(n, o, scope) {
             $scope.total = _.sum(n);
         });
 
-        $scope.labor = 55532;
-        $scope.materials = $scope.equipment = $scope.misc = "";
+        $scope.labor = 1234456;
+        $scope.materials = $scope.equipment = $scope.misc = 1234456;
 
 
         $scope.ok = function() {

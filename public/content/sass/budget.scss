@@ -21,6 +21,38 @@
 
             }
 
+            span.title {
+                display: inline-block;
+                font-size: 20px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-family: AvenirNextLTPro-Regular;
+            }
+
+            input.title {
+                border: 0;
+                font-family: AvenirNextLTPro-Regular;
+                font-size: 20px;
+                padding-left: 0;
+                padding-top: 10px;
+                padding-bottom: 10px;
+
+                &:hover {
+                    background-color: #fff;
+                }
+            }
+
+            span.edit {
+                margin-left: 10px;
+                padding-left: 10px;
+                border-left: 1px solid #eee;
+
+                i {
+                    color: #8b8b8b;
+                    margin-left: 5px;
+                }
+            }
+
             h3 {
                 font-family: AvenirNextLTPro-Regular;
                 font-size: 20px;

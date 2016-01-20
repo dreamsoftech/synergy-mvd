@@ -1,5 +1,5 @@
 app.controller('FinancialsCtrl',
-    ['$scope', '$rootScope', '$timeout', function ($scope, $rootScope, $timeout) {
+    ['$scope', '$rootScope', '$timeout', '$uibModal', function ($scope, $rootScope, $timeout, $uibModal) {
         $scope.arcConfig = {
             size: 200,
             scale: 2,
@@ -58,5 +58,19 @@ app.controller('FinancialsCtrl',
         $scope.isActive = function(state) {
             return _.startsWith($scope.currentState, state);
         }
+
+        $scope.showBudgetAdditionModal = function() {
+            var modalInstance = $uibModal.open({
+                templateUrl: 'budget-addition-modal.html',
+                controller: 'BudgetAdditionModalCtrl',
+                windowClass: 'buget-addition-modal'
+            });
+
+            modalInstance.result.then(function(result) {
+
+            }, function() {
+
+            });
+        };
 
     }]);
