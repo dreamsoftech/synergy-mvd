@@ -19,7 +19,7 @@
                 <div class="pull-left prj-mt-s">
                     <div class="">
                         <span class="prj-blue-rect prj-mr-s"></span>
-                        <span class="prj-hd-itm">Schedule</span>
+                        <span class="prj-hd-itm"><a class="text-default" ui-sref="schedules.main">Schedule</a></span>
                     </div>
                     <div>
                         <div class="clearfix prj-pt-s">
@@ -46,7 +46,7 @@
             <div class="prj-mt-s">
                 <div>
                     <span class="prj-green-rect prj-mr-s"></span>
-                    <span class="prj-hd-itm">Finance</span>
+                    <span class="prj-hd-itm"><a class="text-default" ui-sref="financials.main">Finance</a></span>
                 </div>
                 <div>
                     <div class="clearfix prj-pt-s">
@@ -87,7 +87,7 @@
                     <div class="col-lg-6 border">
                         <div class="ibox">
                             <div class="Schedules">
-                                <p><img src="assets/img/cal.png">  Aug 17 2015, Today's Schedules<a ui-sref="schedules">View All</a></p>
+                                <p><img src="assets/img/cal.png">  Aug 17 2015, Today's Schedules<a ui-sref="schedules.main">View All</a></p>
                             </div>
                             <div class="project">
                                 <div class="feed-element">
@@ -250,46 +250,11 @@
                                     <div class="table-responsive">
                                         <table class="table">
                                             <tbody>
-                                            <tr>
-                                                <td><a href="#">TSK #10234</a></td>
-                                                <td><p>Need Stairs Ready for Floor Lights</p></td>
-                                                <td><span>Bruce Wayne</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#">TSK #10247</a></td>
-                                                <td><p>Complete Fireplace Framing</p></td>
-                                                <td><span>John Steel</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#">TSK #10249</a></td>
-                                                <td><p>Close Garage Roof</p></td>
-                                                <td><span>Mike Hunter</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#">TSK #10252</a></td>
-                                                <td><p>Finish Closing in Roof</p></td>
-                                                <td><span>Dave Gebo</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#">PRO #10005</a></td>
-                                                <td><p>Owner to Select Kitchen Cabinets</p></td>
-                                                <td><span>Jane Smith</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="strock" href="#">RFI #10021</a></td>
-                                                <td><p class="strock">Roofline Modification</p></td>
-                                                <td><span class="strock">Dave Gebo</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="strock" href="#">RFI #10021</a></td>
-                                                <td><p class="strock">Raidant Flooring in Driveway</p></td>
-                                                <td><span class="strock">Dale Gurrea</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a class="strock" href="#">TSK #10217</a></td>
-                                                <td><p class="strock">Install Project Fencing</p></td>
-                                                <td><span class="strock">Torben Moench</span></td>
-                                            </tr>
+                                                <tr ng-class="{'strike': !item.active}" ng-repeat="item in actionItems">
+                                                    <td><a ng-click="showActionItemModal(item)">{{item.invoice}}</a></td>
+                                                    <td><p>{{item.title}}</p></td>
+                                                    <td><span>{{item.responsible}}</span></td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
