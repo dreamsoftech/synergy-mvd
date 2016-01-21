@@ -83,6 +83,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             templateUrl: "partials/financials/purchase-order.html",
             controller: "PurchaseOrderCtrl"
         })
+        .state('financials.invoices', {
+            url: '/invoices/main',
+            templateUrl: "partials/financials/invoices.html",
+            controller: "InvoicesCtrl"
+        })
         .state('purchase-orders', {
             url: '/financials/purchase-orders',
             abstract: true,

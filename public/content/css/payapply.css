@@ -21,10 +21,10 @@
   .payapply-table table tbody {
     border: 1px solid #eee; }
   .payapply-table table tbody tr td {
-    padding: 6px;
+    padding: 10px;
     height: 50px; }
   .payapply-table table thead tr th {
-    padding: 6px;
+    padding: 10px;
     height: 40px; }
   .payapply-table h3 {
     font-family: "AvenirNextLTPro-Medium";
@@ -79,8 +79,8 @@
     font-size: 13px;
     color: #808080; }
   .payapply-table td.title a {
-    font-family: AvenirNextLTPro-Demi;
-    font-size: 13px;
+    font-family: AvenirNextLTPro-Regular;
+    font-size: 15px;
     color: #686868; }
   .payapply-table td.title small {
     font-family: AvenirNextLTPro-Demi;
@@ -111,6 +111,9 @@
     color: #3aabd5; }
   .payapply-table td.flag span {
     margin: 4px; }
+  .payapply-table td.sow small {
+    font-family: AvenirNextLTPro-Regular;
+    font-size: 11px; }
   .payapply-table td.status .label {
     background-color: transparent;
     text-transform: uppercase;
