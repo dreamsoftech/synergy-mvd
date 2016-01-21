@@ -565,3 +565,8 @@ rzslider .rz-pointer:after {
     top: 8px;
     left: 8px;
 }
+
+
+project-filter ul.dropdown-menu {
+    max-width: 200px;
+}

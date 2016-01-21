@@ -683,6 +683,10 @@ app.run (['$rootScope', function($rootScope) {
 }]);
 
 app.constant("projects", [{
+        id: 0,
+        name: "View All"
+    },
+    {
         id: _.uniqueId(),
         name: "Wilmington 45",
         address: "45 Wilmington Ave",

@@ -1,12 +1,7 @@
 <div class="row wrapper border-bottom white-bg page-heading overview ng-scope">
     <div class="col-sm-6 col-lg-10">
         <h2 class="heading">My Dashboard</h2>
-        <ul class="topSubtitle">
-            <li>
-                <a href="javascript:void(0)">All Projects Summary</a>
-            </li>
-            <li><span>4 Live Projects</span></li>
-        </ul>
+        <project-filter current-item="projectFilter"></project-filter>
     </div>
     <div class="col-sm-6 col-lg-2 text-right">
         <a class="btn btn-lg btn-success" ui-sref="projects.start"><i class="fa fa-plus"></i> Create New</a>
