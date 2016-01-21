@@ -49,7 +49,32 @@ app.controller('DirectInvoiceCtrl',
                 name: 'Halm homes'
             }
 
-        ]
+        ];
+
+        $scope.actions = [{
+            id: _.uniqueId('action'),
+            name: "Request Approval"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Further Action Required"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Approve"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Record Payment"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Create Lien Release"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Email"
+        }];
 
 
         $scope.data = [
