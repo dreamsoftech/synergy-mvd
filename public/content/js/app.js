@@ -642,6 +642,22 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             templateUrl: 'partials/schedules/baseline/list.html',
             controller: 'BaselineScheduleCtrl'
         })
+        .state('user', {
+            url: '/user',
+            abstract: true,
+            template: '<ui-view></ui-view>',
+            data: {
+                pageName: 'User'
+            }
+        })
+        .state('user.profile', {
+            url: '/user/profile',
+            templateUrl: 'partials/user/profile.html',
+            controller: 'UserProfileCtrl',
+            data: {
+                pageName: 'User Profile'
+            }
+        })
         .state('sample', {
             url: '/sample',
             templateUrl: 'partials/sample/sample.html',

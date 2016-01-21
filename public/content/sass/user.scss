@@ -1,0 +1,283 @@
+$text-default: 'AvenirNextLTPro-Demi';
+$text-regular: 'AvenirNextLTPro-Regular';
+$text-medium: 'AvenirNextLTPro-Medium';
+
+.up-top-wrapper {
+    color: #4a4a4a;
+
+    img.img-circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .person {
+        margin-left: 25px;
+
+        h2 {
+            margin-top: 0;
+            font-family: $text-regular;
+            font-size: 27px;
+        }
+
+        .contact {
+            font-family: $text-regular;
+            font-size: 10px;
+            color: #8b8b8b;
+
+            i {
+                margin-right: 10px;
+
+                &:not(:first-child) {
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .info {
+            margin-top: 10px;
+            font-family: $text-default;
+
+            .name {
+                font-size: 12px;
+            }
+
+            .address {
+                span {
+                    display: block;
+                    font-size: 10px;
+                    color: #8b8b8b;
+                }
+            }
+        }
+    }
+
+    .edit {
+        @media(min-width: 992px) {
+            margin-top: 25px;
+        }
+    }
+}
+
+.up-wrapper {
+    color: #4a4a4a;
+
+    h3 {
+        font-family: $text-medium;
+        margin-bottom: 15px;
+    }
+
+    .well {
+        border: 1px solid #eee;
+        border-radius: 0;
+        padding: 20px;
+        padding-top: 30px;
+        background-color: #fff;
+
+        label {
+            display: block;
+        }
+
+        span.text {
+            font-family: $text-regular;
+            font-size: 14px;
+        }
+
+        .pull-right {
+            div {
+                color: #8b8b8b;
+                margin-top: 13px;
+            }
+        }
+
+        input[type=password] {
+            background-color: #f9f9f9;
+            padding: 15px;
+            width: 285px;
+
+            margin-right: 25px;
+
+            &:hover {
+                background-color: #fff;
+            }
+        }
+
+        .two-step-security {
+            @media(min-width: 992px) {
+                margin-left: 35px;
+                margin-right: 60px;
+                margin-top: 13px;
+            }
+
+            margin-top: 20px;
+            margin-right: 25px;
+
+            & + div {
+                @media(min-width: 992px) {
+                    margin-top: 6px;
+                }
+                margin-top: 15px;
+            }
+        }
+
+        .password {
+            @media(min-width: 992px) {
+                border-right: 1px solid #eee;
+            }
+        }
+    }
+
+    .table-responsive {
+        table {
+            thead {
+                tr {
+                    th {
+                        font-family: $text-default;
+                        font-size: 13px;
+                        background-color: #f9f9f9;
+                        color: #8b8b8b;
+                        vertical-align: middle;
+
+                        &:first-child {
+                            padding-left: 25px;
+                        }
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        vertical-align: middle;
+                        background-color: #fff;
+
+
+                        &:first-child {
+                            padding-left: 25px;
+                        }
+
+                        &.status {
+                            font-family: $text-default;
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .current-project table tbody tr td {
+        padding: 25px;
+    }
+
+    .cp-name, .cp-sow {
+        font-size: 11px;
+    }
+
+    .cp-role, .cp-sow-completion {
+        font-size: 11px;
+        font-family: $text-regular;
+    }
+
+    .flag {
+        img {
+            width: 20px;
+        }
+    }
+
+    .ai-title {
+        font-family: AvenirNextLTPro-Regular;
+        font-size: 15px;
+    }
+
+    .ai-sub-title {
+        font-family: AvenirNextLTPro-Regular;
+        font-size: 11px;
+        color: #8b8b8b;
+    }
+
+    .ai-due-date, .ai-sow {
+        font-family: AvenirNextLTPro-Regular;
+        font-size: 12px;
+    }
+
+    .ai-initiator {
+        .name {
+            font-size: 12px;
+        }
+
+        .company {
+            font-size: 10px;
+            color: #8b8b8b;
+        }
+    }
+
+    .ai-status {
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    .ai-status-completed {
+        font-family: $text-regular;
+        font-size: 11px;
+    }
+
+    .table-responsive.compliance-information {
+        table {
+            thead {
+                tr {
+                    th {
+                        font-family: $text-default;
+                        font-size: 13px;
+                        background-color: #f9f9f9;
+                        color: #8b8b8b;
+                        vertical-align: middle;
+
+                        &:first-child {
+                            padding-left: 25px;
+                        }
+
+                        img {
+                            margin-top: -5px;
+                            margin-left: 10px;
+                            width: 15px;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    td {
+                        vertical-align: middle;
+                        background-color: #fff;
+
+                        img {
+                            width: 15px;
+                            margin-right: 10px;
+                        }
+
+                        &:first-child {
+                            padding-left: 25px;
+                        }
+
+                        &.attachment {
+                            font-size: 11px;
+
+                            div {
+                                font-family: $text-default;
+                            }
+
+                            span {
+                                font-family: $text-regular;
+                            }
+                        }
+
+                        &.status {
+                            font-family: $text-default;
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
