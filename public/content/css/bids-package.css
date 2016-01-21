@@ -62,8 +62,7 @@
     display: inline-block; }
     .bids-package-wrapper .col-5 > div:first-child {
       display: inline-block;
-      padding: 0px 15px;
-      border-right: 1px solid #eee; }
+      padding: 0px 15px; }
     .bids-package-wrapper .col-5 > div:last-child {
       display: inline-block;
       float: right; }

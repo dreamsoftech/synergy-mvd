@@ -29,6 +29,23 @@ app.controller('BankDrawShowCtrl',
             { id: 3, name: 'Dabe Gebo'}
         ];
 
+        $scope.actions = [{
+            id: _.uniqueId('action'),
+            name: "Request Approval"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Further Action Required"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Approve"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Email"
+        }];
+
         $scope.currentResponsible = $scope.users[0];
 
         $scope.percentChartData = [

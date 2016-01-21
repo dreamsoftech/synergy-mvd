@@ -29,6 +29,43 @@ app.controller('BidsPackageCtrl',
             'http://anotherprojectlink.com/somethin...'
         ];
 
+        $scope.actions = [{
+            id: _.uniqueId('action'),
+            name: "Distribute"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Submit Bid"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Compare"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Award"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Accept Award"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Work Completed"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Material Received"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Record Payment"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Email"
+        }];
+
         $scope.projectEstimates = [
             {
                 scopeOfWork: 'Hardwood Floor Main',

@@ -1,7 +1,7 @@
 <div class="dropdown">
     <a class="dropdown-toggle" ng-class="{btn: !flatStyle}" ng-if="!isDropdown" data-toggle="dropdown">
-        <span class="pull-left">{{selectedText}}</span>
-        <span ng-class="{'pull-right': !flatStyle}"><i class="fa fa-chevron-down"></i></span>
+        <span class="pull-left text-primary pr10 {{labelClass}}">{{selectedText}}</span>
+        <span ng-class="{'pull-right': !flatStyle}"><i class="text-primary fa fa-chevron-down {{labelClass}}"></i></span>
     </a>
     <a class="dropdown-toggle" ng-if="isDropdown" data-toggle="dropdown">
         {{placeholder}}

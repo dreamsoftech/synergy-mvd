@@ -12,8 +12,62 @@ app.controller('ProjectsCtrl', function($scope, $state, $stateParams, $uibModal,
     $scope.schedule_completed = [60, 40, 90, 20, 100];
     $scope.project_completed = 33;
 
-    $scope.projects = projects;
-    $scope.currentProject = projects[2];
+    $scope.actionItems = [{
+        invoice: "TSK #10234",
+        title: "Need Stairs Ready for Floor Lights",
+        type: 'task',
+        responsible: 'Bruce Wayne',
+        active: true
+    },
+    {
+        invoice: "TSK #10247",
+        title: "Complete Fireplace Framing",
+        type: 'task',
+        responsible: 'John Steel',
+        active: true
+    },
+    {
+        invoice: "TSK #10249",
+        title: "Close Garage Roof",
+        type: 'task',
+        responsible: "Mike Hunter",
+        active: true
+    },
+    {
+        invoice: "TSK #10252",
+        title: "Finish Closing in Roof",
+        type: 'task',
+        responsible: "Dave Gebo",
+        active: true
+    },
+    {
+        invoice: "PRO #10005",
+        title: "Owner to Select Kitchen Cabinets",
+        type: 'task',
+        responsible: "Jane Smith",
+        active: true
+    },
+    {
+        invoice: "RFI #10021",
+        title: "Roofline Modification",
+        type: 'rfi',
+        responsible: "Dave Gebo",
+        active: false
+    },
+    {
+        invoice: "RFI #10021",
+        title: "Raidant Flooring in Driveway",
+        type: 'rfi',
+        responsible: "Dale Gurrea",
+        active: false
+    },
+    {
+        invoice: "TSK #10217",
+        title: "Install Project Fencing",
+        type: 'task',
+        responsible: "Torben Moench",
+        active: false
+    }];
 
     $scope.goComm = function () {
         $state.go('comm.main');
@@ -37,6 +91,17 @@ app.controller('ProjectsCtrl', function($scope, $state, $stateParams, $uibModal,
 
         }, function() {
 
+        });
+    }
+
+    $scope.showActionItemModal = function(item) {
+        var modalInstance = $uibModal.open({
+            templateUrl: 'partials/action-items/task/task-modal.html',
+            controller: 'TaskModalCtrl',
+            windowClass: 'gai-modal',
+            resolve: {
+                currentTask: item
+            }
         });
     }
 

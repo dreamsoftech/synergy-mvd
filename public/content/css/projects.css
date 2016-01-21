@@ -120,9 +120,8 @@
 .items-today .table td span {
     color: #3aabd5;
 }
-.items-today .table td .strock {
+.items-today .table tr.strike *{
     text-decoration: line-through;
-    position: relative;
     opacity: 0.4;
 }
 

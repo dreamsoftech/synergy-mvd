@@ -71,6 +71,35 @@ app.controller('PayPreviewCtrl',
             {id: 2, name: "Los Angeles"},
         ];
 
+        $scope.actions = [{
+            id: _.uniqueId('action'),
+            name: "Distribute"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Request Approval"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Further Action Required"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Approve"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Record Payment"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Create Lien Release"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Email"
+        }];
+
         $scope.commentList = [
             {
                 photo: 'assets/img/avasisteam/iris.jpg',
