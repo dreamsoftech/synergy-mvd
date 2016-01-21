@@ -1,6 +1,10 @@
 app.controller('CommMainCtrl',
     ['$scope', '$state', '$stateParams', '$timeout', function($scope, $state, $stateParams, $timeout) {
-        $scope.filter = $stateParams.filter;
+        if ($stateParams.filter)
+            $scope.projectFilter = {
+                id: 0,
+                name: 'View All'
+            };
 
         $scope.comms = [
             {
