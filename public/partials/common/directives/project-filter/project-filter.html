@@ -1,0 +1,3 @@
+<ui-select ng-select="changeOption()" label-class="heading" options="projects" selected-item="currentProject" flat-style="true"></ui-select>
+<div class="text-muted small">{{currentProject.address}}</div>
+<div class="text-muted small" ng-if="currentProject.city">{{currentProject.city}}, {{currentProject.state}} {{currentProject.zipcode}}</div>

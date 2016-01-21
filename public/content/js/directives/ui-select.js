@@ -10,7 +10,8 @@ app.directive('uiSelect', function ($compile) {
             placeholder: '@',
             isDropdown: '@',
             searchPlaceholder: '@',
-            flatStyle: '@'
+            flatStyle: '@',
+            labelClass: '@'
         },
         templateUrl: 'content/js/directives/ui-select.html',
         link: function (scope, element, attrs) {
