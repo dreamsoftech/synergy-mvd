@@ -17,7 +17,38 @@ app.controller('ChangeOrderInProcessCtrl',
 
         $scope.changeOptions = function(o) {
         }
-
+        $scope.actions = [{
+            id: _.uniqueId('action'),
+            name: "Distribute"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Work Completed"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Material Received"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Request Approval"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Further Action Required"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Approve"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Record Payment"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Email"
+        }];
         $scope.categories = [
             {
                 id: 1,
