@@ -570,3 +570,25 @@ rzslider .rz-pointer:after {
 project-filter ul.dropdown-menu {
     max-width: 200px;
 }
+
+
+.follow-up-due {
+    width: 235px;
+    float: right;
+}
+
+.follow-up-due input {
+    width: 0 !important;
+}
+
+.follow-up-due .dropdown-menu {
+    left: 0 !important;
+}
+
+.follow-up-due .date-field-wrapper {
+    border: 1px solid #eee;
+}
+
+.follow-up-due .date-field-wrapper > div:first-child {
+    line-height: 25px;
+}
