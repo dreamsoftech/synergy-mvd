@@ -19,755 +19,95 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="clearfix"></div>
                 </th>
             </tr>
         </thead>
         <tbody>
-            <tr class="whiteBgColor">
+            <tr class="whiteBgColor" ng-repeat="row in selectedMembers">
                 <td class="MemberTableDetails td-name">
                     <div class="feed-Compliance">
                         <div class="pull-left">
-                            <img src="assets/img/avasisteam/dave.jpg" class="img-circle photo" alt="image">
+                            <img ng-src="assets/img/avasisteam/{{row.avatar}}" class="img-circle photo" alt="image">
                         </div>
                         <div class="pull-left media-Compliance">
-                            <span data-toggle="modal" data-target="#myModal" ui-sref="team-members.risk">Dave Musgrove
+                            <span data-toggle="modal" data-target="#myModal" ui-sref="team-members.risk">
+                                {{row.name}}
+                                <a ui-sref="team-members.risk" ng-if="row.alert"><img src="assets/img/alert_small.png"></a>
                             </span>
-                            <b>Premier Heating & Air, Inc.</b>
+                            <b>{{row.company}}</b>
                             <ul class="breadcrumbv22x">
                                 <li><a href="#"><i class="fa fa-envelope"></i></a></li>
                                 <li><a href="#"><i class="fa fa-comments"></i></a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i> &nbsp;861-569-6688</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> &nbsp;{{row.phone}}</a></li>
                             </ul>
                         </div>
+                        <div class="clearfix"></div>
                     </div>
                 </td>
                 <td class="td-scheduled">
                     <div class="feed-Compliance">
                         <div class="mapflag pull-left">
-                            <img alt="image" class="img-circle" src="assets/img/map_icon.png">
+                            <img alt="image" class="img-circle" src="assets/img/map_icon.png" ng-if="row.availability == 'On Site'">
+                            <img alt="image" class="img-circle" src="assets/img/map_icon-gry.png"  ng-if="row.availability != 'On Site'">
                         </div>
                         <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="pink"><span class="sky4">On Site</span></p>
-                            <p class="light-big">next sched. 18 Sep, 2015</p>
+                            <p class="pink"><span ng-class="{true: 'sky4', false: 'offsite'}[row.availability == 'On Site']">{{row.availability}}</span> {{row.show}}</p>
+                            <div class="clearfix"></div>
+                            <p class="light-big">next sched. {{row.next_sched}}</p>
                         </div>
                     </div>
                 </td>
                 <td class="td-project">
                     <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
                         <div class="media-Compliance">
                             <small class="pull-right"></small>
-                            <p class="light-big">Wilmington 47</p>
-                            <b>Sub Contractor</b>
+                            <p ng-class="{true: 'multipalepro', false: 'light-big'}[row.project == 'Multiple']">
+                                <a uib-popover-html="row.project_popover" popover-append-to-body="true" popover-placement="bottom" popover-trigger="mouseenter" ng-if="row.project == 'Multiple'">Multiple</a>
+                                {{row.project != 'Multiple' ? row.project: ''}}
+                            </p>
+                            <b>{{row.role}}</b>
                         </div>
                     </div>
                 </td>
                 <td class="td-scope">
                     <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
                         <div class="media-Compliance">
                             <small class="pull-right"></small>
-                            <p class="light-big">
-                                Fire Place
+                            <p ng-class="{true: 'multipalepro', false: 'light-big'}[row.sow == 'Multiple']">
+                                <a uib-popover-html="row.sow_popover" popover-append-to-body="true" popover-placement="bottom" popover-trigger="mouseenter" ng-if="row.sow == 'Multiple'">Multiple</a>
+                                {{row.sow != 'Multiple' ? row.sow: ''}}
                             </p>
                         </div>
                     </div>
                 </td>
                 <td class="tm-flag-td td-flag">
-                    <div class="pull-left text-danger alert-flag">
-                        <img src="assets/img/red_icon.png"><span>1</span>
+                    <div class="pull-left text-danger alert-flag" ng-if="row.flag.danger">
+                        <img src="assets/img/red_icon.png"><span>{{row.flag.danger}}</span>
                     </div>
-                    <div class="pull-left text-warning alert-flag">
-                        <img src="assets/img/yellow _icon.png"><span>2</span>
+                    <div class="pull-left text-warning alert-flag" ng-if="row.flag.warning">
+                        <img src="assets/img/yellow _icon.png"><span>{{row.flag.warning}}</span>
                     </div>
+                    <div class="clearfix"></div>
                 </td>
                 <td>
                     <div class="ibox-team pull-left">
                         <div class="dd wrapper-dropdown-team">
                             <span><a class="#"><i class="fa fa-cog"></i></a></span>
-                            <ul class="dropdown">
+                            <!-- <ul class="dropdown">
                                 <li><a href="#">Add Notes</a></li>
                                 <li><a href="#">Permissions</a></li>
                                 <li><a href="#" class="gear2xred">Remove From Project</a></li>
-                            </ul>
+                            </ul> -->
                         </div>
                         <div class="dd wrapper-dropdown-team">
                             <span><a class="#"><i class="fa fa-angle-down"></i></a></span>
-                            <ul class="dropdown">
+                            <!-- <ul class="dropdown">
                                 <li><a href="#">Add Notes</a></li>
                                 <li><a href="#">Permissions</a></li>
                                 <li><a href="#" class="gear2xred">Remove From Project</a></li>
-                            </ul>
+                            </ul> -->
                         </div>
-                    </div>
-                </td>
-            </tr>
-            <tr class="whiteBgColor">
-                <td class="MemberTableDetails td-name">
-                    <div class="feed-Compliance">
-                        <div class="pull-left">
-                            <img src="assets/img/avasisteam/mike.jpg" class="img-circle photo" alt="image">
-                        </div>
-                        <div class="pull-left media-Compliance">
-                            <span data-toggle="modal" data-target="#myModal" ui-sref="team-members.risk">Mike Riley
-                            </span>
-                            <b>Canyon River Electric</b>
-                            <ul class="breadcrumbv22x">
-                                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i></a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i> &nbsp;385-285-8616</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-                <td class="td-scheduled">
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                            <img alt="image" class="img-circle" src="assets/img/map_icon.png">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="pink"><span class="sky4">On Site</span></p>
-                            <p class="light-big">next sched. 18 Sep, 2015</p>
-                        </div>
-                    </div>
-                </td>
-                <td class="td-project">
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="light-big">Wilmington 47</a></p>
-                            <b class="multipal">Sub Contractor</b>
-                        </div>
-                    </div>
-                </td>
-                <td class="td-scope">
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="multipalepro">
-                                <a uib-popover-html="mike_sow_popover" popover-append-to-body="true" popover-placement="bottom" popover-trigger="mouseenter">Multiple</a></p>
-                        </div>
-                    </div>
-                </td>
-                <td class="tm-flag-td">
-                    <div class="pull-left text-warning alert-flag">
-                        <img src="assets/img/yellow _icon.png"><span>3</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="ibox-team pull-left">
-                        <div class="dd wrapper-dropdown-team">
-                            <span><a class="#"><i class="fa fa-cog"></i></a></span>
-                            <ul class="dropdown">
-                                <li><a href="#">Add Notes</a></li>
-                                <li><a href="#">Permissions</a></li>
-                                <li><a href="#" class="gear2xred">Remove From Project</a></li>
-                            </ul>
-                        </div>
-                        <div class="dd wrapper-dropdown-team">
-                            <span><a class="#"><i class="fa fa-angle-down"></i></a></span>
-                            <ul class="dropdown">
-                                <li><a href="#">Add Notes</a></li>
-                                <li><a href="#">Permissions</a></li>
-                                <li><a href="#" class="gear2xred">Remove From Project</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <tr class="whiteBgColor">
-                <td class="MemberTableDetails">
-                    <div class="feed-Compliance">
-                        <div class="pull-left">
-                            <img src="assets/img/avasisteam/mary.jpg" class="img-circle photo" alt="image">
-                        </div>
-                        <div class="pull-left media-Compliance">
-                            <span data-toggle="modal" data-target="#myModal" ui-sref="team-members.risk">Mary Beroset
-                            </span>
-                            <b>Wasatch Lighting, Inc.</b>
-                            <ul class="breadcrumbv22x">
-                                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i></a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i> &nbsp;861 891 1611</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                            <img alt="image" class="img-circle" src="assets/img/map_icon.png">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="pink"><span class="sky4">On Site</span> No Show</p>
-                            <p class="light-big">next sched. 24 Sep, 2015</p>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="light-big">Wilmington 47</p>
-                            <b>Designer</b>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="light-big">
-                                Main Floor Overhead Lighting<br>
-                            </p>
-                        </div>
-                    </div>
-                </td>
-                <td class="tm-flag-td">
-                </td>
-                <td>
-                    <div class="ibox-team pull-left">
-                        <div class="dd wrapper-dropdown-team">
-                            <span><a class="#"><i class="fa fa-cog"></i></a></span>
-                            <ul class="dropdown">
-                                <li><a href="#">Add Notes</a></li>
-                                <li><a href="#">Permissions</a></li>
-                                <li><a href="#" class="gear2xred">Remove From Project</a></li>
-                            </ul>
-                        </div>
-                        <div class="dd wrapper-dropdown-team">
-                            <span><a class="#"><i class="fa fa-angle-down"></i></a></span>
-                            <ul class="dropdown">
-                                <li><a href="#">Add Notes</a></li>
-                                <li><a href="#">Permissions</a></li>
-                                <li><a href="#" class="gear2xred">Remove From Project</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <tr class="whiteBgColor">
-                <td class="MemberTableDetails">
-                    <div class="feed-Compliance">
-                        <div class="pull-left">
-                            <img src="assets/img/avasisteam/john.jpg" class="img-circle photo" alt="image">
-                        </div>
-                        <div class="pull-left media-Compliance">
-                            <span data-toggle="modal" data-target="#myModal" ui-sref="team-members.risk">John Steel
-                                <a ui-sref="team-members.risk"><img src="assets/img/alert_small.png"></a>
-                            </span>
-                            <b>L&L Steel Erection</b>
-                            <ul class="breadcrumbv22x">
-                                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i></a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i> &nbsp;861 518 1636</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                            <img alt="image" class="img-circle" src="assets/img/map_icon.png">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="pink"><span class="sky4">On Site</span></p>
-                            <p class="light-big">next sched. 24 Sep, 2015</p>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="light-big">Wilmington 47</p>
-                            <b>Sub Contractor</b>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="light-big">
-                                Fire Place
-                            </p>
-                        </div>
-                    </div>
-                </td>
-                <td class="tm-flag-td">
-                    <div class="pull-left text-danger alert-flag">
-                        <img src="assets/img/red_icon.png"><span>1</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="ibox-team pull-left">
-                        <div class="dd wrapper-dropdown-team">
-                            <span><a class="#"><i class="fa fa-cog"></i></a></span>
-                            <ul class="dropdown">
-                                <li><a href="#">Add Notes</a></li>
-                                <li><a href="#">Permissions</a></li>
-                                <li><a href="#" class="gear2xred">Remove From Project</a></li>
-                            </ul>
-                        </div>
-                        <div class="dd wrapper-dropdown-team">
-                            <span><a class="#"><i class="fa fa-angle-down"></i></a></span>
-                            <ul class="dropdown">
-                                <li><a href="#">Add Notes</a></li>
-                                <li><a href="#">Permissions</a></li>
-                                <li><a href="#" class="gear2xred">Remove From Project</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <tr class="whiteBgColor">
-                <td class="MemberTableDetails">
-                    <div class="feed-Compliance">
-                        <div class="pull-left">
-                            <img src="assets/img/avasisteam/gebo.jpg" class="img-circle photo" alt="image">
-                        </div>
-                        <div class="pull-left media-Compliance">
-                            <span data-toggle="modal" data-target="#myModal" ui-sref="team-members.risk">Dave Gebo
-                            </span>
-                            <b>On Top Roofing</b>
-                            <ul class="breadcrumbv22x">
-                                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i></a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i> &nbsp;835 513 6185</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                            <img alt="image" class="img-circle" src="assets/img/map_icon.png">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="pink"><span class="sky4">On Site</span>No Show</p>
-                            <p class="light-big">next sched. 25 Sep, 2015</p>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="multipalepro">
-                                <!-- <a ng-click="showProjectModal()">Multiple</a> -->
-                                <a uib-popover-html="dave_gebo_project_popover" popover-append-to-body="true" popover-placement="bottom" popover-trigger="mouseenter">Multiple</a>
-                            </p>
-                            <b>Sub Contractor</b>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="multipalepro"><a uib-popover-html="dave_gebo_sow_popover" popover-append-to-body="true" popover-placement="bottom" popover-trigger="mouseenter">Multiple</a></p>
-                        </div>
-                    </div>
-                </td>
-                <td class="tm-flag-td">
-                    <div class="pull-left text-danger alert-flag">
-                        <img src="assets/img/red_icon.png"><span>4</span>
-                    </div>
-                    <div class="pull-left text-warning alert-flag">
-                        <img src="assets/img/yellow _icon.png"><span>1</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="ibox-team pull-left">
-                        <div class="dd wrapper-dropdown-team">
-                            <span><a class="#"><i class="fa fa-cog"></i></a></span>
-                            <ul class="dropdown">
-                                <li><a href="#">Add Notes</a></li>
-                                <li><a href="#">Permissions</a></li>
-                                <li><a href="#" class="gear2xred">Remove From Project</a></li>
-                            </ul>
-                        </div>
-                        <a href="#"><i class="fa fa-angle-down"></i></a>
-                    </div>
-                </td>
-            </tr>
-            <tr class="whiteBgColor">
-                <td class="MemberTableDetails">
-                    <div class="feed-Compliance">
-                        <div class="pull-left">
-                            <img src="assets/img/avasisteam/dan.jpg" class="img-circle photo" alt="image">
-                        </div>
-                        <div class="pull-left media-Compliance">
-                            <span data-toggle="modal" data-target="#myModal" ui-sref="team-members.risk">Dan Bonker
-                                <a ui-sref="team-members.risk"><img src="assets/img/alert_small.png"></a>
-                            </span>
-                            <b>Sage Creek Framing Co.</b>
-                            <ul class="breadcrumbv22x">
-                                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i></a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i> &nbsp;861 891 5339</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                            <img alt="image" class="img-circle" src="assets/img/map_icon.png">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="pink"><span class="offsite">Off Site</span></p>
-                            <p class="light-big">next sched. 18 Sep, 2015</p>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="light-big">Wilmington 47</p>
-                            <b>Sub Contractor</b>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="light-big">
-                                Frame 2nd Stroy
-                            </p>
-                        </div>
-                    </div>
-                </td>
-                <td class="tm-flag-td">
-                </td>
-                <td>
-                    <div class="ibox-team pull-left">
-                        <div class="dd wrapper-dropdown-team">
-                            <span><a class="#"><i class="fa fa-cog"></i></a></span>
-                            <ul class="dropdown">
-                                <li><a href="#">Add Notes</a></li>
-                                <li><a href="#">Permissions</a></li>
-                                <li><a href="#" class="gear2xred">Remove From Project</a></li>
-                            </ul>
-                        </div>
-                        <div class="dd wrapper-dropdown-team">
-                            <span><a class="#"><i class="fa fa-angle-down"></i></a></span>
-                            <ul class="dropdown">
-                                <li><a href="#">Add Notes</a></li>
-                                <li><a href="#">Permissions</a></li>
-                                <li><a href="#" class="gear2xred">Remove From Project</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <tr class="whiteBgColor">
-                <td class="MemberTableDetails">
-                    <div class="feed-Compliance">
-                        <div class="pull-left">
-                            <img src="assets/img/avasisteam/bruce.jpg" class="img-circle photo" alt="image">
-                        </div>
-                        <div class="pull-left media-Compliance">
-                            <span data-toggle="modal" data-target="#myModal" ui-sref="team-members.risk">Bruce Wayne
-                            </span>
-                            <b>Synergy Construction</b>
-                            <ul class="breadcrumbv22x">
-                                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i></a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i> &nbsp;801 580 5683</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                            <img alt="image" class="img-circle" src="assets/img/map_icon-gry.png">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="pink"><span class="offsite">OFF SITE</span></p>
-                            <p class="light-big">next sched. 18 Sep, 2015</p>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="multipalepro">
-                                <!-- <a ng-click="showProjectModal()">Multiple</a> -->
-                                <a uib-popover-html="bruce_wayne_project_popover" popover-append-to-body="true" popover-placement="bottom" popover-trigger="mouseenter">Multiple</a>
-                            </p>
-                            <b>General Contractor</b>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="multipalepro">
-                                <a uib-popover-html="bruce_wayne_sow_popover" popover-append-to-body="true" popover-placement="bottom" popover-trigger="mouseenter">Multiple</a>
-                            </p>
-                        </div>
-                    </div>
-                </td>
-                <td class="tm-flag-td">
-                    <div class="pull-left text-danger alert-flag">
-                        <img src="assets/img/red_icon.png"><span>2</span>
-                    </div>
-                    <div class="pull-left text-warning alert-flag">
-                        <img src="assets/img/yellow _icon.png"><span>5</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="ibox-team pull-left">
-                        <div class="dd wrapper-dropdown-team">
-                            <span><a class="#"><i class="fa fa-cog"></i></a></span>
-                            <ul class="dropdown">
-                                <li><a href="#">Add Notes</a></li>
-                                <li><a href="#">Permissions</a></li>
-                                <li><a href="#" class="gear2xred">Remove From Project</a></li>
-                            </ul>
-                        </div>
-                        <div class="dd wrapper-dropdown-team">
-                            <span><a class="#"><i class="fa fa-angle-down"></i></a></span>
-                            <ul class="dropdown">
-                                <li><a href="#">Add Notes</a></li>
-                                <li><a href="#">Permissions</a></li>
-                                <li><a href="#" class="gear2xred">Remove From Project</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <tr class="whiteBgColor">
-                <td class="MemberTableDetails">
-                    <div class="feed-Compliance">
-                        <div class="pull-left">
-                            <img src="assets/img/avasisteam/jeff.jpg" class="img-circle photo" alt="image">
-                        </div>
-                        <div class="pull-left media-Compliance">
-                            <span data-toggle="modal" data-target="#myModal" ui-sref="team-members.risk">Jeff Price
-                            </span>
-                            <b>Probuild</b>
-                            <ul class="breadcrumbv22x">
-                                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i></a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i> &nbsp;835 563 6699</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                            <img alt="image" class="img-circle" src="assets/img/map_icon-gry.png">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="pink"><span class="offsite">OFF SITE</span></p>
-                            <p class="light-big">next sched. 19 Sep, 2015</p>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="multipalepro">
-                                <!-- <a ng-click="showProjectModal()">Multiple</a> -->
-                                <a uib-popover-html="jeff_price_project_popover" popover-append-to-body="true" popover-placement="bottom" popover-trigger="mouseenter">Multiple</a>
-                            </p>
-                            <b>Supplier</b>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="multipalepro">
-                                <a uib-popover-html="jeff_price_sow_popover" popover-append-to-body="true" popover-placement="bottom" popover-trigger="mouseenter">Multiple</a>
-                            </p>
-                        </div>
-                    </div>
-                </td>
-                <td class="tm-flag-td">
-                    <div class="pull-left text-warning alert-flag">
-                        <img src="assets/img/yellow _icon.png"><span>3</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="ibox-team pull-left">
-                        <a class="#"><i class="fa fa-cog"></i></a>
-                        <a href="#"><i class="fa fa-angle-down"></i></a>
-                    </div>
-                </td>
-            </tr>
-            <tr class="whiteBgColor">
-                <td class="MemberTableDetails">
-                    <div class="feed-Compliance">
-                        <div class="pull-left">
-                            <img src="assets/img/avasisteam/peters.jpg" class="img-circle photo" alt="image">
-                        </div>
-                        <div class="pull-left media-Compliance">
-                            <span data-toggle="modal" data-target="#myModal" ui-sref="team-members.risk">Christian Peters
-                            </span>
-                            <b>MyTy Appliance Specialists</b>
-                            <ul class="breadcrumbv22x">
-                                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i></a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i> &nbsp;861 998 8283</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                            <img alt="image" class="img-circle" src="assets/img/map_icon-gry.png">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="pink"><span class="offsite">OFF SITE</span></p>
-                            <p class="light-big">next sched. 1 Oct, 2015</p>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="light-big">Wilmington 47</p>
-                            <b>Designer</b>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="light-big">
-                                Fire Place
-                            </p>
-                        </div>
-                    </div>
-                </td>
-                <td class="tm-flag-td">
-                </td>
-                <td>
-                    <div class="ibox-team pull-left">
-                        <a class="#"><i class="fa fa-cog"></i></a>
-                        <a href="#"><i class="fa fa-angle-down"></i></a>
-                    </div>
-                </td>
-            </tr>
-            <tr class="whiteBgColor">
-                <td class="MemberTableDetails">
-                    <div class="feed-Compliance">
-                        <div class="pull-left">
-                            <img src="assets/img/avasisteam/jane.jpg" class="img-circle photo" alt="image">
-                        </div>
-                        <div class="pull-left media-Compliance">
-                            <span data-toggle="modal" data-target="#myModal" ui-sref="team-members.risk">Jane Smith
-                            </span>
-                            <b></b>
-                            <ul class="breadcrumbv22x">
-                                <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i></a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i> &nbsp;801 942 1092</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                            <img alt="image" class="img-circle" src="assets/img/map_icon-gry.png">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="pink"><span class="offsite">OFF SITE</span></p>
-                            <p class="light-big">next sched. 1 Oct, 2015</p>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="light-big">Wilmington 47</p>
-                            <b>Owner</b>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="feed-Compliance">
-                        <div class="mapflag pull-left">
-                        </div>
-                        <div class="media-Compliance">
-                            <small class="pull-right"></small>
-                            <p class="light-big">
-                            </p>
-                        </div>
-                    </div>
-                </td>
-                <td class="tm-flag-td">
-                    <div class="pull-left text-warning alert-flag">
-                        <img src="assets/img/yellow _icon.png"><span>1</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="ibox-team pull-left">
-                        <a class="#"><i class="fa fa-cog"></i></a>
-                        <a href="#"><i class="fa fa-angle-down"></i></a>
                     </div>
                 </td>
             </tr>
