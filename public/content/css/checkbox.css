@@ -165,6 +165,7 @@
 .radio input[type="radio"] {
   opacity: 0;
   z-index: 1;
+  cursor: pointer;
 }
 .radio input[type="radio"]:focus + label::before {
   outline: thin dotted;
@@ -185,16 +186,17 @@
 }
 .radio.radio-inline {
   margin-top: 0;
+  cursor: pointer;
 }
 
 .radio-primary input[type="radio"] + label::after {
-  background-color: #337ab7;
+  background-color: #3aabd5;
 }
 .radio-primary input[type="radio"]:checked + label::before {
-  border-color: #337ab7;
+  border-color: #3aabd5;
 }
 .radio-primary input[type="radio"]:checked + label::after {
-  background-color: #337ab7;
+  background-color: #3aabd5;
 }
 
 .radio-danger input[type="radio"] + label::after {

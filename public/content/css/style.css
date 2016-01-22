@@ -253,6 +253,10 @@ li.active .custom-tooltip {
     color: #2a2d33;
 }
 
+.text-white {
+    color: white;
+}
+
 
 textarea {
     padding: 15px;

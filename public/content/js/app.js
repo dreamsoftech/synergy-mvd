@@ -26,6 +26,24 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     $urlRouterProvider.otherwise("/");
 
     return $stateProvider
+        .state('sign-in', {
+            url: '/sign-in',
+            templateUrl: "partials/auth/sign-in.html",
+            controller: "AuthCtrl",
+            data: {
+                isUserSignedIn: false,
+                pageName: 'Sign In'
+            }
+        })
+        .state('sign-up', {
+            url: '/sign-up',
+            templateUrl: "partials/auth/sign-up.html",
+            controller: "AuthCtrl",
+            data: {
+                isUserSignedIn: false,
+                pageName: 'Sign Up'
+            }
+        })
         .state('dashboard', {
             url: '/',
             templateUrl: "partials/dashboards/dashboard.html",
@@ -683,8 +701,10 @@ app.run (['$rootScope', function($rootScope) {
     $rootScope.$on('$stateChangeSuccess', function(e, to) {
         if (!_.isUndefined(to.data)) {
             $rootScope.isHeaderHidden = to.data.isHeaderHidden;
+            $rootScope.currentUser = _.isUndefined(to.data.isUserSignedIn) ? {} : null;
         } else {
             $rootScope.isHeaderHidden = false;
+            $rootScope.currentUser = null;
         }
 
         $rootScope.pageName = to.data.pageName;

@@ -1,0 +1,25 @@
+.auth-wrapper {
+    background-color: #2a2d33;
+    min-height: 100%;
+    padding-bottom: 80px;
+    .top {
+        div {
+            font-size: 20px;
+            color: white;
+        }
+    }
+    .auth-form {
+        width: 500px;
+        border-radius: 5px;
+        margin: 20px auto;
+
+        .heading {
+            font-size: 20px;
+            color: #44474b;
+        }
+
+    }
+    .btn {
+        width: 100%;
+    }
+}
