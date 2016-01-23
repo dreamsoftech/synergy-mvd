@@ -1,7 +1,7 @@
 <div class="procurement-create">
     <div class="row page-detail-header procurement-create-header">
         <div class="col-sm-1 no-padding-horizontal">
-            <div class="closeBox">
+            <div class="closeBox" style="padding: 135px 0;">
                 <p>
                     <a ui-sref="procurement.main">
                         Close <i class="fa fa-caret-right"></i>
@@ -41,6 +41,14 @@
                         <div class="col-md-6 text-right mt20 more-info-name">CURRENTLY RESPONSIBLE</div>
                         <div class="col-md-6 text-left pl0">
                             <ui-select options="users" ng-select="" selected-item="procurement.responsible"></ui>
+                        </div>
+                    </div>
+                    <div class="row mt5">
+                        <div class="col-md-12">
+                            <div class="follow-up-due">
+                                <ui-date-field ng-model="date"></ui-date-field>
+                            </div>
+                            <div class="due-title">Follow Up Due</div>
                         </div>
                     </div>
                 </div>

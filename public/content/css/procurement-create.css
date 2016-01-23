@@ -2,6 +2,14 @@
   margin-top: -1px;
   margin-right: 5px; }
 
+.procurement-create .procurement-create-header .follow-up-due .date-field-wrapper .value {
+  margin-top: -10px;
+  font-size: 11px; }
+
+.procurement-create .procurement-create-header .follow-up-due + .due-title {
+  font-family: AvenirNextLTPro-Bold;
+  font-size: 10px; }
+
 .procurement-create .procurement-create-header .pc-header-title {
   padding-top: 37px;
   padding-left: 15px; }

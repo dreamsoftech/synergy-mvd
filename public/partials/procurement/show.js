@@ -1,4 +1,4 @@
-app.controller('ProcurementShowCtrl', 
+app.controller('ProcurementShowCtrl',
     ['$scope', '$state', function($scope, $state){
         $scope.users = [
             { id: 1, name: 'Bob Jones'},
@@ -13,6 +13,7 @@ app.controller('ProcurementShowCtrl',
         $scope.dateInit = '8/23/14';
         $scope.creator = 'Eric Hoffman';
         $scope.procurementStatus = 'In Process';
+        $scope.date = new Date(2015, 7, 26);
 
         $scope.comments = [
             {
