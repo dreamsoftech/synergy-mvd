@@ -28,6 +28,9 @@ app.controller('PurchaseOrdersCtrl' ,
                 name: 'VA'
         }];
 
+        $scope.date = new Date(2015, 7, 26);
+
+
         $scope.isTextable = true;
 
         $scope.projects = [
