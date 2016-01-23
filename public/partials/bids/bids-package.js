@@ -19,6 +19,8 @@ app.controller('BidsPackageCtrl',
 
         $scope.curResponsible = $scope.users[0];
 
+        $scope.date = new Date(2015, 7, 26);
+
         $scope.documents = [
             'Document Name.pdf',
             'Document Name.jpg'
