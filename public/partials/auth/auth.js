@@ -1,9 +1,9 @@
 app.controller('AuthCtrl',
-    ['$scope', '$state', '$rootScope', function($scope, $state, $rootScope) {
+    ['$scope', '$state', '$localStorage', function($scope, $state, $localStorage) {
         $scope.step = 'signup';
 
         $scope.createAccount = function() {
-            $rootScope.currentUser = {};
+            $localStorage.currentUser = {};
             $state.go("dashboard");
         }
     }]);

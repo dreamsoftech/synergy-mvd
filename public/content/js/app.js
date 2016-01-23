@@ -11,7 +11,8 @@ var app = angular.module('avasis',
         'jkuri.slimscroll',
         'ui.utils.masks',
         'rzModule',
-        'slick'
+        'slick',
+        'ngStorage'
     ]);
 
 app.config(['$locationProvider', function ($locationProvider) {
@@ -695,14 +696,15 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
 
 }]);
 
-app.run (['$rootScope', '$location', function($rootScope, $location) {
+app.run (['$rootScope', '$localStorage', function($rootScope, $localStorage) {
     $rootScope.$on('$stateChangeStart', function(e, to) {
+        $rootScope.currentUser = $localStorage.currentUser;
         if (to.controller != 'AuthCtrl' && _.isUndefined($rootScope.currentUser)) {
             window.location.replace("/#!/sign-up");
             e.preventDefault();
         }
         if (to.controller == 'AuthCtrl' && $rootScope.currentUser) {
-            $location.path("/#!/");
+            window.location.replace("/#!/");
             e.preventDefault();
         }
     });
@@ -757,7 +759,7 @@ app.constant("projects", [{
     }]);
 
 app.controller('AppCtrl',
-    ['$scope', '$rootScope', '$state', function ($scope, $rootScope, $state) {
+    ['$scope', '$rootScope', '$state', '$localStorage', function ($scope, $rootScope, $state, $localStorage) {
 
         // Notifications
         $rootScope.isShowNotifyBar = false;
@@ -807,7 +809,7 @@ app.controller('AppCtrl',
         };
 
         $scope.logout = function() {
-            $rootScope.currentUser = undefined;
+            $localStorage.currentUser = undefined;
             $state.go('sign-up');
         }
     }]);
