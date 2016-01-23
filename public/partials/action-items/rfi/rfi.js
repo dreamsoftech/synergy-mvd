@@ -8,6 +8,9 @@ app.controller('RFICtrl',
             }
         ];
 
+        $scope.date = new Date(2015, 7, 26);
+
+
         /** Dropzone config
         *
         */
