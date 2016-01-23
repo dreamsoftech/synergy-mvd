@@ -31,7 +31,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             templateUrl: "partials/auth/sign-in.html",
             controller: "AuthCtrl",
             data: {
-                isUserSignedIn: false,
                 pageName: 'Sign In'
             }
         })
@@ -40,7 +39,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             templateUrl: "partials/auth/sign-up.html",
             controller: "AuthCtrl",
             data: {
-                isUserSignedIn: false,
                 pageName: 'Sign Up'
             }
         })
@@ -697,14 +695,23 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
 
 }]);
 
-app.run (['$rootScope', function($rootScope) {
+app.run (['$rootScope', '$location', function($rootScope, $location) {
+    $rootScope.$on('$stateChangeStart', function(e, to) {
+        if (to.controller != 'AuthCtrl' && _.isUndefined($rootScope.currentUser)) {
+            window.location.replace("/#!/sign-up");
+            e.preventDefault();
+        }
+        if (to.controller == 'AuthCtrl' && $rootScope.currentUser) {
+            $location.path("/#!/");
+            e.preventDefault();
+        }
+    });
+
     $rootScope.$on('$stateChangeSuccess', function(e, to) {
         if (!_.isUndefined(to.data)) {
             $rootScope.isHeaderHidden = to.data.isHeaderHidden;
-            $rootScope.currentUser = _.isUndefined(to.data.isUserSignedIn) ? {} : null;
         } else {
             $rootScope.isHeaderHidden = false;
-            $rootScope.currentUser = null;
         }
 
         $rootScope.pageName = to.data.pageName;
@@ -750,7 +757,7 @@ app.constant("projects", [{
     }]);
 
 app.controller('AppCtrl',
-    ['$scope', '$rootScope', function ($scope, $rootScope) {
+    ['$scope', '$rootScope', '$state', function ($scope, $rootScope, $state) {
 
         // Notifications
         $rootScope.isShowNotifyBar = false;
@@ -798,5 +805,10 @@ app.controller('AppCtrl',
                 notification.isRead = true;
             }
         };
+
+        $scope.logout = function() {
+            $rootScope.currentUser = undefined;
+            $state.go('sign-up');
+        }
     }]);
 
