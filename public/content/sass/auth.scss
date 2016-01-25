@@ -27,7 +27,10 @@
                 font-size: 17px;
             }
         }
-
+        ul.dropdown-menu {
+            max-height: 250px;
+            overflow-y: auto;
+        }
     }
     .btn {
         width: 100%;
