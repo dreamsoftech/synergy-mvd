@@ -2,7 +2,7 @@
     <!----================== Start TOP NAV BAR==================---->
     <div class="row bankbg">
         <div class="pull-left noPdingLeft noPdingRight close-section">
-            <div class="closeBox">
+            <div class="closeBox" style="padding: 125px 0;">
                 <p><a ui-sref="financials.pay-apply">Close <i class="fa fa-caret-right"></i></a></p>
             </div>
         </div>
@@ -51,6 +51,14 @@
                                     <ui-select selected-item="inspectionLead" options="leadList"></ui-select>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row mt5 pr15">
+                        <div class="col-md-12">
+                            <div class="follow-up-due">
+                                <ui-date-field ng-model="date"></ui-date-field>
+                            </div>
+                            <div class="due-title">Follow Up Due</div>
                         </div>
                     </div>
                 </div>

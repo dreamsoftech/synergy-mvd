@@ -82,6 +82,7 @@ app.controller('ChangeOrderInProcessCtrl',
         $scope.approvers = angular.copy($scope.users);
         $scope.request = "Hi Christine, I was under the impression that there was going to be two sinks in the Master Guest Room but I spoke with Bruce and he didn't see it in the drawings. Would you be able to change things around a bit to add a sink? Let me know your thoughts and if you can do it, please fill ou the table with the cost/schedule info. Thanks!";
 
+        $scope.date = new Date(2015, 7, 26);
         $scope.comments = [
             {
                 avatar: 'bruce.jpg',

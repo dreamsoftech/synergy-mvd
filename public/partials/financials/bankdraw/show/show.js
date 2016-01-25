@@ -22,6 +22,9 @@ app.controller('BankDrawShowCtrl',
             name: 'Draw Details'
         }];
 
+        $scope.date = new Date(2015, 7, 26);
+
+
         $scope.users = [
             { id: 1, name: 'Bruce Wayne'},
             { id: 2, name: 'Mike Riley'},

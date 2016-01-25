@@ -1,276 +1,288 @@
 .procurement-create {
-	.procurement-create-header {
-		.closeBox {
-			img {
-				margin-top: -1px;
-				margin-right: 5px;
-			}
-		}
+    .procurement-create-header {
+        .closeBox {
+            img {
+                margin-top: -1px;
+                margin-right: 5px;
+            }
+        }
 
-		.pc-header-title {
-			padding-top: 37px;
-			padding-left: 15px;
+        .follow-up-due {
+            .date-field-wrapper .value {
+                margin-top: -10px;
+                font-size: 11px;
+            }
 
-			.heading {
-				font-family: "AvenirNextLTPro-Regular";
-	    		font-size: 27px;
-			}
-			.sub-title {
-				font-size: 15px;
-			}
+            & + .due-title {
+                font-family: AvenirNextLTPro-Bold;
+                font-size: 10px;
+            }
+        }
 
-			input {
-				width: 100%;
-			    border: 0px;
-			    background: transparent;
-			    color: #4a4a4a;
-			    font-size: 17px;
-			    border-bottom: 1px solid #ccc;
-			    border-radius: 0px;
-			    padding: 20px 0 10px;
-			}
-			input:focus{
-	    		outline: 0;
-			}
+        .pc-header-title {
+            padding-top: 37px;
+            padding-left: 15px;
 
-			.info {
-				display: block;
-				float: left;
-				padding: 20px 30px 20px 0;
+            .heading {
+                font-family: "AvenirNextLTPro-Regular";
+                font-size: 27px;
+            }
+            .sub-title {
+                font-size: 15px;
+            }
 
-				.info-title {
-					font-family: "AvenirNextLTPro-Regular";
-					font-size: 13px;
-					color: #44474b;
-					padding-bottom: 5px;
-				}
+            input {
+                width: 100%;
+                border: 0px;
+                background: transparent;
+                color: #4a4a4a;
+                font-size: 17px;
+                border-bottom: 1px solid #ccc;
+                border-radius: 0px;
+                padding: 20px 0 10px;
+            }
+            input:focus{
+                outline: 0;
+            }
 
-				.info-value {
-					font-family: "AvenirNextLTPro-Medium";
-					font-size: 13px;
-					color: #4a4a4a;
-				}
-			}
+            .info {
+                display: block;
+                float: left;
+                padding: 20px 30px 20px 0;
 
-			.additional-info {
-				.details {
-					text-align: right;
-					padding-bottom: 6px;
-				}
+                .info-title {
+                    font-family: "AvenirNextLTPro-Regular";
+                    font-size: 13px;
+                    color: #44474b;
+                    padding-bottom: 5px;
+                }
 
-				.details .more-info-name {
-					display: inline-block;
-					text-transform: uppercase;
-					font-family: "AvenirNextLTPro-Bold";
-					font-size: 10px;
-					color: #44474b;
-				}
-				.details .more-info-value {
-					display: inline-block;
-					min-width: 100px;
-					text-align: left;
-					padding: 0 10px;
+                .info-value {
+                    font-family: "AvenirNextLTPro-Medium";
+                    font-size: 13px;
+                    color: #4a4a4a;
+                }
+            }
 
-					.pc-info-title {
-						background-color: #44474b;
-						color: #fff;
-						border-radius: 3px;
-						font-family: "AvenirNextLTPro-Bold";
-						font-size: 10px;
-						padding: 2px 6px;
-					}
+            .additional-info {
+                .details {
+                    text-align: right;
+                    padding-bottom: 6px;
+                }
 
-					.pc-info-date {
-						font-family: "AvenirNextLTPro-Medium";
-						font-size: 12px;
-						color: #44474b;
-					}
+                .details .more-info-name {
+                    display: inline-block;
+                    text-transform: uppercase;
+                    font-family: "AvenirNextLTPro-Bold";
+                    font-size: 10px;
+                    color: #44474b;
+                }
+                .details .more-info-value {
+                    display: inline-block;
+                    min-width: 100px;
+                    text-align: left;
+                    padding: 0 10px;
 
-					.pc-info-status {
-						font-family: "AvenirNextLTPro-Bold";
-						font-size: 12px;
-					}
-				}
-			}
-		}
-	}
+                    .pc-info-title {
+                        background-color: #44474b;
+                        color: #fff;
+                        border-radius: 3px;
+                        font-family: "AvenirNextLTPro-Bold";
+                        font-size: 10px;
+                        padding: 2px 6px;
+                    }
 
-	.procurement-create-content {
-		background-color: #fff;
-	    border: 1px solid #d7d7d7;
-	    border-radius: 4px;
-	    margin-top: 30px;
-	    padding: 15px;
+                    .pc-info-date {
+                        font-family: "AvenirNextLTPro-Medium";
+                        font-size: 12px;
+                        color: #44474b;
+                    }
 
-	    .person-info-wrapper {
-	    	padding: 20px 0; 
-	    	border-bottom: 1px solid #d7d7d7;
-	    	margin: 0 20px;
-	    }
+                    .pc-info-status {
+                        font-family: "AvenirNextLTPro-Bold";
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
 
-	    .person-info {
-	    	display: block;
+    .procurement-create-content {
+        background-color: #fff;
+        border: 1px solid #d7d7d7;
+        border-radius: 4px;
+        margin-top: 30px;
+        padding: 15px;
 
-	    	.info-panel {
-	    		display: block;
-	    		float: left;
-	    		border-right: 1px solid #d7d7d7;
-	    		padding: 8px 10px 8px 20px;
+        .person-info-wrapper {
+            padding: 20px 0;
+            border-bottom: 1px solid #d7d7d7;
+            margin: 0 20px;
+        }
 
-	    		.name, .date {
-	    			display: block;
-	    			float: left;
-	    			padding-right: 20px;
-	    		}
+        .person-info {
+            display: block;
 
-	    		.name-header, .date-header {
-	    			font-family: "AvenirNextLTPro-Regular";
-	    			font-size: 11px;
-	    			color: #44474b;
-	    		}
+            .info-panel {
+                display: block;
+                float: left;
+                border-right: 1px solid #d7d7d7;
+                padding: 8px 10px 8px 20px;
 
-	    		.name-value {
-	    			font-family: "AvenirNextLTPro-Bold";
-	    			font-size: 12px;
-	    		}
+                .name, .date {
+                    display: block;
+                    float: left;
+                    padding-right: 20px;
+                }
 
-	    		.date-value {
-	    			font-family: "AvenirNextLTPro-Medium";
-	    			font-size: 13px;
-	    			color: #4a4a4a;
-	    		}
+                .name-header, .date-header {
+                    font-family: "AvenirNextLTPro-Regular";
+                    font-size: 11px;
+                    color: #44474b;
+                }
 
-	    	}
-	    	.info-panel:first-of-type {
-	    		padding-left: 0px;
-	    	}
-	    	.info-panel:last-of-type {
-	    		border-right: none;
-	    	}
-	    }
+                .name-value {
+                    font-family: "AvenirNextLTPro-Bold";
+                    font-size: 12px;
+                }
 
-	    .description-title {
-	    	display: block;
-	    	margin-bottom: 14px;
-	    	font-family: "AvenirNextLTPro-Bold";
-	    	font-size: 13px;
-	    	color: #44474b;
-	    }
+                .date-value {
+                    font-family: "AvenirNextLTPro-Medium";
+                    font-size: 13px;
+                    color: #4a4a4a;
+                }
 
-	    .description-text {
-	    	font-family: "AvenirNextLTPro-Regular";
-	    	font-size: 13px;
-	    	color: #4a4a4a;
-	    }
-	}
+            }
+            .info-panel:first-of-type {
+                padding-left: 0px;
+            }
+            .info-panel:last-of-type {
+                border-right: none;
+            }
+        }
 
-	.no-border {
-		border: none !important;
-	}
+        .description-title {
+            display: block;
+            margin-bottom: 14px;
+            font-family: "AvenirNextLTPro-Bold";
+            font-size: 13px;
+            color: #44474b;
+        }
 
-	.material-wrapper {
-		padding: 20px 0;
-	    border-bottom: 1px solid #d7d7d7;
-	    margin: 0 15px;
+        .description-text {
+            font-family: "AvenirNextLTPro-Regular";
+            font-size: 13px;
+            color: #4a4a4a;
+        }
+    }
 
-	    .stepwizard {
-	    	display: table;
-		    width: 100%;
-		    position: relative;
-	    }
+    .no-border {
+        border: none !important;
+    }
 
-	    .stepwizard-row:before {
-		    top: 13px;
-		    bottom: 0;
-		    position: absolute;
-		    content: " ";
-		    width: 100%;
-		    height: 4px;
-		    background-color: #eeeeee;
-		    z-index: 0;
-		}
+    .material-wrapper {
+        padding: 20px 0;
+        border-bottom: 1px solid #d7d7d7;
+        margin: 0 15px;
 
-	    .stepwizard-row {
-		    display: table-row;
-		}
+        .stepwizard {
+            display: table;
+            width: 100%;
+            position: relative;
+        }
 
-		.stepwizard-step {
-		    display: table-cell;
-		    text-align: left;
-		    position: relative;
-		    width: calc(33.34%);
-		}
+        .stepwizard-row:before {
+            top: 13px;
+            bottom: 0;
+            position: absolute;
+            content: " ";
+            width: 100%;
+            height: 4px;
+            background-color: #eeeeee;
+            z-index: 0;
+        }
 
-		.stepwizard-step:last-of-type {
-			text-align: right;
-		}
+        .stepwizard-row {
+            display: table-row;
+        }
 
-		.stepwizard-step p {
-		    margin-top: 10px;
-		    font-family: "AvenirNextLTPro-Demi";
-		    font-size: 13px;
-		}
+        .stepwizard-step {
+            display: table-cell;
+            text-align: left;
+            position: relative;
+            width: calc(33.34%);
+        }
 
-		.wizard-step {
-			a {
-				width: 22px;
-			    height: 22px;
-			    background-image: url("/assets/img/wizard-step.png");
-			}
+        .stepwizard-step:last-of-type {
+            text-align: right;
+        }
 
-			p {
-				color: #4a4a4a;
-			}
-		    
-		}
+        .stepwizard-step p {
+            margin-top: 10px;
+            font-family: "AvenirNextLTPro-Demi";
+            font-size: 13px;
+        }
 
-		.wizard-active {
-			a {
-				width: 28px;
-				height: 28px;
-				background-image: url('/assets/img/wizard-active.png');
-			}
+        .wizard-step {
+            a {
+                width: 22px;
+                height: 22px;
+                background-image: url("/assets/img/wizard-step.png");
+            }
 
-			p {
-				color: #e25c5c;
-			}
-		}
+            p {
+                color: #4a4a4a;
+            }
 
-		.wizard-past {
-			a {
-				width: 22px;
-				height: 22px;
-				background-image: url("/assets/img/wizard-past.png");
-			}
+        }
 
-			p {
-				color: #3aabd5;
-			}
-		}
+        .wizard-active {
+            a {
+                width: 28px;
+                height: 28px;
+                background-image: url('/assets/img/wizard-active.png');
+            }
 
-		.form-group {
-			label {
-				display: block;
-				padding-bottom: 10px;
-				font-family: "AvenirNextLTPro-Demi";
-				font-size: 13px;
-				color: #44474b;
-			}
-			input, textarea {
-				background-color: #f9f9f9;
-				width: 100%;
-				padding: 15px 20px;
-				font-family: "AvenirNextLTPro-Regular";
-				font-size: 12px;
-			}
-		}
+            p {
+                color: #e25c5c;
+            }
+        }
 
-		.revision-item {
-			margin-top: 30px;
-		}
-	}
+        .wizard-past {
+            a {
+                width: 22px;
+                height: 22px;
+                background-image: url("/assets/img/wizard-past.png");
+            }
 
-	.tab-content {
-		border-radius: 0px 0px 4px 4px;
-	}
+            p {
+                color: #3aabd5;
+            }
+        }
+
+        .form-group {
+            label {
+                display: block;
+                padding-bottom: 10px;
+                font-family: "AvenirNextLTPro-Demi";
+                font-size: 13px;
+                color: #44474b;
+            }
+            input, textarea {
+                background-color: #f9f9f9;
+                width: 100%;
+                padding: 15px 20px;
+                font-family: "AvenirNextLTPro-Regular";
+                font-size: 12px;
+            }
+        }
+
+        .revision-item {
+            margin-top: 30px;
+        }
+    }
+
+    .tab-content {
+        border-radius: 0px 0px 4px 4px;
+    }
 }

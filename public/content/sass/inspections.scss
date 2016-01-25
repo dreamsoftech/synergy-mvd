@@ -54,6 +54,12 @@ $c-text-gray: #808080;
         vertical-align: middle;
     }
 
+    .date-field-wrapper .value {
+        font-family: AvenirNextLTPro-Demi;
+        font-size: 10px;
+        line-height: 25px;
+    }
+
     .mr15 {
         margin-right: 15px;
     }
@@ -264,7 +270,7 @@ table.aii-item-table {
         background-color: #f9f9f9;
         resize: none;
         font-family: AvenirNextLTPro-Regular;
-        
+
         &:focus {
             background-color: #fff;
             border: 1px solid #d7d7d7;

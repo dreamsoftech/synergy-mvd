@@ -3527,6 +3527,12 @@ table.tablebankTopRight tr td p {
     color: #FFF;
 }
 
+.bankdraw-inner-page .date-field-wrapper .value {
+    font-family: AvenirNextLTPro-Demi;
+    font-size: 11px !important;
+    line-height: 25px;
+}
+
 
 /*-----------------------------------------------------
                     Bank_Draw-v2@2x

@@ -7,6 +7,8 @@ app.controller('PayPreviewCtrl',
             { id: 1, name: 'Bruce Wayne'}
         ];
 
+        $scope.date = new Date(2015, 7, 26);
+
         $scope.itemList = [
             {
                 project: 'Wilmington 46',
