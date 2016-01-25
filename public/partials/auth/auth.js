@@ -4,6 +4,7 @@ app.controller('AuthCtrl',
 
         $scope.createAccount = function() {
             $localStorage.currentUser = {};
+            $rootScope.currentUser = {};
             $state.go("dashboard");
         }
 
