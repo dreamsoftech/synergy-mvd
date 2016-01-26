@@ -1,0 +1,122 @@
+@import 'variables';
+
+.project-profile-top-wrapper {
+
+    h2 {
+        margin-top: 15px;
+    }
+
+    .col-xs-9 {
+        font-family: $text-bold;
+        font-size: 10px;
+    }
+
+    .col-xs-3 {
+        font-size: 12px;
+    }
+}
+
+.project-profile-information-wrapper {
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border: 1px solid #eee;
+
+    img {
+        width: 75px;
+        height: 75px;
+        display: block;
+    }
+
+    a {
+        font-size: 11px;
+    }
+
+    label {
+        display: block;
+        font-size: 13px;
+        color: $text-default;
+    }
+    span {
+        display: block;
+        font-family: $text-regular;
+        font-size: 12px;
+        color: $text-default;
+    }
+
+    .address {
+        margin-left: 40px;
+        margin-top: 20px;
+    }
+
+    .section {
+        height: 93px;
+    }
+
+    .border-right {
+        border-right: 1px solid #eee;
+    }
+
+    .type-of-project,
+    .square-footage {
+        display: inline-block;
+        text-align: left;
+    }
+
+    .type-of-project {
+        margin-top: 25px;
+    }
+
+    .square-footage {
+        margin-top: 5px;
+    }
+
+    .start-date-edit {
+        margin-top: 25px;
+        text-align: left;
+    }
+
+    button {
+        padding: 10px 20px;
+    }
+
+    @media(max-width: 1252px) {
+
+    }
+}
+
+.project-profile-wrapper {
+    .nav-tabs {
+        border: 1px solid #eee;
+
+
+        li {
+            a {
+                color: #8b8b8b;
+                font-size: 13px;
+                min-width: 110px;
+                text-align: center;
+                padding: 15px 30px;
+                border-top: 0;
+            }
+
+            &.active a {
+                border: 1px solid #eee;
+                border-top: 0;
+                border-bottom: 1px solid #fff;
+                border-radius: 0;
+            }
+
+            &:first-child a {
+                border-left: 0;
+            }
+        }
+    }
+
+    .tab-content {
+        background-color: #fff;
+        padding: 30px 20px 40px;
+        border: 1px solid #eee;
+        border-top: 0;
+    }
+}

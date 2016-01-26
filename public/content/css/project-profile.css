@@ -1,0 +1,73 @@
+.project-profile-top-wrapper h2 {
+  margin-top: 15px; }
+
+.project-profile-top-wrapper .col-xs-9 {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 10px; }
+
+.project-profile-top-wrapper .col-xs-3 {
+  font-size: 12px; }
+
+.project-profile-information-wrapper {
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border: 1px solid #eee; }
+  .project-profile-information-wrapper img {
+    width: 75px;
+    height: 75px;
+    display: block; }
+  .project-profile-information-wrapper a {
+    font-size: 11px; }
+  .project-profile-information-wrapper label {
+    display: block;
+    font-size: 13px;
+    color: #4a4a4a; }
+  .project-profile-information-wrapper span {
+    display: block;
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 12px;
+    color: #4a4a4a; }
+  .project-profile-information-wrapper .address {
+    margin-left: 40px;
+    margin-top: 20px; }
+  .project-profile-information-wrapper .section {
+    height: 93px; }
+  .project-profile-information-wrapper .border-right {
+    border-right: 1px solid #eee; }
+  .project-profile-information-wrapper .type-of-project,
+  .project-profile-information-wrapper .square-footage {
+    display: inline-block;
+    text-align: left; }
+  .project-profile-information-wrapper .type-of-project {
+    margin-top: 25px; }
+  .project-profile-information-wrapper .square-footage {
+    margin-top: 5px; }
+  .project-profile-information-wrapper .start-date-edit {
+    margin-top: 25px;
+    text-align: left; }
+  .project-profile-information-wrapper button {
+    padding: 10px 20px; }
+
+.project-profile-wrapper .nav-tabs {
+  border: 1px solid #eee; }
+  .project-profile-wrapper .nav-tabs li a {
+    color: #8b8b8b;
+    font-size: 13px;
+    min-width: 110px;
+    text-align: center;
+    padding: 15px 30px;
+    border-top: 0; }
+  .project-profile-wrapper .nav-tabs li.active a {
+    border: 1px solid #eee;
+    border-top: 0;
+    border-bottom: 1px solid #fff;
+    border-radius: 0; }
+  .project-profile-wrapper .nav-tabs li:first-child a {
+    border-left: 0; }
+
+.project-profile-wrapper .tab-content {
+  background-color: #fff;
+  padding: 30px 20px 40px;
+  border: 1px solid #eee;
+  border-top: 0; }
