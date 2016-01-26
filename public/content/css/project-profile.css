@@ -68,6 +68,56 @@
 
 .project-profile-wrapper .tab-content {
   background-color: #fff;
-  padding: 30px 20px 40px;
+  padding: 30px 20px 20px;
   border: 1px solid #eee;
   border-top: 0; }
+
+.project-profile-wrapper .loans-wrapper h4 {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 12px; }
+
+.project-profile-wrapper .loans-wrapper p {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 16px; }
+
+.project-profile-wrapper .loans-wrapper .address {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 12px; }
+
+.project-profile-wrapper .loans-wrapper .contact {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 10px; }
+
+.project-profile-wrapper .loans-wrapper .table-responsive {
+  margin-top: 30px; }
+  .project-profile-wrapper .loans-wrapper .table-responsive table thead th {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 12px;
+    color: #8b8b8b; }
+    .project-profile-wrapper .loans-wrapper .table-responsive table thead th:first-child {
+      border-left: 1px solid #eee; }
+    .project-profile-wrapper .loans-wrapper .table-responsive table thead th:last-child {
+      border-right: 1px solid #eee; }
+  .project-profile-wrapper .loans-wrapper .table-responsive table tbody td {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 13px;
+    padding: 25px 20px; }
+    .project-profile-wrapper .loans-wrapper .table-responsive table tbody td:first-child {
+      border-left: 1px solid #eee; }
+    .project-profile-wrapper .loans-wrapper .table-responsive table tbody td:last-child {
+      border-right: 1px solid #eee; }
+    .project-profile-wrapper .loans-wrapper .table-responsive table tbody td.desc {
+      font-family: "AvenirNextLTPro-Regular";
+      font-size: 11px; }
+    .project-profile-wrapper .loans-wrapper .table-responsive table tbody td.sow {
+      font-family: "AvenirNextLTPro-Demi";
+      font-size: 12px;
+      color: #3aabd5; }
+
+.project-profile-wrapper .loans-wrapper .add-line {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 13px; }
