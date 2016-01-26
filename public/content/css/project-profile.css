@@ -49,6 +49,15 @@
   .project-profile-information-wrapper button {
     padding: 10px 20px; }
 
+.project-profile-wrapper .text-regular {
+  font-family: "AvenirNextLTPro-Regular"; }
+
+.project-profile-wrapper .text-bold {
+  font-family: "AvenirNextLTPro-Demi"; }
+
+.project-profile-wrapper .text-medium {
+  font-family: "AvenirNextLTPro-Medium"; }
+
 .project-profile-wrapper .nav-tabs {
   border: 1px solid #eee; }
   .project-profile-wrapper .nav-tabs li a {
@@ -88,36 +97,75 @@
   font-family: "AvenirNextLTPro-Regular";
   font-size: 10px; }
 
-.project-profile-wrapper .loans-wrapper .table-responsive {
-  margin-top: 30px; }
-  .project-profile-wrapper .loans-wrapper .table-responsive table thead th {
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    padding: 20px;
-    background-color: #f9f9f9;
+.project-profile-wrapper .loans-wrapper .table-responsive table thead th {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 12px;
+  color: #8b8b8b; }
+  .project-profile-wrapper .loans-wrapper .table-responsive table thead th:first-child {
+    border-left: 1px solid #eee; }
+  .project-profile-wrapper .loans-wrapper .table-responsive table thead th:last-child {
+    border-right: 1px solid #eee; }
+
+.project-profile-wrapper .loans-wrapper .table-responsive table tbody td {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 13px;
+  padding: 25px 20px; }
+  .project-profile-wrapper .loans-wrapper .table-responsive table tbody td:first-child {
+    border-left: 1px solid #eee; }
+  .project-profile-wrapper .loans-wrapper .table-responsive table tbody td:last-child {
+    border-right: 1px solid #eee; }
+  .project-profile-wrapper .loans-wrapper .table-responsive table tbody td.desc {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 11px; }
+  .project-profile-wrapper .loans-wrapper .table-responsive table tbody td.sow {
     font-family: "AvenirNextLTPro-Demi";
     font-size: 12px;
-    color: #8b8b8b; }
-    .project-profile-wrapper .loans-wrapper .table-responsive table thead th:first-child {
-      border-left: 1px solid #eee; }
-    .project-profile-wrapper .loans-wrapper .table-responsive table thead th:last-child {
-      border-right: 1px solid #eee; }
-  .project-profile-wrapper .loans-wrapper .table-responsive table tbody td {
-    font-family: "AvenirNextLTPro-Regular";
-    font-size: 13px;
-    padding: 25px 20px; }
-    .project-profile-wrapper .loans-wrapper .table-responsive table tbody td:first-child {
-      border-left: 1px solid #eee; }
-    .project-profile-wrapper .loans-wrapper .table-responsive table tbody td:last-child {
-      border-right: 1px solid #eee; }
-    .project-profile-wrapper .loans-wrapper .table-responsive table tbody td.desc {
-      font-family: "AvenirNextLTPro-Regular";
-      font-size: 11px; }
-    .project-profile-wrapper .loans-wrapper .table-responsive table tbody td.sow {
-      font-family: "AvenirNextLTPro-Demi";
-      font-size: 12px;
-      color: #3aabd5; }
+    color: #3aabd5; }
 
 .project-profile-wrapper .loans-wrapper .add-line {
   font-family: "AvenirNextLTPro-Demi";
   font-size: 13px; }
+
+.project-profile-wrapper .phases-sow-wrapper h3 {
+  font-family: "AvenirNextLTPro-Medium";
+  font-size: 17px;
+  color: #4a4a4a;
+  margin-bottom: 20px; }
+
+.project-profile-wrapper .phases-sow-wrapper .table-responsive table thead th {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 13px;
+  color: #8b8b8b; }
+  .project-profile-wrapper .phases-sow-wrapper .table-responsive table thead th:first-child {
+    border-left: 1px solid #eee; }
+  .project-profile-wrapper .phases-sow-wrapper .table-responsive table thead th:last-child {
+    border-right: 1px solid #eee; }
+
+.project-profile-wrapper .phases-sow-wrapper .table-responsive table tbody tr td {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 13px;
+  padding: 25px 20px; }
+  .project-profile-wrapper .phases-sow-wrapper .table-responsive table tbody tr td:first-child {
+    border-left: 1px solid #eee; }
+  .project-profile-wrapper .phases-sow-wrapper .table-responsive table tbody tr td:last-child {
+    border-right: 1px solid #eee; }
+
+.project-profile-wrapper .phases-sow-wrapper .table-responsive table tbody tr:last-child td {
+  border-bottom: 1px solid #eee; }
+
+.project-profile-wrapper .phases-sow-wrapper .add-line {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 13px; }
+
+.project-profile-wrapper .phases-sow-wrapper input[type=text] {
+  background-color: #f9f9f9; }
+  .project-profile-wrapper .phases-sow-wrapper input[type=text]:focus {
+    background-color: #fff; }
