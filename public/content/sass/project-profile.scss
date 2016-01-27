@@ -275,4 +275,63 @@
             }
         }
     }
+
+    .division-cost-code-wrapper {
+        h3 {
+            font-family: $text-medium;
+            font-size: 17px;
+        }
+
+        .node-wrapper {
+            padding: 10px;
+            border-top: 1px solid #eee;
+
+            > div {
+                display: table-cell;
+            }
+        }
+
+        .angular-ui-tree-handle {
+            padding: 20px 15px;
+            border-top: 1px solid #eee;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .angular-ui-tree-nodes .fa {
+            font-size: 13px;
+            padding-right: 0;
+        }
+
+        .division {
+            width: 135px;
+        }
+
+        .divisions-wrapper {
+            border: 1px solid #eee;
+            border-top: 0;
+            margin-top: 10px;
+        }
+
+        .angular-ui-tree-node .angular-ui-tree-nodes:before {
+            height: 0;
+        }
+
+        .angular-ui-tree-nodes .angular-ui-tree-nodes li {
+            border-left: 0;
+        }
+
+        .angular-ui-tree-nodes .angular-ui-tree-nodes li[has-child='true']:before {
+            border-top: 0;
+        }
+
+        .child {
+            padding-left: 110px;
+            color: $text-default;
+        }
+
+        .collapsed {
+            background-color: #f9f9f9;
+        }
+    }
 }

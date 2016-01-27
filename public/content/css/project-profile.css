@@ -169,3 +169,47 @@
   background-color: #f9f9f9; }
   .project-profile-wrapper .phases-sow-wrapper input[type=text]:focus {
     background-color: #fff; }
+
+.project-profile-wrapper .division-cost-code-wrapper h3 {
+  font-family: "AvenirNextLTPro-Medium";
+  font-size: 17px; }
+
+.project-profile-wrapper .division-cost-code-wrapper .node-wrapper {
+  padding: 10px;
+  border-top: 1px solid #eee; }
+  .project-profile-wrapper .division-cost-code-wrapper .node-wrapper > div {
+    display: table-cell; }
+
+.project-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-handle {
+  padding: 20px 15px;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+  font-size: 13px; }
+
+.project-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-nodes .fa {
+  font-size: 13px;
+  padding-right: 0; }
+
+.project-profile-wrapper .division-cost-code-wrapper .division {
+  width: 135px; }
+
+.project-profile-wrapper .division-cost-code-wrapper .divisions-wrapper {
+  border: 1px solid #eee;
+  border-top: 0;
+  margin-top: 10px; }
+
+.project-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-node .angular-ui-tree-nodes:before {
+  height: 0; }
+
+.project-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-nodes .angular-ui-tree-nodes li {
+  border-left: 0; }
+
+.project-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-nodes .angular-ui-tree-nodes li[has-child='true']:before {
+  border-top: 0; }
+
+.project-profile-wrapper .division-cost-code-wrapper .child {
+  padding-left: 110px;
+  color: #4a4a4a; }
+
+.project-profile-wrapper .division-cost-code-wrapper .collapsed {
+  background-color: #f9f9f9; }
