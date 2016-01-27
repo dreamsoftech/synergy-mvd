@@ -1,1 +1,19 @@
-coming soon
+<div class="panel panel-default auth-form">
+    <div class="panel-body">
+        <form name="signinForm">
+            <div class="text-center heading form-group">Sign in</div>
+            <div class="form-group">
+                <input type="email" placeholder="Email..." required ng-model="user.email" class="input-lg form-control">
+            </div>
+            <div class="form-group">
+                <input type="password" required ng-model="user.confirmPassword" placeholder="Confirm Password..." class="input-lg form-control">
+            </div>
+            <div class="mt20">
+                <button class="btn btn-lg btn-primary" ng-click="signIn()" ng-class="{disabled: signinForm.$invalid}">
+                    Sign In
+                    <i class="fa fa-arrow-right pl10"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
