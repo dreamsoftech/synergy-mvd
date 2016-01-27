@@ -685,6 +685,40 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 pageName: 'User Profile'
             }
         })
+        .state('project-profile', {
+            url: '/project-profile',
+            abstract: true,
+            templateUrl: 'partials/project-profile/project-profile.html',
+            controller: 'ProjectProfileCtrl',
+            data: {
+                pageName: 'Project Profile'
+            }
+        })
+        .state('project-profile.construction-loan-parameters', {
+            url: '/construction-loan-parameters',
+            templateUrl: 'partials/project-profile/construction-loan-parameters.html',
+            controller: 'ProjectProfileConstructionLoanCtrl'
+        })
+        .state('project-profile.division-cost-code', {
+            url: '/division-cost-code',
+            templateUrl: 'partials/project-profile/division-cost-code.html',
+            controller: 'ProjectProfileDivisionCostCodeCtrl'
+        })
+        .state('project-profile.project-requirements', {
+            url: '/project-requirements',
+            templateUrl: 'partials/project-profile/project-requirements.html',
+            controller: 'ProjectProfileRequirementsCtrl'
+        })
+        .state('project-profile.project-phases-sow', {
+            url: '/project-phases-sow',
+            templateUrl: 'partials/project-profile/project-phases-sow.html',
+            controller: 'ProjectProfilePhaseSowCtrl'
+        })
+        .state('project-profile.project-permissions', {
+            url: '/project-permissions',
+            templateUrl: 'partials/project-profile/project-permissions.html',
+            controller: 'ProjectProfilePermissionsCtrl'
+        })
         .state('sample', {
             url: '/sample',
             templateUrl: 'partials/sample/sample.html',
