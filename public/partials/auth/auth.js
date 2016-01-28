@@ -3,15 +3,15 @@ app.controller('AuthCtrl',
         $scope.step = 'signup';
 
         $scope.createAccount = function() {
-            $localStorage.currentUser = {};
-            $rootScope.currentUser = {};
-            $state.go("dashboard");
+            $localStorage.currentUser = $scope.user;
+            $rootScope.currentUser = $scope.user;
+            $state.go("projects.start");
         }
 
         $scope.signIn = function() {
-            $localStorage.currentUser = {};
-            $rootScope.currentUser = {};
-            $state.go("dashboard");
+            $localStorage.currentUser = $scope.user;
+            $rootScope.currentUser = $scope.user;
+            $state.go("projects.start");
         }
 
         $scope.months = [
