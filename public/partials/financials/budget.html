@@ -43,6 +43,20 @@
                 <li ng-repeat="item in budgets" ui-tree-node data-collapsed="true" ng-include="'budget-item-template.html'"></li>
             </ol>
         </div>
+        <div class="table-tree" style="padding: 15px 20px; background: #f3f3f4;">
+            <div class="text-muted">
+                <div>Total</div>
+                <div style="width: 100px">{{budgets | sumBy:'labor'}}</div>
+                <div style="width: 100px">{{budgets | sumBy:'materials'}}</div>
+                <div style="width: 100px">{{budgets | sumBy:'equipment'}}</div>
+                <div style="width: 100px">{{budgets | sumBy:'misc'}}</div>
+                <div style="width: 100px">{{budgets | sumBy:'total'}}</div>
+                <div style="width: 120px"></div>
+                <div style="width: 80px"></div>
+                <div style="width: 60px">{{(budgets | sumBy:'cpsf') | number:0}}</div>
+                <div style="width: 60px"></div>
+            </div>
+        </div>
     </div>
     <!-- Nested node template -->
     <script type="text/ng-template" id="budget-item-template.html">
