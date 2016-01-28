@@ -719,6 +719,19 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             templateUrl: 'partials/project-profile/project-permissions.html',
             controller: 'ProjectProfilePermissionsCtrl'
         })
+        .state('reporting', {
+            url: '/reporting',
+            absolute: true,
+            template: '<ui-view></ui-view>',
+            data: {
+                pageName: 'Reporting'
+            }
+        })
+        .state('reporting.main', {
+            url: '/main',
+            templateUrl: 'partials/reporting/main.html',
+            controller: 'ReportingMainCtrl'
+        })
         .state('sample', {
             url: '/sample',
             templateUrl: 'partials/sample/sample.html',
