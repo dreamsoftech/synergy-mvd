@@ -27,7 +27,7 @@
         <div class="card-content">
             <div class="row">
                 <div class="col-md-2 col-sm-6 border-right">
-                    <span class="action-item-text">TOTAL: {{ item.total }}</span>
+                    <span class="action-item-text">Total Items Outstanding: {{ item.total }}</span>
                     <div class="action-item-count-info">
                         <span class="label label-green">&nbsp;</span>
                         <span class="count">{{ item.green }}</span>
@@ -52,7 +52,7 @@
                     <div class="row">
                         <div class="col-md-5">
                             <div class="">
-                                <span class="action-item-text">ITEMS ASSIGNED TO ME</span><br>
+                                <span class="action-item-text">Items Required By Me</span><br>
                                 <span class="action-item-value">
                                     {{ item.assignedMe.green.total + item.assignedMe.orange.total + item.assignedMe.red.total }} Items
                                 </span>

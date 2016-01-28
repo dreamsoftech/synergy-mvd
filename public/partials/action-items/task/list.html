@@ -19,7 +19,7 @@
                 </div>
                 <div class="row mt30">
                     <div class="col-md-3 col-sm-6">
-                        <span class="action-item-text">TOTAL: {{ gai.total }}</span>
+                        <span class="action-item-text">Total Items Outstanding: {{ gai.total }}</span>
                         <div class="action-item-count-info">
                             <span class="label label-green">&nbsp;</span>
                             <span class="count">{{ gai.green }}</span>
@@ -44,7 +44,7 @@
                         <div class="row">
                             <div class="col-md-5 no-padding-right">
                                 <div class="">
-                                    <span class="action-item-text">ITEMS ASSIGNED TO ME</span><br>
+                                    <span class="action-item-text">Items Required By Me</span><br>
                                     <span class="action-item-value">
                                         {{ gai.assignedMe.green.total + gai.assignedMe.orange.total + gai.assignedMe.red.total }} Items
                                     </span>
