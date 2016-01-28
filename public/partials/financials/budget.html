@@ -33,7 +33,6 @@
                 <div style="width: 100px">Miscellanous</div>
                 <div style="width: 100px">Total</div>
                 <div style="width: 120px">Items</div>
-                <div style="width: 80px">Status</div>
                 <div style="width: 60px">CPSF</div>
                 <div style="width: 60px">% of Project</div>
             </div>
@@ -52,7 +51,6 @@
                 <div style="width: 100px">{{budgets | sumBy:'misc'}}</div>
                 <div style="width: 100px">{{budgets | sumBy:'total'}}</div>
                 <div style="width: 120px"></div>
-                <div style="width: 80px"></div>
                 <div style="width: 60px">{{(budgets | sumBy:'cpsf') | number:0}}</div>
                 <div style="width: 60px"></div>
             </div>
@@ -69,13 +67,12 @@
                         <span>{{item.name}}</span>
                     </div>
                 </div>
-                <div style="width: 100px">{{item.labor | currency:'$':0}}</div>
-                <div style="width: 100px">{{item.materials | currency:'$':0}}</div>
-                <div style="width: 100px">{{item.equipment | currency:'$':0}}</div>
-                <div style="width: 100px">{{item.misc | currency:'$':0}}</div>
-                <div style="width: 100px">{{item.total | currency:'$':0}}</div>
+                <div style="width: 100px">{{item.labor | zCurrency}}</div>
+                <div style="width: 100px">{{item.materials | zCurrency}}</div>
+                <div style="width: 100px">{{item.equipment | zCurrency}}</div>
+                <div style="width: 100px">{{item.misc | zCurrency}}</div>
+                <div style="width: 100px">{{item.total | zCurrency}}</div>
                 <div style="width: 120px"><span class="items" ng-if="item.items" ng-click="showBudgetEstimateModal(item)">{{item.items}}</span></div>
-                <div style="width: 80px">{{item.status}}</div>
                 <div style="width: 60px">{{item.cpsf}}</div>
                 <div style="width: 60px"><span ng-if="item.percent_of_project">{{item.percent_of_project}}%</span></div>
             </div>
