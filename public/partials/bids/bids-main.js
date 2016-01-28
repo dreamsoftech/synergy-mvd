@@ -44,6 +44,15 @@ app.controller('BidsMainCtrl',
                 ]
             }
         ];
+
+        $scope.toggleCheck = function($event) {
+            var checked = $event.currentTarget.checked;
+            var elements = $($event.currentTarget).closest('table').find('tbody input[type=checkbox]');
+            _.each(elements, function(e) {
+                e.checked = checked;
+            });
+        };
+
         $scope.drafts = [];
         $scope.awardeds = [
             {
