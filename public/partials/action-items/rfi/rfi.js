@@ -8,6 +8,8 @@ app.controller('RFICtrl',
             }
         ];
 
+        $scope.curResponsible = $scope.users[0];
+
         $scope.date = new Date(2015, 7, 26);
 
 
