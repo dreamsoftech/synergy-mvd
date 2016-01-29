@@ -84,11 +84,11 @@
                 <div class="row">
                     <div class="col-md-3 form-group">
                         <label>Scope(s) of Work to be Bid</label>
-                        <ui-select options="sow" placeholder="Scope of Work" ng-select="showSowWorkModal()"></ui-select>
+                        <ui-select options="sows" placeholder="Scope of Work" ng-select="showSowWorkModal()"></ui-select>
                     </div>
                     <div class="col-md-2 form-group">
                         <label>Estimated Start Date</label>
-                        <input class="form-control" type="text" placeholder="Aug 26, 2015" />
+                        <ui-date-field ng-model="startDate"></ui-date-field>
                     </div>
                     <div class="col-md-3 form-group">
                         <label>Materials</label>

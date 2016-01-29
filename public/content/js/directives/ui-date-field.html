@@ -1,6 +1,6 @@
 <div class="custom-datefield">
     <div class="date-field-wrapper clearfix">
-        <div class="pull-left">{{placeholder}}</div>
+        <div ng-if="placeholder" class="pull-left">{{placeholder}}</div>
         <div class="value text-muted pull-left" ng-click="open()">
             <input type="date" uib-datepicker-popup
                                is-open="opened"

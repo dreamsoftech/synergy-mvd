@@ -5,8 +5,9 @@
   border-radius: 2px;
   position: relative;
   font-size: 14px; }
+  .date-field-wrapper .pull-left + .value {
+    margin-left: 30px; }
   .date-field-wrapper .value {
-    margin-left: 30px;
     cursor: pointer; }
   .date-field-wrapper input[type='date'] {
     border: none;
