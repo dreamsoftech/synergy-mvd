@@ -3430,69 +3430,58 @@ app.controller('FinancialsBudgetCtrl',
 
     }]);
 
-app.controller('BudgetAdditionModalCtrl',
-    ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
+app.controller('BudgetAdditionModalCtrl', function($scope, $uibModalInstance, divisions, sows) {
+    $scope.isNameEdit = false;
+    $scope.name = '';
 
-        $scope.isNameEdit = false;
-        $scope.name = '';
+    $scope.divisions = divisions;
+    $scope.sows = sows;
+    $scope.currentDivision = null;
+    $scope.currentCostCode = null;
 
-        $scope.divisions = [
-            {id: _.uniqueId(), name: 'Division 1 General Requirements'}
-        ];
+    $scope.$watchGroup(['labor', 'materials', 'equipment', 'misc'], function(n, o, scope) {
+        $scope.total = _.sum(n);
+    });
 
-        $scope.costCodes = [
-            {id: _.uniqueId(), name: '01300'}
-        ];
-
-        $scope.sows = [
-            {id: _.uniqueId(), name: 'Pros Egis Laus'}
-        ];
-
-        $scope.$watchGroup(['labor', 'materials', 'equipment', 'misc'], function(n, o, scope) {
-            $scope.total = _.sum(n);
-        });
-
-        $scope.labor = 1234456;
-        $scope.materials = $scope.equipment = $scope.misc = 1234456;
+    $scope.labor = 1234456;
+    $scope.materials = $scope.equipment = $scope.misc = 1234456;
 
 
-        $scope.ok = function() {
-            $uibModalInstance.close();
-        }
+    $scope.ok = function() {
+        $uibModalInstance.close();
+    }
 
-        $scope.cancel = function() {
-            $uibModalInstance.dismiss('cancel');
-        }
-    }]);
+    $scope.cancel = function() {
+        $uibModalInstance.dismiss('cancel');
+    }
+});
 
-app.controller('BudgetEstimateModalCtrl',
-    ['$scope', '$uibModalInstance', 'currentItem', function($scope, $uibModalInstance, currentItem) {
+app.controller('BudgetEstimateModalCtrl', function($scope, $uibModalInstance, currentItem) {
+    var item = currentItem;
 
-        var item = currentItem;
+    $scope.divisions = [];
+    $scope.costCodes = [];
+    $scope.sows = [];
 
-        $scope.divisions = [];
-        $scope.costCodes = [];
-        $scope.sows = [];
+    if ( item.detail != null && item.detail != "" && typeof item.detail != "undefined" ) {
+        $scope.divisions.push({id: 1, name: item.detail.division[0].name});
+        $scope.costCodes.push({id: 1, name: item.detail.cost_code[0]});
+        $scope.sows.push({id: 1, name: item.detail.sow[0]});
+    }
+    $scope.labor = item.labor;
+    $scope.materials = item.materials;
+    $scope.equipment = item.equipment;
+    $scope.misc = item.misc;
 
-        if ( item.detail != null && item.detail != "" && typeof item.detail != "undefined" ) {
-            $scope.divisions.push({id: 1, name: item.detail.division[0].name});
-            $scope.costCodes.push({id: 1, name: item.detail.cost_code[0]});
-            $scope.sows.push({id: 1, name: item.detail.sow[0]});
-        }
-        $scope.labor = item.labor;
-        $scope.materials = item.materials;
-        $scope.equipment = item.equipment;
-        $scope.misc = item.misc;
+    $scope.$watchGroup(['labor', 'materials', 'equipment', 'misc'], function(n, o, scope) {
+        $scope.total = _.sum(n);
+    });
 
-        $scope.$watchGroup(['labor', 'materials', 'equipment', 'misc'], function(n, o, scope) {
-            $scope.total = _.sum(n);
-        });
+    $scope.ok = function() {
+        $uibModalInstance.close();
+    }
 
-        $scope.ok = function() {
-            $uibModalInstance.close();
-        }
-
-        $scope.cancel = function() {
-            $uibModalInstance.dismiss('cancel');
-        }
-    }]);
+    $scope.cancel = function() {
+        $uibModalInstance.dismiss('cancel');
+    }
+});

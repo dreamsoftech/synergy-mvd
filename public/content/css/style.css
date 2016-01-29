@@ -386,6 +386,14 @@ ui-select .btn.dropdown-toggle {
     border: 1px solid #eee;
     padding: 15px;
     font-size: 14px;
+    overflow: hidden;
+}
+
+ui-select .btn.dropdown-toggle span:first-child {
+    max-width: calc(100% - 30px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 ui-select .dropdown-toggle, ui-select ul {

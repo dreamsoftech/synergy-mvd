@@ -351,7 +351,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         .state('action-items.inspections-new', {
             url: '/inspections/new',
             templateUrl: "partials/action-items/inspections/new.html",
-            controller: "ActionItemsCtrl",
+            controller: "InspectionsNewCtrl",
             data: {
                 isHeaderHidden: true,
                 pageName: 'Add New Inspection'
@@ -383,6 +383,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         .state('action-items.punch-items.new', {
             url: '/new',
             templateUrl: "partials/action-items/punch-item/new.html",
+            controller: "PunchItemListCtrl",
             data: {
                 isHeaderHidden: true,
                 pageName: 'New Punch List Item'
@@ -768,10 +769,7 @@ app.run (['$rootScope', '$localStorage', function($rootScope, $localStorage) {
     });
 }]);
 
-app.constant("projects", [{
-        id: 0,
-        name: "View All"
-    },
+app.constant("projects", [
     {
         id: _.uniqueId(),
         name: "Wilmington 45",
@@ -849,19 +847,19 @@ app.constant("classifications",
         {id: _.uniqueId(), name: 'General'}
     ]);
 
-app.constant("disciplines",
+app.constant("categories",
     [
-        id: _.uniqueId(), name: 'Architecture'},
-        id: _.uniqueId(), name: 'Electrical'},
-        id: _.uniqueId(), name: 'Engineering'},
-        id: _.uniqueId(), name: 'Estimating'},
-        id: _.uniqueId(), name: 'HVAC'}
+        {id: _.uniqueId(), name: 'Architecture'},
+        {id: _.uniqueId(), name: 'Electrical'},
+        {id: _.uniqueId(), name: 'Engineering'},
+        {id: _.uniqueId(), name: 'Estimating'},
+        {id: _.uniqueId(), name: 'HVAC'}
     ]);
 
 app.constant("invoices",
     [
-        id: _.uniqueId(), name: 'INV #1029 - Seasons Waterproofing'},
-        id: _.uniqueId(), name: 'INV #1042 - Summit County'}
+        {id: _.uniqueId(), name: 'INV #1029 - Seasons Waterproofing'},
+        {id: _.uniqueId(), name: 'INV #1042 - Summit County'}
     ]);
 
 app.constant("members",
@@ -876,10 +874,6 @@ app.constant("members",
         project: 'Wilmington 47',
         role: 'Sub Contractor',
         sow: 'Fire Place',
-        flag: {
-            danger: 1,
-            warning: 2
-        }
     }, {
         id: _.uniqueId(),
         avatar: 'mike.jpg',
@@ -891,10 +885,6 @@ app.constant("members",
         project: 'Wilmington 47',
         role: 'Sub Contractor',
         sow: 'Multiple',
-        sow_popover: $sce.trustAsHtml("<div>Main Floor Overhead Lighting<br>Rough Electrical<br>Stairway Floor Lighting</div>"),
-        flag: {
-            warning: 3
-        }
     }, {
         id: _.uniqueId(),
         avatar: 'mary.jpg',
@@ -919,9 +909,6 @@ app.constant("members",
         project: 'Wilmington 47',
         role: 'Sub Contractor',
         sow: 'Fire Place',
-        flag: {
-            danger: 1
-        }
     }, {
         id: _.uniqueId(),
         avatar: 'gebo.jpg',
@@ -933,14 +920,8 @@ app.constant("members",
         show: 'No Show',
         next_sched: '25 Sep, 2015',
         project: 'Multiple',
-        project_popover: $sce.trustAsHtml("<div>Wilmington 47<br>Wilmington 48</div>"),
         role: 'Sub Contractor',
         sow: 'Multiple',
-        sow_popover: $sce.trustAsHtml("<div>Roof Dry-In<br>Set Steel</div>"),
-        flag: {
-            danger: 4,
-            warning: 1
-        }
     }, {
         id: _.uniqueId(),
         avatar: 'dan.jpg',
@@ -963,14 +944,8 @@ app.constant("members",
         availability: 'Off Site',
         next_sched: '18 Sep, 2015',
         project: 'Multiple',
-        project_popover: $sce.trustAsHtml("<div>Wilmington 45<br>Wilmington 46<br>Wilmington 47<br>Wilmington 48</div>"),
         role: 'General Contractor',
         sow: 'Multiple',
-        sow_popover: $sce.trustAsHtml("<div>Frame 2nd Story<br>Insulation<br>Snow Removal</div>"),
-        flag: {
-            danger: 2,
-            warning: 5
-        }
     }, {
         id: _.uniqueId(),
         avatar: 'jeff.jpg',
@@ -981,13 +956,8 @@ app.constant("members",
         availability: 'Off Site',
         next_sched: '19 Sep, 2015',
         project: 'Multiple',
-        project_popover: $sce.trustAsHtml("<div>Wilmington 47<br>Wilmington 48</div>"),
         role: 'Supplier',
         sow: 'Multiple',
-        sow_popover: $sce.trustAsHtml("<div>Roof Dry-In<br>Set Steel</div>"),
-        flag: {
-            warning: 3
-        }
     }, {
         id: _.uniqueId(),
         avatar: 'peters.jpg',
@@ -1010,10 +980,317 @@ app.constant("members",
         next_sched: '1 Oct, 2015',
         project: 'Wilmington 47',
         role: 'Owner',
-        flag: {
-            warning: 1
-        }
-    }];
+    }]);
+
+app.constant("divisions", [
+    {
+        id: _.uniqueId(), 
+        name: "Division 1 General Requirements", 
+        codes: [
+            {id: _.uniqueId(), name: "01100 Summary"},
+            {id: _.uniqueId(), name: "01200 Price and Payment Procedures"},
+            {id: _.uniqueId(), name: "01300 Administrative Requirements"},
+            {id: _.uniqueId(), name: "01400 Quality Requirements"},
+            {id: _.uniqueId(), name: "01500 Temporary Facilities and Controls"},
+            {id: _.uniqueId(), name: "01600 Product Requirements"},
+            {id: _.uniqueId(), name: "01700 Execution Requirements"},
+            {id: _.uniqueId(), name: "01800 Facility Operation"},
+            {id: _.uniqueId(), name: "01900 Facility Decommissioning"}
+        ]
+    },
+    {
+        id: _.uniqueId(),
+        name: "Division 2 Site Construction",
+        codes: [
+            {id: _.uniqueId(), name: "02050 Basic Site Materials and Methods"},
+            {id: _.uniqueId(), name: "02100 Site Remediation"},
+            {id: _.uniqueId(), name: "02200 Site Preparation"},
+            {id: _.uniqueId(), name: "02300 Earthwork"},
+            {id: _.uniqueId(), name: "02400 Tunneling, Boring and Jacking"},
+            {id: _.uniqueId(), name: "02450 Foundation and Load"},
+            {id: _.uniqueId(), name: "02500 Utility Services"},
+            {id: _.uniqueId(), name: "02600 Drainage and Containment"},
+            {id: _.uniqueId(), name: "02700 Bases, Ballasts, Pavements and Appurtenances"},
+            {id: _.uniqueId(), name: "02800 Site Improvements and Amenities"},
+            {id: _.uniqueId(), name: "02900 Planting"},
+            {id: _.uniqueId(), name: "02950 Site Restoration and Rehabilitation"}
+        ]
+    },
+    {
+        id: _.uniqueId(), 
+        name: "Division 3 Concrete", 
+        codes: [
+            {id: _.uniqueId(), name: "03050 Basic Concrete Materials and Methods"},
+            {id: _.uniqueId(), name: "03100 Concrete Forms and Accessories"},
+            {id: _.uniqueId(), name: "03200 Concrete Reinforcement"},
+            {id: _.uniqueId(), name: "03300 Cast"},
+            {id: _.uniqueId(), name: "03400 Precast Concrete"},
+            {id: _.uniqueId(), name: "03500 Cementitious Decks and Underlayment"},
+            {id: _.uniqueId(), name: "03600 Grouts"},
+            {id: _.uniqueId(), name: "03700 Mass Concrete"},
+            {id: _.uniqueId(), name: "03900 Concrete Restoration and Cleaning"}
+        ]
+    },
+    {
+        id: _.uniqueId(), 
+        name: "Division 4 Masonry",
+        codes: [
+            {id: _.uniqueId(), name: "04050 Basic Masonry Materials and Methods"},
+            {id: _.uniqueId(), name: "04200 Masonry Units"},
+            {id: _.uniqueId(), name: "04400 Stone"},
+            {id: _.uniqueId(), name: "04500 Refractories"},
+            {id: _.uniqueId(), name: "04600 Corrosion"},
+            {id: _.uniqueId(), name: "04700 Simulated Masonry"},
+            {id: _.uniqueId(), name: "04800 Masonry Assemblies"},
+            {id: _.uniqueId(), name: "04900 Masonry Restoration and Cleaning"}
+        ]
+    },
+    {
+        id: _.uniqueId(), 
+        name: "Division 5 Metals",
+        codes: [
+            {id: _.uniqueId(), name: "05050 Basic Metal Materials and Methods"},
+            {id: _.uniqueId(), name: "05100 Structural Metal Framing"},
+            {id: _.uniqueId(), name: "05200 Metal Joists"},
+            {id: _.uniqueId(), name: "05300 Metal Deck"},
+            {id: _.uniqueId(), name: "05400 Cold"},
+            {id: _.uniqueId(), name: "05500 Metal Fabrications"},
+            {id: _.uniqueId(), name: "05600 Hydraulic Fabrications"},
+            {id: _.uniqueId(), name: "05700 Ornamental Metal"},
+            {id: _.uniqueId(), name: "05800 Expansion Control"},
+            {id: _.uniqueId(), name: "05900 Metal Restoration and Cleaning"}
+        ]
+    },
+    {
+        id: _.uniqueId(), 
+        name: "Division 6 Wood and Plastics",
+        codes: [
+            {id: _.uniqueId(), name: "06050 Basic Wood and Plastic Materials and Methods"},
+            {id: _.uniqueId(), name: "06100 Rough Carpentry"},
+            {id: _.uniqueId(), name: "06200 Finish Carpentry"},
+            {id: _.uniqueId(), name: "06400 Architectural Woodwork"},
+            {id: _.uniqueId(), name: "06500 Structural Plastics"},
+            {id: _.uniqueId(), name: "06600 Plastic Fabrications"},
+            {id: _.uniqueId(), name: "06900 Wood and Plastic Restoration and Cleaning"}
+        ]
+    },
+    {
+        id: _.uniqueId(), 
+        name: "Division 7 Thermal and Moisture Protection",
+        codes: [
+            {id: _.uniqueId(), name: "07050 Basic Thermal and Moisture Protection Materials and Methods"},
+            {id: _.uniqueId(), name: "07100 Damproofing and Waterproofing"},
+            {id: _.uniqueId(), name: "07200 Thermal Protection"},
+            {id: _.uniqueId(), name: "07300 Shingles, Roof Tiles, and Roof Coverings"},
+            {id: _.uniqueId(), name: "07400 Roofing and Siding Panels"},
+            {id: _.uniqueId(), name: "07500 Membrane Roofing"},
+            {id: _.uniqueId(), name: "07600 Flashing and Sheet Metal"},
+            {id: _.uniqueId(), name: "07700 Roof Specialties and Accessories"},
+            {id: _.uniqueId(), name: "07800 Fire and Smoke Protection"},
+            {id: _.uniqueId(), name: "07900 Joint Sealers"},
+        ]
+    },
+    {
+        id: _.uniqueId(), 
+        name: "Division 8 Doors and Windows",
+        codes: [
+            {id: _.uniqueId(), name: "08050 Basic Door and Window Materials and Methods"},
+            {id: _.uniqueId(), name: "08100 Metal Doors and Frames"},
+            {id: _.uniqueId(), name: "08200 Wood and Plastic Doors"},
+            {id: _.uniqueId(), name: "08300 Specialty Doors"},
+            {id: _.uniqueId(), name: "08400 Entrances and Storefronts"},
+            {id: _.uniqueId(), name: "08500 Windows"},
+            {id: _.uniqueId(), name: "08600 Skylights"},
+            {id: _.uniqueId(), name: "08700 Hardware"},
+            {id: _.uniqueId(), name: "08800 Glazing"},
+            {id: _.uniqueId(), name: "08900 Glazed Curtain Wall"}
+        ]
+    },
+    {
+        id: _.uniqueId(), 
+        name: "Division 9 Finishes",
+        codes: [
+            {id: _.uniqueId(), name: "09050 Basic Finish Materials and Methods"},
+            {id: _.uniqueId(), name: "09100 Metal Support Assemblies"},
+            {id: _.uniqueId(), name: "09200 Plaster and Gypsum Board"},
+            {id: _.uniqueId(), name: "09300 Tile"},
+            {id: _.uniqueId(), name: "09400 Terrazzo"},
+            {id: _.uniqueId(), name: "09500 Ceilings"},
+            {id: _.uniqueId(), name: "09600 Flooring"},
+            {id: _.uniqueId(), name: "09700 Wall Finishes"},
+            {id: _.uniqueId(), name: "09800 Acoustical Treatment"},
+            {id: _.uniqueId(), name: "09900 Paints and Coatings"}
+        ]
+    },
+    {
+        id: _.uniqueId(), 
+        name: "Division 10 Specialties",
+        codes: [
+            {id: _.uniqueId(), name: "10100 Visual Display Boards"},
+            {id: _.uniqueId(), name: "10150 Compartments and Cubicles"},
+            {id: _.uniqueId(), name: "10200 Louvers and Vents"},
+            {id: _.uniqueId(), name: "10240 Grilles and Screens"},
+            {id: _.uniqueId(), name: "10250 Service Walls"},
+            {id: _.uniqueId(), name: "10260 Wall and Corner Guards"},
+            {id: _.uniqueId(), name: "10270 Access Flooring"},
+            {id: _.uniqueId(), name: "10290 Pest Control"},
+            {id: _.uniqueId(), name: "10300 Fireplaces and Stoves"},
+            {id: _.uniqueId(), name: "10340 Manufactured Exterior Specialties"},
+            {id: _.uniqueId(), name: "10350 Flagpoles"},
+            {id: _.uniqueId(), name: "10400 Identification Devices"},
+            {id: _.uniqueId(), name: "10450 Pedestrian Control Devices"},
+            {id: _.uniqueId(), name: "10500 Lockers"},
+            {id: _.uniqueId(), name: "10520 Fire Protection Specialties"},
+            {id: _.uniqueId(), name: "10530 Protective Covers"},
+            {id: _.uniqueId(), name: "10550 Postal Specialties"},
+            {id: _.uniqueId(), name: "10600 Partitions"},
+            {id: _.uniqueId(), name: "10670 Storage Shelving"},
+            {id: _.uniqueId(), name: "10700 Exterior Protection"},
+            {id: _.uniqueId(), name: "10750 Telephone Specialties"},
+            {id: _.uniqueId(), name: "10800 Toilet, Bath, and Laundry Specialties"},
+            {id: _.uniqueId(), name: "10880 Scales"},
+            {id: _.uniqueId(), name: "10900 Wardrobe and Closet Specialties"}
+        ]
+    },
+    {
+        id: _.uniqueId(), 
+        name: "Division 11 Equipment",
+        codes: [
+            {id: _.uniqueId(), name: "11010 Maintenance Equipment"},
+            {id: _.uniqueId(), name: "11020 Security and Vault Equipment"},
+            {id: _.uniqueId(), name: "11030 Teller and Service Equipment"},
+            {id: _.uniqueId(), name: "11040 Ecclesiastical Equipment"},
+            {id: _.uniqueId(), name: "11050 Library Equipment"},
+            {id: _.uniqueId(), name: "11060 Theater and Stage Equipment"},
+            {id: _.uniqueId(), name: "11070 Instrumental Equipment"},
+            {id: _.uniqueId(), name: "11080 Registration Equipment"},
+            {id: _.uniqueId(), name: "11090 Checkroom Equipment"},
+            {id: _.uniqueId(), name: "11100 Mercantile Equipment"},
+            {id: _.uniqueId(), name: "11110 Commercial Laundry and Dry Cleaning Equipment"},
+            {id: _.uniqueId(), name: "11120 Vending Equipment"},
+            {id: _.uniqueId(), name: "11130 Audio"},
+            {id: _.uniqueId(), name: "11140 Vehicle Service Equipment"},
+            {id: _.uniqueId(), name: "11150 Parking Control Equipment"},
+            {id: _.uniqueId(), name: "11160 Loading Dock Equipment"},
+            {id: _.uniqueId(), name: "11170 Solid Waste Handling Equipment"},
+            {id: _.uniqueId(), name: "11190 Detention Equipment"},
+            {id: _.uniqueId(), name: "11200 Water Supply and Treatment Equipment"},
+            {id: _.uniqueId(), name: "11280 Hydraulic Gates and Valves"},
+            {id: _.uniqueId(), name: "11300 Fluid Waste Treatment and Disposal Equipment"},
+            {id: _.uniqueId(), name: "11400 Food Service Equipment"},
+            {id: _.uniqueId(), name: "11450 Residential Equipment"},
+            {id: _.uniqueId(), name: "11460 Unit Kitchens"},
+            {id: _.uniqueId(), name: "11470 Darkroom Equipment"},
+            {id: _.uniqueId(), name: "11480 Athletic, Recreational, and Therapeutic Equipment"},
+            {id: _.uniqueId(), name: "11500 Industrial and Process Equipment"},
+            {id: _.uniqueId(), name: "11600 Laboratory Equipment"},
+            {id: _.uniqueId(), name: "11650 Planetarium Equipment"},
+            {id: _.uniqueId(), name: "11660 Observatory Equipment"},
+            {id: _.uniqueId(), name: "11680 Office Equipment"},
+            {id: _.uniqueId(), name: "11700 Medical Equipment"},
+            {id: _.uniqueId(), name: "11780 Mortuary Equipment"},
+            {id: _.uniqueId(), name: "11850 Navigation Equipment"},
+            {id: _.uniqueId(), name: "11870 Agricultural Equipment"},
+            {id: _.uniqueId(), name: "11900 Exhibit Equipment"}
+        ]
+    },
+    {
+        id: _.uniqueId(), 
+        name: "Division 12 Furnishings",
+        codes: [
+            {id: _.uniqueId(), name: "12050 Fabrics"},
+            {id: _.uniqueId(), name: "12100 Art"},
+            {id: _.uniqueId(), name: "12300 Manufactured Casework"},
+            {id: _.uniqueId(), name: "12400 Furnishings and Accessories"},
+            {id: _.uniqueId(), name: "12500 Furniture"},
+            {id: _.uniqueId(), name: "12600 Multiple Seating"},
+            {id: _.uniqueId(), name: "12700 Systems Furniture"},
+            {id: _.uniqueId(), name: "12800 Interior Plants and Planters"},
+            {id: _.uniqueId(), name: "12900 Furnishings Restoration and Repair"}
+        ]
+    },
+    {
+        id: _.uniqueId(), 
+        name: "Division 13 Special Construction",
+        codes: [
+            {id: _.uniqueId(), name: "13010 Air"},
+            {id: _.uniqueId(), name: "13020 Building Modules"},
+            {id: _.uniqueId(), name: "13030 Special Purpose Rooms"},
+            {id: _.uniqueId(), name: "13080 Sound, Vibration, and Seismic Control"},
+            {id: _.uniqueId(), name: "13090 Radiation Protection"},
+            {id: _.uniqueId(), name: "13100 Lightning Protection"},
+            {id: _.uniqueId(), name: "13110 Cathodic Protection"},
+            {id: _.uniqueId(), name: "13120 Pre"},
+            {id: _.uniqueId(), name: "13150 Swimming Pools"},
+            {id: _.uniqueId(), name: "13160 Aquariums"},
+            {id: _.uniqueId(), name: "13165 Aquatic Park Facilities"},
+            {id: _.uniqueId(), name: "13170 Tubs and Pools"},
+            {id: _.uniqueId(), name: "13175 Ice Rinks"},
+            {id: _.uniqueId(), name: "13185 Kennels and Animal Shelters"},
+            {id: _.uniqueId(), name: "13190 Site"},
+            {id: _.uniqueId(), name: "13200 Storage Tanks"},
+            {id: _.uniqueId(), name: "13220 Filter Underdrains and Media"},
+            {id: _.uniqueId(), name: "13230 Digester Covers and Appurtenances"},
+            {id: _.uniqueId(), name: "13240 Oxygenation Systems"},
+            {id: _.uniqueId(), name: "13260 Sludge Conditioning Systems"},
+            {id: _.uniqueId(), name: "13280 Hazardous Material Remediation"},
+            {id: _.uniqueId(), name: "13400 Measurement and Control Instrumentation"},
+            {id: _.uniqueId(), name: "13500 Recording Instrumentation"},
+            {id: _.uniqueId(), name: "13550 Transportation Control Instrumentation"},
+            {id: _.uniqueId(), name: "13600 Solar and Wind Energy Equipment"},
+            {id: _.uniqueId(), name: "13700 Security Access and Surveillance"},
+            {id: _.uniqueId(), name: "13800 Building Automation and Control"},
+            {id: _.uniqueId(), name: "13850 Detection and Alarm"},
+            {id: _.uniqueId(), name: "13900 Fire Suppression"}
+        ]
+    },
+    {
+        id: _.uniqueId(), 
+        name: "Division 14 Conveying Systems",
+        codes: [
+            {id: _.uniqueId(), name: "14100 Dumbwaiters"},
+            {id: _.uniqueId(), name: "14200 Elevators"},
+            {id: _.uniqueId(), name: "14300 Escalators and Moving Walks"},
+            {id: _.uniqueId(), name: "14400 Lifts"},
+            {id: _.uniqueId(), name: "14500 Material Handling"},
+            {id: _.uniqueId(), name: "14600 Hoists and Cables"},
+            {id: _.uniqueId(), name: "14700 Turntables"},
+            {id: _.uniqueId(), name: "14800 Scaffolding"},
+            {id: _.uniqueId(), name: "14900 Transportation"}
+        ]
+    },
+    {
+        id: _.uniqueId(), 
+        name: "Division 15 Mechanical",
+        codes: [
+            {id: _.uniqueId(), name: "15050 Basic Mechanical Materials and Methods"},
+            {id: _.uniqueId(), name: "15100 Building Service Piping"},
+            {id: _.uniqueId(), name: "15200 Process Piping"},
+            {id: _.uniqueId(), name: "15300 Fire Protection Piping"},
+            {id: _.uniqueId(), name: "15400 Plumbing Fixtures and Equipment"},
+            {id: _.uniqueId(), name: "15500 Heat"},
+            {id: _.uniqueId(), name: "15600 Refrigeration Equipment"},
+            {id: _.uniqueId(), name: "15700 Heating, Ventilating, and Air Conditioning Equipment"},
+            {id: _.uniqueId(), name: "15800 Air Distribution"},
+            {id: _.uniqueId(), name: "15900 HVAC Instrumentation and Controls"},
+            {id: _.uniqueId(), name: "15950 Testing, Adjusting, and Balancing"}
+        ]
+    },
+    {
+        id: _.uniqueId(), 
+        name: "Division 16 Electrical",
+        codes: [
+            {id: _.uniqueId(), name: "16050 Basic Electrical Materials and Methods"},
+            {id: _.uniqueId(), name: "16100 Wiring Methods"},
+            {id: _.uniqueId(), name: "16200 Electrical Power"},
+            {id: _.uniqueId(), name: "16300 Transmission and Distribution"},
+            {id: _.uniqueId(), name: "16400 Low"},
+            {id: _.uniqueId(), name: "16500 Lighting"},
+            {id: _.uniqueId(), name: "16700 Communications"},
+            {id: _.uniqueId(), name: "16800 Sound and Video"}
+        ]
+    }
+]);
 
 app.controller('AppCtrl',
     ['$scope', '$rootScope', '$state', '$localStorage', function ($scope, $rootScope, $state, $localStorage) {
