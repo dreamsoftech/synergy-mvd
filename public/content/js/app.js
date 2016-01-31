@@ -110,6 +110,28 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             templateUrl: "partials/financials/direct-payments.html",
             controller: "DirectPaymentsCtrl"
         })
+        .state('direct-payment', {
+            url: '/fiancials/direct-payments',
+            absolute: true,
+            template: '<ui-view></ui-view>'
+        })
+        .state('direct-payment.new', {
+            url: '/new',
+            templateUrl: "partials/financials/direct-payment/new.html",
+            controller: "DirectPaymentNewCtrl",
+            data: {
+                isHeaderHidden: true,
+                pageName: 'Direct Payment'
+            }
+        })
+        .state('direct-payment.in-process', {
+            url: '/in-process',
+            templateUrl: "partials/financials/in-process.html",
+            controller: "DirectPaymentInProcessCtrl",
+            data: {
+                pageName: "Direct Payment"
+            }
+        })
         .state('purchase-orders', {
             url: '/financials/purchase-orders',
             abstract: true,
@@ -609,15 +631,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 isHeaderHidden: true
             }
         })
-        .state('direct-payment', {
-            url: '/financials/direct-payment',
-            templateUrl: "partials/financials/direct-payment/direct-payment.html",
-            controller: "DirectPaymentCtrl",
-            data: {
-                isHeaderHidden: true,
-                pageName: 'Direct Payment'
-            }
-        })
         .state('direct-invoice', {
             url: '/financials/direct-invoice',
             templateUrl: "partials/financials/direct-invoice/direct-invoice.html",
@@ -803,7 +816,7 @@ app.constant("projects", [
         zipcode: "90125"
     }]);
 
-app.constant("sows", 
+app.constant("sows",
     [
         {id: _.uniqueId(), name: 'Doors'},
         {id: _.uniqueId(), name: 'Drywall'},
@@ -984,8 +997,8 @@ app.constant("members",
 
 app.constant("divisions", [
     {
-        id: _.uniqueId(), 
-        name: "Division 1 General Requirements", 
+        id: _.uniqueId(),
+        name: "Division 1 General Requirements",
         codes: [
             {id: _.uniqueId(), name: "01100 Summary"},
             {id: _.uniqueId(), name: "01200 Price and Payment Procedures"},
@@ -1017,8 +1030,8 @@ app.constant("divisions", [
         ]
     },
     {
-        id: _.uniqueId(), 
-        name: "Division 3 Concrete", 
+        id: _.uniqueId(),
+        name: "Division 3 Concrete",
         codes: [
             {id: _.uniqueId(), name: "03050 Basic Concrete Materials and Methods"},
             {id: _.uniqueId(), name: "03100 Concrete Forms and Accessories"},
@@ -1032,7 +1045,7 @@ app.constant("divisions", [
         ]
     },
     {
-        id: _.uniqueId(), 
+        id: _.uniqueId(),
         name: "Division 4 Masonry",
         codes: [
             {id: _.uniqueId(), name: "04050 Basic Masonry Materials and Methods"},
@@ -1046,7 +1059,7 @@ app.constant("divisions", [
         ]
     },
     {
-        id: _.uniqueId(), 
+        id: _.uniqueId(),
         name: "Division 5 Metals",
         codes: [
             {id: _.uniqueId(), name: "05050 Basic Metal Materials and Methods"},
@@ -1062,7 +1075,7 @@ app.constant("divisions", [
         ]
     },
     {
-        id: _.uniqueId(), 
+        id: _.uniqueId(),
         name: "Division 6 Wood and Plastics",
         codes: [
             {id: _.uniqueId(), name: "06050 Basic Wood and Plastic Materials and Methods"},
@@ -1075,7 +1088,7 @@ app.constant("divisions", [
         ]
     },
     {
-        id: _.uniqueId(), 
+        id: _.uniqueId(),
         name: "Division 7 Thermal and Moisture Protection",
         codes: [
             {id: _.uniqueId(), name: "07050 Basic Thermal and Moisture Protection Materials and Methods"},
@@ -1091,7 +1104,7 @@ app.constant("divisions", [
         ]
     },
     {
-        id: _.uniqueId(), 
+        id: _.uniqueId(),
         name: "Division 8 Doors and Windows",
         codes: [
             {id: _.uniqueId(), name: "08050 Basic Door and Window Materials and Methods"},
@@ -1107,7 +1120,7 @@ app.constant("divisions", [
         ]
     },
     {
-        id: _.uniqueId(), 
+        id: _.uniqueId(),
         name: "Division 9 Finishes",
         codes: [
             {id: _.uniqueId(), name: "09050 Basic Finish Materials and Methods"},
@@ -1123,7 +1136,7 @@ app.constant("divisions", [
         ]
     },
     {
-        id: _.uniqueId(), 
+        id: _.uniqueId(),
         name: "Division 10 Specialties",
         codes: [
             {id: _.uniqueId(), name: "10100 Visual Display Boards"},
@@ -1153,7 +1166,7 @@ app.constant("divisions", [
         ]
     },
     {
-        id: _.uniqueId(), 
+        id: _.uniqueId(),
         name: "Division 11 Equipment",
         codes: [
             {id: _.uniqueId(), name: "11010 Maintenance Equipment"},
@@ -1195,7 +1208,7 @@ app.constant("divisions", [
         ]
     },
     {
-        id: _.uniqueId(), 
+        id: _.uniqueId(),
         name: "Division 12 Furnishings",
         codes: [
             {id: _.uniqueId(), name: "12050 Fabrics"},
@@ -1210,7 +1223,7 @@ app.constant("divisions", [
         ]
     },
     {
-        id: _.uniqueId(), 
+        id: _.uniqueId(),
         name: "Division 13 Special Construction",
         codes: [
             {id: _.uniqueId(), name: "13010 Air"},
@@ -1245,7 +1258,7 @@ app.constant("divisions", [
         ]
     },
     {
-        id: _.uniqueId(), 
+        id: _.uniqueId(),
         name: "Division 14 Conveying Systems",
         codes: [
             {id: _.uniqueId(), name: "14100 Dumbwaiters"},
@@ -1260,7 +1273,7 @@ app.constant("divisions", [
         ]
     },
     {
-        id: _.uniqueId(), 
+        id: _.uniqueId(),
         name: "Division 15 Mechanical",
         codes: [
             {id: _.uniqueId(), name: "15050 Basic Mechanical Materials and Methods"},
@@ -1277,7 +1290,7 @@ app.constant("divisions", [
         ]
     },
     {
-        id: _.uniqueId(), 
+        id: _.uniqueId(),
         name: "Division 16 Electrical",
         codes: [
             {id: _.uniqueId(), name: "16050 Basic Electrical Materials and Methods"},

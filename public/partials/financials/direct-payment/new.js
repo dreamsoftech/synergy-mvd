@@ -1,4 +1,4 @@
-app.controller('DirectPaymentCtrl', function($scope, members, projects, contracts, sows, classifications) {
+app.controller('DirectPaymentNewCtrl', function($scope, members, projects, contracts, sows, classifications) {
     $scope.payApplications = [
         {
             id: 1,
