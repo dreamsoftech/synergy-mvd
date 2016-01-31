@@ -1,12 +1,8 @@
 app.controller('PunchItemDetailModalCtrl',
-    ['$scope', '$uibModalInstance', 'currentItem', function($scope, $uibModalInstance, currentItem) {
+    function($scope, $uibModalInstance, members, sows, currentItem) {
         $scope.punchItem = currentItem;
-
-        $scope.userList = [
-            { name: 'Beth Wiseman', company: 'Synergy Construction'},
-            { name: 'Bruce Wayne', company: 'Synergy Construction'},
-            { name: 'Torben Moench', company: 'Pendleton Design Management'}
-        ];
+        $scope.userList = members;
+        $scope.sows = sows;
 
         $scope.photoList = [
             'assets/img/photos/photo11.jpg',
@@ -60,5 +56,4 @@ app.controller('PunchItemDetailModalCtrl',
         $scope.cancel = function () {
             $uibModalInstance.dismiss('cancel');
         };
-    }]
-);
+    });

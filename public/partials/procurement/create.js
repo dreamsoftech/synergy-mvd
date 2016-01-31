@@ -1,7 +1,7 @@
 /**
 * Created by Anton on 12/14/2015
 */
-app.controller('ProcurementCreateCtrl', ['$scope', '$state', function($scope, $state){
+app.controller('ProcurementCreateCtrl', function($scope, members, categories, sows){
     $scope.procurementType = 'Ornare Cras';
     $scope.workScope = 'Ullamcorper Adipiscing';
     $scope.dateDue = 'Aug 23,2015';
@@ -48,162 +48,9 @@ app.controller('ProcurementCreateCtrl', ['$scope', '$state', function($scope, $s
         }
     ];
 
-    $scope.category = [
-        {
-            id: 1,
-            name: "Site Prep"
-        }, {
-            id: 2,
-            name: "Foundation"
-        }, {
-            id: 3,
-            name: "Framing"
-        },
-        {
-            id: 3,
-            name: "Rough-In"
-        }, {
-            id: 4,
-            name: "Exterior Finishes"
-        }, {
-            id: 5,
-            name: "Garage Doors"
-        },
-        {
-            id: 6,
-            name: "Roofing"
-        }, {
-            id: 7,
-            name: "Windows & Doors"
-        }, {
-            id: 8,
-            name: "Interior Trim"
-        },
-        {
-            id: 9,
-            name: "Paint"
-        }, {
-            id: 10,
-            name: "Appliances"
-        }, {
-            id: 11,
-            name: "Hardware"
-        },
-        {
-            id: 12,
-            name: "Floor Finishes"
-        }, {
-            id: 13,
-            name: "Landscaping"
-        }
-    ];
-
-    $scope.sow = [
-        {
-            id: 1,
-            name: "Door Frames"
-        }, {
-            id: 2,
-            name: "Drywall"
-        }, {
-            id: 3,
-            name: "Fireplace Install"
-        },
-        {
-            id: 4,
-            name: "Fire Sprinkler Rough-In"
-        }, {
-            id: 5,
-            name: "Form Footings"
-        }, {
-            id: 6,
-            name: "Form Foundation Walls"
-        },
-        {
-            id: 7,
-            name: "Frame 2nd Stroy"
-        }, {
-            id: 8,
-            name: "Insulation"
-        }, {
-            id: 9,
-            name: "Main Floor Overhead"
-        },
-        {
-            id: 10,
-            name: "Lighting"
-        }, {
-            id: 11,
-            name: "Plumbing Rough-In"
-        }, {
-            id: 12,
-            name: "Pour Foundation"
-        },
-        {
-            id: 13,
-            name: "Prime"
-        }, {
-            id: 14,
-            name: "Rough Dry In"
-        }, {
-            id: 15,
-            name: "Rough Electrical"
-        },
-        {
-            id: 16,
-            name: "Rough Mechanical"
-        }, {
-            id: 17,
-            name: "Rough Plumbing"
-        }, {
-            id: 18,
-            name: "Set Steel"
-        },
-        {
-            id: 19,
-            name: "Stairway Floor Lighting"
-        }, {
-            id: 20,
-            name: "Show Removal"
-        }
-    ];
-
-    $scope.teamMembers = [
-        {
-            id: 1,
-            name: "Bruce Wayne"
-        }, {
-            id: 2,
-            name: "Christian Peters"
-        }, {
-            id: 3,
-            name: "Dan Bonker"
-        },
-        {
-            id: 4,
-            name: "Dave Gebo"
-        }, {
-            id: 5,
-            name: "Dave Musgrove"
-        }, {
-            id: 6,
-            name: "Jane Smith"
-        },
-        {
-            id: 7,
-            name: "Jeff Price"
-        }, {
-            id: 8,
-            name: "John Steel"
-        }, {
-            id: 9,
-            name: "Mary Beroset"
-        },
-        {
-            id: 10,
-            name: "Mike Riley"
-        }
-    ];
+    $scope.categories = categories;
+    $scope.sows = sows;
+    $scope.teamMembers = members;
 
     $scope.getClass = function(state) {
         var currentStep = parseInt($state.current.name.slice(-1));
@@ -231,4 +78,4 @@ app.controller('ProcurementCreateCtrl', ['$scope', '$state', function($scope, $s
         }
         return false;
     }
-}]);
+});

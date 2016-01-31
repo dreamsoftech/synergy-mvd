@@ -19,8 +19,10 @@
         right: 22px;
         top: 16px;
         font-size: 17px; }
-    .auth-wrapper .auth-form ul.dropdown-menu {
-      max-height: 250px;
-      overflow-y: auto; }
   .auth-wrapper .btn {
     width: 100%; }
+
+ui-select ul.dropdown-menu {
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden; }

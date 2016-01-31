@@ -55,17 +55,17 @@
         <div class="row">
             <div class="col-md-6 form-group">
                 <label>Scope of Work</label>
-                <ui-select options="sows" selected-item="sows[0]"></ui-select>
+                <ui-select options="sows" placeholder="Select Scope of Work"></ui-select>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 form-group">
                 <label>Division</label>
-                <ui-select options="divisions" selected-item="divisions[0]"></ui-select>
+                <ui-select options="divisions" placeholder="Select Placeholder" selected-item="currentDivision"></ui-select>
             </div>
             <div class="col-md-6 form-group">
                 <label>Cost Code</label>
-                <ui-select options="costCodes" selected-item="costCodes[0]"></ui-select>
+                <ui-select options="currentDivision.codes" placeholder="Select Cost Code" selected-item="currentCostCode"></ui-select>
             </div>
         </div>
         <div class="row">

@@ -1,4 +1,4 @@
-app.controller('BidsCtrl', ['$scope', '$uibModal', function($scope, $uibModal){
+app.controller('BidsCtrl', function($scope, $uibModal, projects, sows){
     $scope.showBidsCompareModal = function(){
         var modalInstance = $uibModal.open({
             templateUrl: 'partials/bids/bids-modal.html',
@@ -59,28 +59,9 @@ app.controller('BidsCtrl', ['$scope', '$uibModal', function($scope, $uibModal){
         },
     };
 
-    $scope.sow = [
-      {
-        id: 1,
-        name: 'Master bedroom cabinetry'
-      }, {
-        id: 2,
-        name: 'Carpet'
-      }, {
-        id: 3,
-        name: 'Main floor plumbing'
-      }
-    ];
+    $scope.sows = sows;
 
-    $scope.projects = [
-      {
-        id: 1,
-        name: 'Wilmington 47'
-      }, {
-        id: 2,
-        name: 'Anderson Bileos 53'
-      }
-    ];
+    $scope.projects = projects;
 
     $scope.selectProject = function(p) {
       $scope.project = p.name;
@@ -94,7 +75,7 @@ app.controller('BidsCtrl', ['$scope', '$uibModal', function($scope, $uibModal){
       $scope.opened = !$scope.opened;
     }
 
-}]);
+});
 
 app.controller('BidsSubcontractorModalCtrl',
     ['$scope', '$state', '$uibModalInstance', function($scope, $state, $uibModalInstance) {
