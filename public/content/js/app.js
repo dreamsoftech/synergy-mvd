@@ -126,9 +126,10 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         })
         .state('direct-payment.in-process', {
             url: '/in-process',
-            templateUrl: "partials/financials/in-process.html",
+            templateUrl: "partials/financials/direct-payment/in-process.html",
             controller: "DirectPaymentInProcessCtrl",
             data: {
+                isHeaderHidden: true,
                 pageName: "Direct Payment"
             }
         })
