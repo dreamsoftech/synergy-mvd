@@ -1,303 +1,325 @@
 <div class="row wrapper border-bottom white-bg page-heading overview up-top-wrapper">
     <div class="col-md-8">
-        <div class="pull-left">
-            <img class="img-circle" src="assets/img/avasisteam/mike.jpg" alt="Bruce's Photo">
-        </div>
-        <div class="pull-left person">
-            <h2>Mike Wallaby</h2>
-            <div class="contact">
-                <i class="fa fa-envelope"></i>|
-                <i class="fa fa-comments"></i>|
-                <i class="fa fa-phone"></i>415 123 3456
-            </div>
-            <div class="info">
-                <span class="name text-primary">Anderson Perkins LTD Shipping Center</span>
-                <div class="address">
-                    <span class="primary-address">1796 Prospector Avenue</span>
-                    <span class="second-address">Park City, Utah 84605</span>
-                </div>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-
-    <div class="col-md-4 edit">
-        <div class="dropdown text-right" uib-dropdown>
-            <button type="button" class="btn btn-success btn-lg" uib-dropdown-toggle>
-                Edit
-            </button>
-            <ul uib-dropdown-menu class="dropdown-menu-right chevron-down-menu" role="menu">
-                <li><a href="javascript:void(0)">Edit Notifications</a></li>
-                <li><a href="javascript:void(0)">Edit Permissions</a></li>
-            </ul>
-        </div>
+        <h2>My Profile</h2>
     </div>
 </div>
 
-<div class="row up-wrapper wrapper-content animated fadeInRight">
-    <div class="col-md-12">
-        <h3>Compliance Information</h3>
-        <div class="table-responsive compliance-information">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Credit <img src="assets/img/alert.png"/></th>
-                        <th>Insurance</th>
-                        <th>Licence</th>
-                        <th>Judgement</th>
-                        <th>Background Check</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr ng-repeat="row in complianceInformation">
-                        <td class="attachment">
-                            <div class="pull-left">
-                                <img ng-src="assets/img/{{row.credit.flag}}"/>
-                            </div>
-                            <div class="pull-left">
-                                <div class="text-primary" ng-if="row.credit.attachments">
-                                    {{ row.credit.attachments }}
-                                    {{ row.credit.attachments > 1 ? ' attachments' : ' attachment' }}
-                                </div>
-                                <div ng-if="!row.credit.attachments">-</div>
-                                <span class="date">{{ row.credit.date }}</span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </td>
-                        <td class="attachment">
-                            <div class="pull-left">
-                                <img ng-src="assets/img/{{row.insurance.flag}}"/>
-                            </div>
-                            <div class="pull-left">
-                                <div class="text-primary" ng-if="row.insurance.attachments">
-                                    {{ row.insurance.attachments }}
-                                    {{ row.insurance.attachments > 1 ? ' attachments' : ' attachment' }}
-                                </div>
-                                <div ng-if="!row.insurance.attachments">-</div>
-                                <span class="date">{{ row.insurance.date }}</span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </td>
-                        <td class="attachment">
-                            <div class="pull-left">
-                                <img ng-src="assets/img/{{row.licence.flag}}"/>
-                            </div>
-                            <div class="pull-left">
-                                <div class="text-primary" ng-if="row.licence.attachments">
-                                    {{ row.licence.attachments }}
-                                    {{ row.licence.attachments > 1 ? ' attachments' : ' attachment' }}
-                                </div>
-                                <div ng-if="!row.licence.attachments">-</div>
-                                <span class="date">{{ row.licence.date }}</span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </td>
-                        <td class="attachment">
-                            <div class="pull-left">
-                                <img ng-src="assets/img/{{row.judgement.flag}}"/>
-                            </div>
-                            <div class="pull-left">
-                                <div class="text-primary" ng-if="row.judgement.attachments">
-                                    {{ row.judgement.attachments }}
-                                    {{ row.judgement.attachments > 1 ? ' attachments' : ' attachment' }}
-                                </div>
-                                <div ng-if="!row.judgement.attachments">-</div>
-                                <span class="date">{{ row.judgement.date }}</span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </td>
-                        <td class="attachment">
-                            <div class="pull-left">
-                                <img ng-src="assets/img/{{row.background.flag}}"/>
-                            </div>
-                            <div class="pull-left">
-                                <div class="text-primary" ng-if="row.background.attachments">
-                                    {{ row.background.attachments }}
-                                    {{ row.background.attachments > 1 ? ' attachments' : ' attachment' }}
-                                </div>
-                                <div ng-if="!row.background.attachments">-</div>
-                                <span class="date">{{ row.background.date }}</span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </td>
-                        <td class="status" ng-class="{'text-success': row.status == 'In Compliance',
-                                       'text-danger': row.status == 'Out of Compliance'}">
-                            {{row.status}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="col-md-12 mt25">
-        <h3>Current Projects</h3>
-        <div class="table-responsive current-project">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Project Name</th>
-                        <th>Role</th>
-                        <th>Scope of Work</th>
-                        <th>SOW Completion %</th>
-                        <th>Scheduled Onsite</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="row in currentProjects">
-                        <td class="cp-name text-primary">
-                            {{ row.name }}
-                        </td>
-                        <td class="cp-role">
-                            {{ row.role }}
-                        </td>
-                        <td class="cp-sow text-primary">
-                            {{ row.sow }}
-                        </td>
-                        <td class="cp-sow-completion">
-                            {{ row.sow_completion ? row.sow_completion + '%' : '-'}}
-                        </td>
-                        <td class="cp-onsite" ng-class="{'text-success': row.onsite == 'YES',
-                                                         'text-danger': row.onsite == 'NO'}">
-                            {{ row.onsite }}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="col-md-12 mt25">
-        <h3>Action Items Required by Mike Wallaby</h3>
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th class="flag" style="width: 50px;"></th>
-                        <th>Title</th>
-                        <th>Due Date</th>
-                        <th>Initiator</th>
-                        <th>SOW</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="row in actionItems">
-                        <td class="flag"><img ng-src="assets/img/{{row.flag}}"/></td>
-                        <td>
-                            <div class="ai-title">{{ row.title }}</div>
-                            <div class="ai-sub-title">{{ row.sTitle }}</div>
-                        </td>
-                        <td class="ai-due-date">
-                            {{ row.due_date }}
-                        </td>
-                        <td class="ai-initiator">
-                            <div class="text-primary name">{{ row.initiator.name }}</div>
-                            <small class="company">{{ row.initiator.company }}</small>
-                        </td>
-                        <td class="ai-sow">
-                            {{ row.sow }}
-                        </td>
-                        <td>
-                            <div class="ai-status" ng-class="{'text-success': row.status == 'In Process',
-                                                              'text-warning': row.status == 'Pending',
-                                                              'text-info': row.status == 'Draft'}">
-                                {{ row.status }}
-                            </div>
-                            <div class="ai-status-completed">
-                                {{ row.status_completion }}% Completed
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="col-md-12 mt25">
-        <h3>Completed Projects</h3>
-        <div class="table-responsive current-project">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Project Name</th>
-                        <th>Role</th>
-                        <th>Scope of Work</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="row in completedProjects">
-                        <td class="cp-name text-primary">
-                            {{ row.name }}
-                        </td>
-                        <td class="cp-role">
-                            {{ row.role }}
-                        </td>
-                        <td class="cp-sow text-primary">
-                            {{ row.sow }}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="col-md-12 mt35">
-        <div class="well">
-            <div class="form-group">
-                <label>Personal Details</label>
-            </div>
-            <hr/>
-            <div class="form-group">
-                <div class="pull-left">
-                    <label>Address</label>
-                    <span class="text">1796 Prospector Avenue Park City, Utah 84605</span>
-                </div>
-
-                <div class="pull-right">
-                    <div>
-                        <i class="fa fa-gear"></i>
-                        <i class="fa fa-chevron-down"></i>
+<div class="row up-wrapper wrapper-content animated fadeInRight up-content-wrapper">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="up-card p20">
+                <button class="btn btn-primary btn-sm btn-edit">Edit</button>
+                <div class="photo-section">
+                    <div class="photo">
+                        <img src="assets/img/users/mike.jpg">
+                        <div class="label label-danger warning-circle">
+                            <i class="fa fa-warning"></i>
+                        </div>
+                        <div class="text-primary">Change Picture</div>
                     </div>
                 </div>
-                <div class="clearfix"></div>
-            </div>
-            <hr/>
-            <div class="form-group">
-                <div class="pull-left">
-                    <label>Language</label>
-                    <span class="text">English, Spanish</span>
-                </div>
-
-                <div class="pull-right">
-                    <div>
-                        <i class="fa fa-gear"></i>
-                        <i class="fa fa-chevron-down"></i>
+                <div class="contact-info">
+                    <div class="name">Eric Hoffman</div>
+                    <div class="address">1796 Prospector Avenue Park City, Utah 84605</div>
+                    <div class="contact">
+                        <i class="fa fa-envelope"></i>eric@hoffman.co
+                        <i class="fa fa-phone"></i>801-588-5688
                     </div>
                 </div>
-                <div class="clearfix"></div>
-            </div>
-            <hr/>
-            <div class="form-group">
-                <label>Security</label>
-                <label>Password</label>
-
-                <div class="row">
-                    <div class="col-md-5 password">
-                        <input type="password" value="password" />
-                        <span class="text-primary">Change</span>
+                <hr class="lighter">
+                <div class="contact-info">
+                    <div class="name">Flora Corp</div>
+                    <div class="address">123 S. Main Street, Utah 84605</div>
+                    <div class="contact">
+                        <i class="fa fa-link"></i>www.floracorp.com
+                        <i class="fa fa-phone"></i>801-588-5688
                     </div>
+                </div>
+            </div>
 
-                    <div class="col-md-7">
-                        <div class="pull-left two-step-security">Two-Step Security</div>
-                        <div class="pull-left">
-                            <ui-rec-switch ng-model="isTwoStepSecurity"></ui-rec-switch>
+            <div class="up-card p20 mt30 billing-info">
+                <button class="btn btn-primary btn-sm btn-edit">Edit</button>
+                <div class="title">
+                    <img class="lock" src="assets/img/lock.png">
+                    Billing Information
+                </div>
+                <hr>
+                <label>Address</label>
+                <span>1796 Prospector Avenue Park City, Utah 84605</span>
+                <hr class="lighter">
+                <label>Credit Card Info</label>
+                <span>1234 5678 90 ******</span>
+            </div>
+
+            <div class="up-card p20 mt30 security-settings">
+                <button class="btn btn-primary btn-sm btn-edit">Edit</button>
+                 <div class="title">
+                    <img class="lock" src="assets/img/lock.png">
+                    Security Settings
+                </div>
+                <hr>
+                <label>Current Password</label>
+                <input type="password" value="password">
+                <hr class="lighter">
+                <div class="two-step-security">
+                    <div class="pull-left">
+                        Two-Step Security
+                    </div>
+                    <div class="pull-right">
+                        <ui-rec-switch ng-model="isTwoStepSecuirty"></ui-rec-switch>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div class="up-card p20 mt30 compliance-info">
+                <div class="title">
+                    <i class="fa fa-warning text-danger"></i>
+                    Compliance Information
+                </div>
+                <hr>
+                <div class="compliance-item">
+                    <div class="pull-left">
+                        Credit
+                    </div>
+                    <div class="pull-right text-right">
+                        <span class="text-primary">2 Attachments</span>
+                        <small>Aug 23, 2015</small>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <hr class="lighter">
+                <div class="compliance-item">
+                    <div class="pull-left">
+                        Insurance
+                    </div>
+                    <div class="pull-right text-right">
+                        <span class="text-primary">1 Attachment</span>
+                        <small>Dec 19, 2015</small>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <hr class="lighter">
+                <div class="compliance-item">
+                    <div class="pull-left">
+                        Licence
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <hr class="lighter">
+                <div class="compliance-item">
+                    <div class="pull-left">
+                        Judgements
+                    </div>
+                    <div class="pull-right text-right">
+                        <span class="text-primary">4 Attachments</span>
+                        <small>May 6, 2016</small>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <hr class="lighter">
+                <div class="compliance-item">
+                    <div class="pull-left">
+                        Background Check
+                    </div>
+                    <div class="pull-right text-right">
+                        <span class="text-primary">2 Attachments</span>
+                        <small>Aug 23, 2015</small>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <hr class="lighter">
+                <div class="compliance-item">
+                    <div class="pull-left">
+                        Status
+                    </div>
+                    <div class="pull-right text-right">
+                        <span class="text-primary">1 Attachment</span>
+                        <small>Dec 19, 2014</small>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="up-card p20 projects">
+                <div class="title">
+                    <img class="cap" src="assets/img/cap.png">
+                    Projects
+                </div>
+                <hr>
+                <div class="row project-info">
+                    <div class="col-md-3">
+                        <div id="donutchart" style="height: 140px; width: 140px;"></div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-4" style="margin-top: 55px;">
+                                <div class="pull-left">
+                                    <div class="label label-primary">&nbsp;</div>
+                                </div>
+                                <div class="pull-left">
+                                    <label>Current Projects</label>
+                                    <span>14</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4" style="margin-top: 55px;">
+                                <div class="pull-left">
+                                    <div class="label label-warning">&nbsp;</div>
+                                </div>
+                                <div class="pull-left">
+                                    <label>Archived Projects</label>
+                                    <span>15</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4" style="margin-top: 55px;">
+                                <div class="pull-left">
+                                    <div class="label label-success">&nbsp;</div>
+                                </div>
+                                <div class="pull-left">
+                                    <label>Total Projects</label>
+                                    <span>29</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <hr class="lighter">
+                <div class="current-projects">
+                    <h5>Current Projects</h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Role</th>
+                                    <th>Scope of Work</th>
+                                    <th>SOW Completion</th>
+                                    <th>Schedule</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="project in current_projects">
+                                    <td class="name">{{project.name}}</td>
+                                    <td class="role">{{project.role}}</td>
+                                    <td class="sow">{{project.sow}}</td>
+                                    <td class="sow-completion">{{project.sow_completion}}%</td>
+                                    <td>
+                                        <div class="schedule">
+                                            <div class="pull-left availability-image">
+                                                <img src="assets/img/map_icon.png" ng-if="project.availability == 'On Site'">
+                                                <img src="assets/img/map_icon-gry.png" ng-if="project.availability != 'On Site'">
+                                            </div>
+                                            <div class="pull-left on-off-site">
+                                                <span ng-class="{true: 'on-site', false: 'off-site'}[project.availability == 'On Site']">
+                                                    {{project.availability}}
+                                                </span>
+                                            </div>
+                                            <div class="pull-left availability" ng-if="project.show">
+                                                {{project.show}}
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <span class="next-sched">next sched. {{project.next_sched}}</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="archived-projects mt20">
+                    <h5>Archived Projects</h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Role</th>
+                                    <th>Scope of Work</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="project in archived_projects">
+                                    <td class="name">{{project.name}}</td>
+                                    <td class="role">{{project.role}}</td>
+                                    <td class="sow">{{project.sow}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
 </div>
+
+<script type="text/javascript">
+$(function () {
+
+    var getColor = {
+        'total': '#79c485',
+        'current': '#3aabd5',
+        'archived': '#fdae46'
+    };
+
+    $('#donutchart').highcharts({
+        credits: {
+            enabled: false
+        },
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: null
+        },
+        tooltip: {
+            enabled: false
+        },
+        plotOptions: {
+          series: {
+              dataLabels: {
+                  enabled: false
+              },
+              shadow: false,
+              states: {
+                  hover: {
+                      enabled: false
+                  }
+              }
+           },
+           pie: {
+               borderWidth: 0
+           }
+        },
+        series: [{
+            name: 'Inner',
+            data: [{
+                y: 56,
+                color: getColor['current']
+            }, {
+                y: 24,
+                color: getColor['archived'],
+            }],
+            size: '80%',
+            innerSize: '70%',
+
+        },
+        {
+            name: 'Outer',
+            data: [{
+                y: 200,
+                color: getColor['total']
+            }],
+            size: '100%',
+            innerSize: '80%',
+        }]
+    });
+});
+
+</script>

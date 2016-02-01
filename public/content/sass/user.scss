@@ -1,283 +1,323 @@
-$text-default: 'AvenirNextLTPro-Demi';
-$text-regular: 'AvenirNextLTPro-Regular';
-$text-medium: 'AvenirNextLTPro-Medium';
+@import 'variables';
 
 .up-top-wrapper {
-    color: #4a4a4a;
+    color: $text-default;
 
-    img.img-circle {
-        width: 60px;
-        height: 60px;
-    }
-
-    .person {
-        margin-left: 25px;
-
-        h2 {
-            margin-top: 0;
-            font-family: $text-regular;
-            font-size: 27px;
-        }
-
-        .contact {
-            font-family: $text-regular;
-            font-size: 10px;
-            color: #8b8b8b;
-
-            i {
-                margin-right: 10px;
-
-                &:not(:first-child) {
-                    margin-left: 10px;
-                }
-            }
-        }
-
-        .info {
-            margin-top: 10px;
-            font-family: $text-default;
-
-            .name {
-                font-size: 12px;
-            }
-
-            .address {
-                span {
-                    display: block;
-                    font-size: 10px;
-                    color: #8b8b8b;
-                }
-            }
-        }
-    }
-
-    .edit {
-        @media(min-width: 992px) {
-            margin-top: 25px;
-        }
+    h2 {
+        font-family: $text-regular;
+        font-size: 27px;
+        font-weight: 300;
+        margin: 15px 0;
     }
 }
 
-.up-wrapper {
-    color: #4a4a4a;
+.up-content-wrapper {
+    color: $text-default;
+    padding: 30px 30px 40px;
 
-    h3 {
-        font-family: $text-medium;
-        margin-bottom: 15px;
+    .up-card {
+        border: 1px solid #eee;
+        border-radius: 2px;
+        position: relative;
+        background-color: #fff;
+        min-height: 100px;
+
+        .btn-edit {
+            padding: 10px 20px;
+            position: absolute;
+            right: 20px;
+        }
+
+        .photo-section {
+            .photo {
+                margin: 0 auto;
+                display: table;
+                position: relative;
+            }
+
+            img {
+                width: 100px;
+                border-radius: 100px;
+            }
+
+            .warning-circle {
+                padding: 2px 4px;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                display: block;
+                line-height: 20px;
+                font-size: 13px;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+            .text-primary {
+                font-family: AvenirNextLTPro-Demi;
+                font-size: 11px;
+                margin-bottom: 15px;
+                margin-top: 15px;
+                margin-left: 10px;
+            }
+        }
+
+        .contact-info {
+            text-align: center;
+
+            .name {
+                font-family: AvenirNextLTPro-Demi;
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+            .address {
+                font-family: AvenirNextLTPro-Regular;
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
+
+            .contact {
+                font-family: AvenirNextLTPro-Regular;
+                font-size: 11px;
+
+                i {
+                    margin-right: 10px;
+
+                    &:last-child {
+                        margin-left: 20px;
+                    }
+
+                    &.fa-link {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
     }
 
-    .well {
-        border: 1px solid #eee;
-        border-radius: 0;
-        padding: 20px;
-        padding-top: 30px;
-        background-color: #fff;
+    .billing-info {
+        .title {
+            font-family: AvenirNextLTPro-Regular;
+            font-size: 17px;
+
+            img.lock {
+                width: 20px;
+                margin-top: -6px;
+            }
+        }
 
         label {
+            font-family: $text-bold;
+            font-size: 13px;
             display: block;
         }
 
-        span.text {
+        span {
             font-family: $text-regular;
-            font-size: 14px;
+            font-size: 12px;
+        }
+    }
+
+    .security-settings {
+        .title {
+            font-family: AvenirNextLTPro-Regular;
+            font-size: 17px;
+
+            img.lock {
+                width: 20px;
+                margin-top: -6px;
+            }
         }
 
-        .pull-right {
-            div {
-                color: #8b8b8b;
-                margin-top: 13px;
-            }
+        label {
+            font-family: $text-bold;
+            font-size: 13px;
+            display: block;
+        }
+
+        span {
+            font-family: $text-regular;
+            font-size: 12px;
         }
 
         input[type=password] {
             background-color: #f9f9f9;
-            padding: 15px;
-            width: 285px;
+            width: 100%;
 
-            margin-right: 25px;
-
-            &:hover {
+            &:active, &:focus {
                 background-color: #fff;
             }
         }
 
         .two-step-security {
-            @media(min-width: 992px) {
-                margin-left: 35px;
-                margin-right: 60px;
-                margin-top: 13px;
-            }
-
-            margin-top: 20px;
-            margin-right: 25px;
-
-            & + div {
-                @media(min-width: 992px) {
-                    margin-top: 6px;
-                }
-                margin-top: 15px;
-            }
-        }
-
-        .password {
-            @media(min-width: 992px) {
-                border-right: 1px solid #eee;
+            > div:first-child {
+                margin-top: 7px;
             }
         }
     }
 
-    .table-responsive {
-        table {
-            thead {
-                tr {
-                    th {
-                        font-family: $text-default;
+    .compliance-info {
+        .title {
+            font-family: $text-regular;
+            font-size: 17px;
+        }
+
+        .compliance-item {
+            .pull-left {
+                font-family: $text-regular;
+                font-size: 12px;
+            }
+
+            .pull-right {
+                span {
+                    font-family: $text-bold;
+                    font-size: 11px;
+                    display: block;
+                }
+
+                small {
+                    font-family: $text-regular;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    .projects {
+        .title {
+            font-family: AvenirNextLTPro-Regular;
+            font-size: 17px;
+
+            img.cap {
+                width: 22px;
+                margin-top: -3px;
+            }
+        }
+
+        h5 {
+            font-family: $text-bold;
+            font-size: 13px;
+        }
+
+        .current-projects {
+            .table {
+                thead {
+                    tr th {
+                        padding: 15px 20px;
+                        font-family: $text-bold;
                         font-size: 13px;
+                        color: $text-muted;
                         background-color: #f9f9f9;
-                        color: #8b8b8b;
-                        vertical-align: middle;
-
-                        &:first-child {
-                            padding-left: 25px;
-                        }
                     }
                 }
-            }
-            tbody {
-                tr {
-                    td {
+
+                tbody {
+
+                    tr td {
                         vertical-align: middle;
-                        background-color: #fff;
-
-
-                        &:first-child {
-                            padding-left: 25px;
+                        padding: 20px;
+                        &.name, &.sow {
+                            font-family: $text-bold;
+                            font-size: 11px;
+                            color: $text-primary;
                         }
 
-                        &.status {
-                            font-family: $text-default;
+                        &.role, &.sow-completion {
+                            font-family: $text-regular;
                             font-size: 11px;
                         }
                     }
                 }
             }
-        }
-    }
 
-    .current-project table tbody tr td {
-        padding: 25px;
-    }
+            .schedule {
+                .on-off-site {
+                    font-family: $text-bold;
+                    font-size: 10px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    text-transform: uppercase;
+                }
 
-    .cp-name, .cp-sow {
-        font-size: 11px;
-    }
+                .on-site {
+                    color: $text-success;
+                }
 
-    .cp-role, .cp-sow-completion {
-        font-size: 11px;
-        font-family: $text-regular;
-    }
+                .off-site {
+                    color: $text-muted;
+                }
 
-    .flag {
-        img {
-            width: 20px;
-        }
-    }
+                .availability-image {
+                    width: 8px;
+                }
 
-    .ai-title {
-        font-family: AvenirNextLTPro-Regular;
-        font-size: 15px;
-    }
+                .availability {
+                    color: $text-danger;
+                    font-family: $text-bold;
+                    font-size: 9px;
+                    line-height: 16px;
+                }
 
-    .ai-sub-title {
-        font-family: AvenirNextLTPro-Regular;
-        font-size: 11px;
-        color: #8b8b8b;
-    }
+                .next-sched {
+                    font-family: $text-regular;
+                    font-size: 11px;
+                }
 
-    .ai-due-date, .ai-sow {
-        font-family: AvenirNextLTPro-Regular;
-        font-size: 12px;
-    }
-
-    .ai-initiator {
-        .name {
-            font-size: 12px;
+            }
         }
 
-        .company {
-            font-size: 10px;
-            color: #8b8b8b;
-        }
-    }
+        .archived-projects {
 
-    .ai-status {
-        font-size: 10px;
-        text-transform: uppercase;
-    }
-
-    .ai-status-completed {
-        font-family: $text-regular;
-        font-size: 11px;
-    }
-
-    .table-responsive.compliance-information {
-        table {
-            thead {
-                tr {
-                    th {
-                        font-family: $text-default;
+            .table {
+                thead {
+                    tr th {
+                        padding: 15px 20px;
+                        font-family: $text-bold;
                         font-size: 13px;
+                        color: $text-muted;
                         background-color: #f9f9f9;
-                        color: #8b8b8b;
-                        vertical-align: middle;
-
-                        &:first-child {
-                            padding-left: 25px;
-                        }
-
-                        img {
-                            margin-top: -5px;
-                            margin-left: 10px;
-                            width: 15px;
-                        }
                     }
                 }
-            }
 
-            tbody {
-                tr {
-                    td {
+                tbody {
+
+                    tr td {
                         vertical-align: middle;
-                        background-color: #fff;
-
-                        img {
-                            width: 15px;
-                            margin-right: 10px;
-                        }
-
-                        &:first-child {
-                            padding-left: 25px;
-                        }
-
-                        &.attachment {
+                        padding: 20px;
+                        &.name, &.sow {
+                            font-family: $text-medium;
                             font-size: 11px;
-
-                            div {
-                                font-family: $text-default;
-                            }
-
-                            span {
-                                font-family: $text-regular;
-                            }
                         }
 
-                        &.status {
-                            font-family: $text-default;
+                        &.role {
+                            font-family: $text-regular;
                             font-size: 11px;
                         }
                     }
                 }
             }
         }
+
+        .project-info {
+            .label {
+                margin-right: 10px;
+            }
+            label {
+                display: block;
+                font-family: $text-bold;
+                font-size: 13px;
+                text-transform: uppercase;
+            }
+
+            span {
+                font-family: $text-regular;
+                font-size: 12px;
+            }
+        }
+    }
+
+    hr.lighter {
+        border: 1px solid #f9f9f9;
     }
 }

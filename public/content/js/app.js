@@ -693,7 +693,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             }
         })
         .state('user.profile', {
-            url: '/user/profile',
+            url: '/profile',
             templateUrl: 'partials/user/profile.html',
             controller: 'UserProfileCtrl',
             data: {
