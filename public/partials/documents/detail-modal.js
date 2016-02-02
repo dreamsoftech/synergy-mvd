@@ -1,6 +1,9 @@
 app.controller('DocumentDetailModalCtrl',
     ['$scope', '$uibModalInstance', 'selectedDoc', function($scope, $uibModalInstance, selectedDoc) {
-        $scope.selectedDoc = selectedDoc
+        $scope.selectedDoc = selectedDoc;
+        if (_.isUndefined($scope.selectedDoc.url))
+            $scope.selectedDoc.url = "assets/img/documents/pdf_sample.jpg";
+
         $scope.permittedUsers = [{
             name: 'Bruce Wayne'
         },

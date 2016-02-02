@@ -12,7 +12,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="document in documents">
-                    <td class="text-primary">{{document.name}}</td>
+                    <td><a class="text-primary" ng-click="showDocumentModal(document)">{{document.name}}</a></td>
                     <td>{{document.document_type}}</td>
                     <td>{{document.project_name}}</td>
                     <td>{{document.scope_of_work}}</td>

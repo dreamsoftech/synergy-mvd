@@ -108,7 +108,7 @@
         </div>
         <div data-nodrag ng-click="toggle(this)" class="text-primary" style="display: inline-block">
             <i class="fa" ng-class="{'fa-folder-o': collapsed, 'fa-folder-open-o': !collapsed}"></i>
-            <span>{{folder.title}}</span>
+            <span>{{folder.name}}</span>
         </div>
         <span class="pull-right small text-muted" data-nodrag>{{folder.children.length}} Documents</span>
     </div>
@@ -137,7 +137,7 @@
                         <input type="checkbox" ng-click="selectDocument(document)">
                         <label>&nbsp;</label>
                     </div>
-                    <a class="text-primary" ng-click="showDetailModal(document)">{{document.title}}</a>
+                    <a class="text-primary" ng-click="showDetailModal(document)">{{document.name}}</a>
                 </td>
                 <td>{{document.project}}</td>
                 <td class="medium">{{document.scope_of_work}}</td>

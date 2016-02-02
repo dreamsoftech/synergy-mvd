@@ -2,34 +2,34 @@ app.controller('DocumentsCtrl',
     ['$scope', '$uibModal', function($scope, $uibModal) {
         $scope.documents = [{
             id: 1,
-            title: 'General Documents',
+            name: 'General Documents',
             children: [
               {
                 id: 11,
-                title: 'RFI',
+                name: 'RFI',
                 has_files: true, 
                 children: [
                   {
                     id: 111,
-                    title: 'Arthur Contruction RFI',
+                    name: 'Arthur Contruction RFI',
                     project: 'Wilmington 47',
                     is_file: true,
                     scope_of_work: 'Dry Wall',
                     team_members: [{
                         name: 'Brad Harrison',
-                        job_title: 'Sub Contractor'
+                        job_name: 'Sub Contractor'
                     }],
                     access: 'Bruce Wayne'
                   },
                   {
                     id: 112,
-                    title: 'Landscape Grade',
+                    name: 'Landscape Grade',
                     project: 'Wilmington 47',
                     is_file: true,
                     scope_of_work: 'Landscaping',
                     team_members: [{
                         name: 'Torben Moench',
-                        job_title: 'Contractor'
+                        job_name: 'Contractor'
                     }],
                     access: 'Bruce Wayne, Jane Smith'
                   }
@@ -37,50 +37,50 @@ app.controller('DocumentsCtrl',
               },
               {
                 id: 12,
-                title: 'Change Order',
+                name: 'Change Order',
                 children: []
               },
               {
                 id: 12,
-                title: 'Inspections',
+                name: 'Inspections',
                 children: []
               },
               {
                 id: 12,
-                title: 'Punch List',
+                name: 'Punch List',
                 children: []
               }
             ]
           }, {
             id: 2,
-            title: 'Action Items',
+            name: 'Action Items',
             children: [
               {
                 id: 11,
-                title: 'RFI',
+                name: 'RFI',
                 has_files: true,
                 children: [
                   {
                     id: 111,
-                    title: 'Arthur Contruction RFI',
+                    name: 'Arthur Contruction RFI',
                     project: 'Wilmington 47',
                     is_file: true,
                     scope_of_work: 'Dry Wall',
                     team_members: [{
                         name: 'Brad Harrison',
-                        job_title: 'Sub Contractor'
+                        job_name: 'Sub Contractor'
                     }],
                     access: 'Bruce Wayne'
                   },
                   {
                     id: 112,
-                    title: 'Landscape Grade',
+                    name: 'Landscape Grade',
                     project: 'Wilmington 47',
                     is_file: true,
                     scope_of_work: 'Landscaping',
                     team_members: [{
                         name: 'Torben Moench',
-                        job_title: 'Contractor'
+                        job_name: 'Contractor'
                     }],
                     access: 'Bruce Wayne, Jane Smith'
                   }
@@ -88,39 +88,39 @@ app.controller('DocumentsCtrl',
               },
               {
                 id: 12,
-                title: 'Change Order',
+                name: 'Change Order',
                 children: []
               },
               {
                 id: 12,
-                title: 'Inspections',
+                name: 'Inspections',
                 children: []
               },
               {
                 id: 12,
-                title: 'Punch List',
+                name: 'Punch List',
                 children: []
               }
             ]
           }, {
             id: 3,
-            title: 'Compliance Documents',
+            name: 'Compliance Documents',
             children: []
           }, {
             id: 3,
-            title: 'Financials Documents',
+            name: 'Financials Documents',
             children: []
           }, {
             id: 3,
-            title: 'Bids',
+            name: 'Bids',
             children: []
           }, {
             id: 3,
-            title: 'Owner Selections',
+            name: 'Owner Selections',
             children: []
           }, {
             id: 3,
-            title: 'Reports',
+            name: 'Reports',
             children: []
           }];
         $scope.options = [
