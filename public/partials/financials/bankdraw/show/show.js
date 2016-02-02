@@ -306,6 +306,11 @@ app.controller('BankDrawShowCtrl',
             {contact: 'Dave Musgrove', avatar: 'assets/img/users/dave.jpg', company_name: 'Premier Heating & Air, Inc.', contract_type: 'Subcontractor', project_name: 'Wilmington 47', phone_number: '861-569-6688', credit_date: '08/01/2015', insurance_date: '01/31/2016', license_date: '02/15/2016', judgement_date: '08/01/2015', background_check_date: '08/01/2015', status: 'Complaint'}
         ];
 
+        $scope.attachments = [
+            {name: 'FirePlace Concrete', item_id: 'RFI #1023', created_at: 'Aug 23, 2015 11:00 AM', creator: 'Bob Jones'},
+            {name: 'Inceptos Sit Condementum', item_id: 'RFI #1023', created_at: 'Aug 23, 2015 11:00 AM', creator: 'Bob Jones'}
+        ];
+
         $scope.convertDate = function(dt) {
             return moment(dt).format('MMM DD, YYYY');
         }

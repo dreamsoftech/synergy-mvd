@@ -34,7 +34,35 @@
                     </uib-tab>
                     <uib-tab heading="Access">Access</uib-tab>
                     <uib-tab heading="Activity">Activity</uib-tab>
-                    <uib-tab heading="Attachments">Attachments</uib-tab>
+                    <uib-tab heading="Attachments">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Document Name</th>
+                                    <th>Item ID#</th>
+                                    <th>Date Attached</th>
+                                    <th>Initiator</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="attachment in attachments">
+                                    <td>
+                                        <a class="text-primary">{{attachment.name}}</a>
+                                    </td>
+                                    <td>
+                                        <span class="label label-info">{{attachment.item_id}}</span>
+                                    </td>
+                                    <td>{{attachment.created_at}}</td>
+                                    <td>{{attachment.creator}}</td>
+                                    <td class="text-muted">
+                                        <i class="fa fa-trash pr20"></i>
+                                        <i class="fa fa-download"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </uib-tab>
                 </uib-tabset>
             </div>
         </div>
