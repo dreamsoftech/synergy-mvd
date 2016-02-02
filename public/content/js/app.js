@@ -633,12 +633,26 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             }
         })
         .state('direct-invoice', {
-            url: '/financials/direct-invoice',
-            templateUrl: "partials/financials/direct-invoice/direct-invoice.html",
-            controller: "DirectInvoiceCtrl",
+            url: '/fiancials/direct-invoice',
+            absolute: true,
+            template: '<ui-view></ui-view>'
+        })
+        .state('direct-invoice.new', {
+            url: '/new',
+            templateUrl: "partials/financials/direct-invoice/new.html",
+            controller: "DirectInvoiceNewCtrl",
             data: {
                 isHeaderHidden: true,
                 pageName: 'Create New Direct Invoice'
+            }
+        })
+        .state('direct-invoice.in-process', {
+            url: '/:id',
+            templateUrl: "partials/financials/direct-invoice/in-process.html",
+            controller: "DirectInvoiceInProcessCtrl",
+            data: {
+                isHeaderHidden: true,
+                pageName: "Direct Invoice"
             }
         })
         .state('photos', {
@@ -816,7 +830,13 @@ app.constant("projects", [
         state: "VA",
         zipcode: "90125"
     }]);
-
+app.constant("bidTypes",
+    [
+        {id: _.uniqueId(), name: 'Equipment'},
+        {id: _.uniqueId(), name: 'Labor'},
+        {id: _.uniqueId(), name: 'Material'},
+        {id: _.uniqueId(), name: 'General'}
+    ]);
 app.constant("phases",
     [
         {id: _.uniqueId(), name: 'Start Project'},

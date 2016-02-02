@@ -70,7 +70,6 @@
       margin-top: 0; }
   .pon-page-wrapper input {
     height: 51px;
-    padding: 15px;
     background-color: #f9f9f9; }
     .pon-page-wrapper input:focus {
       background-color: #fff;
@@ -297,7 +296,6 @@
       margin-top: 0; }
   .poi-page-wrapper input {
     height: 51px;
-    padding: 15px;
     background-color: #f9f9f9; }
     .poi-page-wrapper input:focus {
       background-color: #fff;

@@ -2,7 +2,7 @@ app.controller('DirectPaymentNewCtrl', function($scope, members, projects, contr
     $scope.payApplications = [
         {
             id: 1,
-            name: 'Demilis'
+            name: 'Lighting'
         }
     ];
     $scope.projects = projects;

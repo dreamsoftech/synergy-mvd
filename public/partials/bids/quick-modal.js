@@ -1,4 +1,4 @@
-app.controller('BidsQuickModalCtrl', function($scope, $state, $uibModalInstance, projects, sows) {
+app.controller('BidsQuickModalCtrl', function($scope, $state, $uibModalInstance, projects, sows, bidTypes) {
 
     $scope.cancel = function() {
         $uibModalInstance.dismiss('cancel');
@@ -19,28 +19,7 @@ app.controller('BidsQuickModalCtrl', function($scope, $state, $uibModalInstance,
 
     $scope.projects = projects;
     $scope.sows = sows;
-    $scope.availableTypes = [
-        {
-            id: 1,
-            name: "Close Garage Roof"
-        },
-        {
-            id: 2,
-            name: "Finish Closing in Roof"
-        },
-        {
-            id: 3,
-            name: "Roofline Medification"
-        },
-        {
-            id: 4,
-            name: "Install Project Fencing"
-        },
-        {
-            id: 5,
-            name: "Close Garage Roof"
-        }
-    ];
+    $scope.availableTypes = bidTypes;
 
     $scope.bidPrj = {
         project: {

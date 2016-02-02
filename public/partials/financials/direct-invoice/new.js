@@ -1,4 +1,4 @@
-app.controller('DirectInvoiceCtrl', function($scope, members, projects, contracts, sows, classifications) {
+app.controller('DirectInvoiceNewCtrl', function($scope, members, projects, contracts, sows, classifications) {
     $scope.projects = projects;
     $scope.contracts = contracts;
     $scope.sows = sows;
