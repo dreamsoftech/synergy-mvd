@@ -41,6 +41,18 @@ app.directive('uiSelect', function ($compile) {
                 }
 
             };
+
+            scope.$watch('selectedItem', function(newVal, oldVal){
+                if (scope.isDropdown || !newVal)
+                    return;
+
+                if (scope.multiple) {
+                    scope.selectedText = _.map(scope.selectedItem, 'name').join(', ');
+                } else {
+                    scope.selectedText = newVal.name;
+                }
+            });
+
             if (!scope.selectedItem)
                 scope.selectedText = scope.placeholder;
 

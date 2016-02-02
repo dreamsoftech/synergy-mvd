@@ -324,4 +324,10 @@ app.controller('BankDrawShowCtrl',
 
             });
         }
+
+        $scope.approveAll = function() {
+            _.each($scope.paymentApplications, function(e) {
+                e.status = $scope.statusOptions[0];
+            });
+        }
     }]);
