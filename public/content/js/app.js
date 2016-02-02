@@ -817,6 +817,32 @@ app.constant("projects", [
         zipcode: "90125"
     }]);
 
+app.constant("phases",
+    [
+        {id: _.uniqueId(), name: 'Start Project'},
+        {id: _.uniqueId(), name: 'Site Preparation'},
+        {id: _.uniqueId(), name: 'Foundation'},
+        {id: _.uniqueId(), name: 'Framing'},
+        {
+            id: _.uniqueId(), 
+            name: 'Roof',
+            subPhases: [
+                {id: _.uniqueId(), name: 'Structural Support'},
+                {id: _.uniqueId(), name: 'Frame Roof'},
+                {id: _.uniqueId(), name: 'Close In Roof'},
+                {id: _.uniqueId(), name: 'Roof Material'},
+                {id: _.uniqueId(), name: 'Finish Details'}
+            ]
+        },
+        {id: _.uniqueId(), name: 'Exterior'},
+        {id: _.uniqueId(), name: 'Windows & Doors'},
+        {id: _.uniqueId(), name: 'Painting'},
+        {id: _.uniqueId(), name: 'Interior Finishes'},
+        {id: _.uniqueId(), name: 'Fixtures & Appliances'},
+        {id: _.uniqueId(), name: 'Completed Project'},
+        {id: _.uniqueId(), name: 'Contingency Phase'}
+    ]);
+
 app.constant("sows",
     [
         {id: _.uniqueId(), name: 'Doors'},

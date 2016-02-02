@@ -101,11 +101,11 @@
                                 <div class="row form-group">
                                     <div class="col-sm-4">
                                         <label for="">Phase</label>
-                                        <ui-select selected-item="selectedProject" options="projects" placeholder="Choose"></ui-select>
+                                        <ui-select selected-item="selectedPhase" options="phases" placeholder="Choose"></ui-select>
                                     </div>
                                     <div class="col-sm-4">
                                         <label for="">Sub Phase</label>
-                                        <ui-select selected-item="selectedProject" options="projectList" placeholder="Choose"></ui-select>
+                                        <ui-select options="selectedPhase.subPhases" placeholder="Choose"></ui-select>
                                     </div>
                                     <div class="col-sm-4">
                                         <label for="">Scope of Work</label>
@@ -122,15 +122,15 @@
                                 <div class="row form-group">
                                     <div class="col-sm-4">
                                         <label for="">Phase</label>
-                                        <ui-select selected-item="selectedProject" options="projectList" placeholder="Choose"></ui-select>
+                                        <ui-select selected-item="phase2" options="phases" placeholder="Choose"></ui-select>
                                     </div>
                                     <div class="col-sm-4">
                                         <label for="">Sub Phase</label>
-                                        <ui-select selected-item="selectedProject" options="projectList" placeholder="Choose"></ui-select>
+                                        <ui-select options="phase2.subPhases" placeholder="Choose"></ui-select>
                                     </div>
                                     <div class="col-sm-4">
                                         <label for="">Scope of Work</label>
-                                        <ui-select selected-item="selectedProject" options="projectList" placeholder="Choose"></ui-select>
+                                        <ui-select options="sows" placeholder="Choose"></ui-select>
                                     </div>
                                 </div>
                                 <div class="text-primary">
@@ -143,7 +143,7 @@
                                         <input type="radio" id="due-date-radio" value="due-date" name="schedule_type">
                                         <label for="due-date-radio" class="text-primary">Due Date</label>
                                     </div>
-                                    <input type="text" class="form-control input-lg label-default">
+                                    <ui-date-field ng-model="date"></ui-date-field>
                                 </div>
                             </td>
                         </tr>
