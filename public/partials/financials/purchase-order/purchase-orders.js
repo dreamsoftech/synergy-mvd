@@ -34,9 +34,10 @@ app.controller('PurchaseOrdersCtrl', function ($scope, members, projects, contra
     $scope.projects = projects;
     $scope.contracts = contracts;
     $scope.sows = sows;
-    $scope.procurements = [
-
-    ];
+    $scope.procurements = [{
+        id: 1,
+        name: 'Piping'
+    }];
     $scope.comments = [
         {
             avatar: 'bruce.jpg',
