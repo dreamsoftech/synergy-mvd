@@ -44,6 +44,24 @@ app.controller('RFICtrl', function($scope, members, categories, sows) {
     $scope.solution = "I would suggest looking into some different treatments that can give similar results. If your mind is set, you can also consider doing a type of apoxy over the top to protect the concrete. I think that is the best solution...it will just have a more glossy look. \n\nHi Jane, the apoxy take a few hours to apply and about an hour to dry. Check with Concrete Covers but it shouldnt be a big deal.";
     $scope.clarify = "Dale, thanks a lot for looking into this. I had no idea we would be creating a long term issue, good catch!\nPlease let me know how long the apoxy takes to apply and dry if you know. We have a lot of people on site in the next week and I don't want anyone walking through it.";
 
+    $scope.accesses = [
+        {user: {avatar: 'dan.jpg', name: 'Dan Bonker', phone: '415 123 3456'}, company: 'Flora Corp', role: 'Senior Director', responsibility: 'Aenean Ultricies', access: 'View'},
+        {user: {avatar: 'dave.jpg', name: 'Dave Musgrove', phone: '415 123 3456'}, company: 'Flora Corp', role: 'Senior Director', responsibility: 'Aenean Ultricies', access: 'View'},
+        {user: {avatar: 'dave_gebo.jpg', name: 'Dave Gebo', phone: '415 123 3456'}, company: 'Flora Corp', role: 'Senior Director', responsibility: 'Aenean Ultricies', access: 'View'},
+        {user: {avatar: 'john.jpg', name: 'John Steel', phone: '415 123 3456'}, company: 'Flora Corp', role: 'Senior Director', responsibility: 'Aenean Ultricies', access: 'View'},
+    ];
+
+    $scope.activities = [
+        {user: {avatar: 'dan.jpg', name: 'Dan Bonker', phone: '415 123 3456'}, name: 'Distributed Bid Package', date: 'Aug 23, 2015 - 11:00 AM', role: 'Senior Director'},
+        {user: {avatar: 'dave.jpg', name: 'Dave Musgrove', phone: '415 123 3456'}, name: 'Fermentum Pharetra Porta Cursus', date: 'Aug 23, 2015 - 10:00 AM', role: 'Owner'},
+        {user: {avatar: 'dave_gebo.jpg', name: 'Dave Gebo', phone: '415 123 3456'}, name: 'Fermentum Pharetra Porta Cursus', date: 'Aug 23, 2015 - 9:00 AM', role: 'SubContractor'}
+    ];
+
+    $scope.attachments = [
+        {document: 'FirePlace Concrete', item: 'RFI #1023', attached_date: 'Aug 23, 2015 - 11:00 AM', initiator: 'Bob Jones'},
+        {document: 'Inceptos Sit Condimentum', item: 'RFI #1023', attached_date: 'Aug 23, 2015 - 11:00 AM', initiator: 'Eric Hoffman'}
+    ];
+
     $scope.comments = [
         {
             avatar: 'bruce.jpg',

@@ -185,6 +185,10 @@
     }
 
     .projects {
+        @media(max-width: 992px) {
+            margin-top: 30px;
+        }
+
         .title {
             font-family: AvenirNextLTPro-Regular;
             font-size: 17px;

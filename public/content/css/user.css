@@ -108,6 +108,9 @@
   .up-content-wrapper .compliance-info .compliance-item .pull-right small {
     font-family: "AvenirNextLTPro-Regular";
     font-size: 10px; }
+  @media (max-width: 992px) {
+    .up-content-wrapper .projects {
+      margin-top: 30px; } }
   .up-content-wrapper .projects .title {
     font-family: AvenirNextLTPro-Regular;
     font-size: 17px; }

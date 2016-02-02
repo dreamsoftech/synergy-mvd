@@ -348,6 +348,90 @@ th.initiator {
             top: 4px; }
             .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .comments-wrapper .comment .edit:hover {
               cursor: pointer; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .access-wrapper .photo {
+          width: 35px;
+          height: 35px;
+          margin-right: 15px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .access-wrapper .contact {
+          color: #8b8b8b;
+          font-family: AvenirNextLTPro-Regular;
+          font-size: 10px; }
+          .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .access-wrapper .contact i {
+            margin-left: 5px;
+            margin-right: 5px; }
+            .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .access-wrapper .contact i:first-child {
+              margin-left: 0; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .access-wrapper .table thead tr th {
+          background-color: #f9f9f9;
+          color: #8b8b8b;
+          padding: 15px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .access-wrapper .table tbody tr td {
+          vertical-align: middle;
+          padding: 15px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .access-wrapper .table tfoot tr td {
+          padding: 20px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .access-wrapper .company,
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .access-wrapper .role,
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .access-wrapper .responsibility,
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .access-wrapper .access,
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .access-wrapper .gear {
+          font-family: AvenirNextLTPro-Regular;
+          font-size: 11px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .activity-wrapper .table thead tr th {
+          background-color: #f9f9f9;
+          color: #8b8b8b;
+          padding: 15px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .activity-wrapper .table tbody tr td {
+          vertical-align: middle;
+          padding: 15px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .activity-wrapper .table tfoot tr td {
+          padding: 20px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .activity-wrapper .member .photo {
+          width: 35px;
+          height: 35px;
+          margin-right: 15px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .activity-wrapper .member .contact {
+          color: #8b8b8b;
+          font-family: AvenirNextLTPro-Regular;
+          font-size: 10px; }
+          .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .activity-wrapper .member .contact i {
+            margin-left: 5px;
+            margin-right: 5px; }
+            .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .activity-wrapper .member .contact i:first-child {
+              margin-left: 0; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .activity-wrapper .name {
+          font-family: AvenirNextLTPro-Demi;
+          font-size: 12px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .activity-wrapper .date,
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .activity-wrapper .role {
+          font-family: AvenirNextLTPro-Regular;
+          font-size: 11px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .attachments-wrapper .table thead tr th {
+          background-color: #f9f9f9;
+          color: #8b8b8b;
+          padding: 15px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .attachments-wrapper .table tbody tr td {
+          vertical-align: middle;
+          padding: 20px 15px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .attachments-wrapper .table tfoot tr td {
+          padding: 20px 15px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .attachments-wrapper .document,
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .attachments-wrapper .initiator {
+          font-family: AvenirNextLTPro-Demi;
+          font-size: 13px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .attachments-wrapper .item .label {
+          background-color: #4a4a4a;
+          color: #fff;
+          font-family: AvenirNextLTPro-Regular;
+          font-size: 12px;
+          font-weight: 100; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .attachments-wrapper .date {
+          font-family: AvenirNextLTPro-Regular;
+          font-size: 15px; }
+        .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .attachments-wrapper .download {
+          color: #8b8b8b; }
+          .rfi-in-process-wrapper .rfi-tabs-section .rfi-tabs-content .tab-content .attachments-wrapper .download i:first-child {
+            margin-right: 15px; }
     .rfi-in-process-wrapper .rfi-tabs-section h3 {
       margin-top: 20px;
       font-family: AvenirNextLTPro-Demi;
