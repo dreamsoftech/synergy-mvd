@@ -45,8 +45,8 @@ app.controller('ActionItemsCtrl',
             orange: 2,
             red: 2,
             completed: {
-                total: 10,
-                done: 2
+                total: 8,
+                done: 1
             },
             assignedMe: {
                 green: {
