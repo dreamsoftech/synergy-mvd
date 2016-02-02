@@ -62,6 +62,35 @@ app.controller('RFICtrl', function($scope, members, categories, sows) {
         {document: 'Inceptos Sit Condimentum', item: 'RFI #1023', attached_date: 'Aug 23, 2015 - 11:00 AM', initiator: 'Eric Hoffman'}
     ];
 
+    $scope.actions = [{
+            id: _.uniqueId('action'),
+            name: "Distribute"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Request Approval"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Further Action Required"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Approve"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Record Payment"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Create Lien Release"
+        },
+        {
+            id: _.uniqueId('action'),
+            name: "Email"
+        }];
+
     $scope.comments = [
         {
             avatar: 'bruce.jpg',
