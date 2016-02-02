@@ -31,8 +31,8 @@
         <td class="text-medium text-muted">
             {{application.amount | currency}}
         </td>
-        <td class="text-primary">
-            {{application.documents}} {{application.documents > 2 ? 'Documents': 'Document'}}
+        <td>
+            <a class="text-primary" ng-click="showDocumentModal()">{{application.documents}} {{application.documents > 2 ? 'Documents': 'Document'}}</a>
         </td>
         <td>
             <ui-select selected-item="application.status" placeholder="Choose" options="statusOptions"></ui-select><br>

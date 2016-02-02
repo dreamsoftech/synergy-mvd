@@ -330,4 +330,21 @@ app.controller('BankDrawShowCtrl',
                 e.status = $scope.statusOptions[0];
             });
         }
+
+        $scope.showDocumentModal = function() {
+            var modalInstance = $uibModal.open({
+                templateUrl: 'partials/documents/detail-modal.html',
+                controller: 'DocumentDetailModalCtrl',
+                windowClass: 'comment-modal',
+                resolve: {
+                    selectedDoc: function() {
+                        return {
+                            name: 'Synergy Construction - Invoice',
+                            url: 'assets/img/documents/invoice.jpg'
+                        };
+                    }
+                },
+                backdrop: 'static'
+            });
+        }
     }]);
