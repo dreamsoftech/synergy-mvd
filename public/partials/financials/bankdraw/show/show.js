@@ -311,6 +311,11 @@ app.controller('BankDrawShowCtrl',
             {name: 'Inceptos Sit Condementum', item_id: 'RFI #1023', created_at: 'Aug 23, 2015 11:00 AM', creator: 'Bob Jones'}
         ];
 
+        $scope.activities = [
+            {name: 'Distribute Bid Package', created_at: 'Aug 23, 2015 11:00AM', creator: {name: 'Bruce Wayne', avatar: 'assets/img/bruce-wayne.png', role: 'Senior Director', phone_number: '801-580-5683'}},
+            {name: 'Fermentum Phareta Porta Cursus', created_at: 'Aug 23, 2015 11:00AM', creator: {name: 'John Steel', avatar: 'assets/img/users/john.jpg', role: 'Owner', phone_number: '861-518-1636'}},
+        ];
+
         $scope.convertDate = function(dt) {
             return moment(dt).format('MMM DD, YYYY');
         }

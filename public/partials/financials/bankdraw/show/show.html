@@ -33,7 +33,40 @@
                         <div ng-include="'partials/bids/package/comments.html'"></div>
                     </uib-tab>
                     <uib-tab heading="Access">Access</uib-tab>
-                    <uib-tab heading="Activity">Activity</uib-tab>
+                    <uib-tab heading="Activity">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Activity</th>
+                                    <th>Activity Date</th>
+                                    <th>Team Member</th>
+                                    <th>Project Role</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="activity in activities">
+                                    <td>
+                                        <a class="text-primary">{{activity.name}}</a>
+                                    </td>
+                                    <td>{{activity.created_at}}</td>
+                                    <td>
+                                        <div class="pull-left">
+                                            <img width="40px" ng-src="{{activity.creator.avatar}}" class="img-circle" alt="image">
+                                        </div>
+                                        <div class="pull-left pl10">
+                                            <div class="text-primary">{{activity.creator.name}}</div>
+                                            <ul class="list-inline text-muted">
+                                                <li><i class="fa fa-envelope"></i></li>
+                                                <li><i class="fa fa-comments"></i></li>
+                                                <li><i class="fa fa-phone"></i>  <span class="small font-regular">{{activity.creator.phone_number}}</span></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td>{{activity.creator.role}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </uib-tab>
                     <uib-tab heading="Attachments">
                         <table class="table table-bordered">
                             <thead>
