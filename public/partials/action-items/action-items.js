@@ -518,6 +518,25 @@ app.controller('ActionItemsCtrl',
             ]
         };
 
+        $scope.showNewTaskModal = function() {
+            var modalInstance = $uibModal.open({
+                templateUrl: 'partials/action-items/task/task-modal.html',
+                controller: 'TaskModalCtrl',
+                windowClass: 'gai-modal',
+                resolve: {
+                    currentTask: function () {
+                        return {no: '1483', date: '8/10/2015', initiator: {name: 'Bruce Wayne'}, company: 'Synergy Construction', role: 'General Contractor', assignee: 1};
+                    }
+                }
+            });
+
+            modalInstance.result.then(function(res) {
+
+            }, function() {
+
+            });
+        };
+
 
         $scope.round = function(val) {
             return Math.round(val);

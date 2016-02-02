@@ -1,4 +1,4 @@
-app.controller('TaskModalCtrl', function($scope, $uibModalInstance, members, projects, currentTask) {
+app.controller('TaskModalCtrl', function($scope, $uibModalInstance, members, projects, currentTask, sows) {
     $scope.cancel = function() {
         $uibModalInstance.dismiss('cancel');
     };
