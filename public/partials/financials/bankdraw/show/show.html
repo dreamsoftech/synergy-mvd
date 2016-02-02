@@ -32,7 +32,58 @@
                     <uib-tab heading="Comments">
                         <div ng-include="'partials/bids/package/comments.html'"></div>
                     </uib-tab>
-                    <uib-tab heading="Access">Access</uib-tab>
+                    <uib-tab heading="Access">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Company</th>
+                                    <th>Project Role</th>
+                                    <th>RFI Responsibility</th>
+                                    <th>Access</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="access in accesses">
+                                    <td>
+                                        <div class="pull-left">
+                                            <img width="40px" ng-src="{{access.user.avatar}}" class="img-circle" alt="image">
+                                        </div>
+                                        <div class="pull-left pl10">
+                                            <div class="text-primary">{{access.user.name}}</div>
+                                            <ul class="list-inline text-muted">
+                                                <li><i class="fa fa-envelope"></i></li>
+                                                <li><i class="fa fa-comments"></i></li>
+                                                <li><i class="fa fa-phone"></i>  <span class="small font-regular">{{access.user.phone_number}}</span></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td>{{access.company_name}}</td>
+                                    <td>{{access.user.role}}</td>
+                                    <td>{{access.rfi_responsibility}}</td>
+                                    <td>{{access.access}}</td>
+                                    <td>
+                                        <div class="btn-group" uib-dropdown>
+                                            <a class="btn btn-transparent heading" uib-dropdown-toggle>
+                                                <i class="fa fa-cog"></i><i class="pl5 fa fa-angle-down"></i>
+                                            </a>
+
+                                            <ul class="uib-dropdown-menu dropdown-menu-right chevron-down-menu" role="menu" style="min-width: 100px">
+                                                <li role="menuitem"><a ng-click="">Option 1</a></li>
+                                                <li role="menuitem"><a ng-click="">Option 2</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">
+                                        <a class="text-primary" href=""><i class="fa fa-plus pr10"></i>Add User</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </uib-tab>
                     <uib-tab heading="Activity">
                         <table class="table table-bordered">
                             <thead>
@@ -91,6 +142,11 @@
                                     <td class="text-muted">
                                         <i class="fa fa-trash pr20"></i>
                                         <i class="fa fa-download"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <a class="text-primary" href=""><i class="fa fa-plus pr10"></i>Attach Documents</a>
                                     </td>
                                 </tr>
                             </tbody>

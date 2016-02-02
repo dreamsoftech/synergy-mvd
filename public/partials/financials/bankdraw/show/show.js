@@ -316,6 +316,11 @@ app.controller('BankDrawShowCtrl',
             {name: 'Fermentum Phareta Porta Cursus', created_at: 'Aug 23, 2015 11:00AM', creator: {name: 'John Steel', avatar: 'assets/img/users/john.jpg', role: 'Owner', phone_number: '861-518-1636'}},
         ];
 
+        $scope.accesses = [
+            {user: {name: 'Bruce Wayne', avatar: 'assets/img/bruce-wayne.png', role: 'Senior Director', phone_number: '801-580-5683'}, company_name: 'Synergy Construction', rfi_responsibility: '', access: 'View'},
+            {user: {name: 'John Steel', avatar: 'assets/img/users/john.jpg', role: 'Owner', phone_number: '861-518-1636'}, company_name: 'Synergy Construction', rfi_responsibility: '', access: 'View'},
+        ];
+
         $scope.convertDate = function(dt) {
             return moment(dt).format('MMM DD, YYYY');
         }
