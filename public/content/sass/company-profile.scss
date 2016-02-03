@@ -55,8 +55,12 @@
     }
 
     .templates-wrapper {
+        .btn-success {
+            padding: 10px 20px;
+        }
+
         .item {
-            padding: 20px 30px 15px 20px;
+            padding: 15px 30px 15px 20px;
             border: 1px solid #eee;
 
             &:not(.first) {
@@ -75,13 +79,14 @@
             .date {
                 font-family: $text-regular;
                 font-size: 13px;
+                font-weight: 600;
             }
 
             .uploaded-at,
             .last-modified-at {
                 .text-primary {
                     font-family: $text-bold;
-                    font-size: 13px;
+                    font-size: 12px;
                 }
             }
 
