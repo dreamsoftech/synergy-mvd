@@ -103,6 +103,42 @@
 .company-profile-wrapper .division-cost-code-wrapper .collapsed {
   background-color: #f9f9f9; }
 
+.company-profile-wrapper .documentation-wrapper .wall {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 10px 20px 20px;
+  background-color: #fff;
+  margin-bottom: 20px; }
+  .company-profile-wrapper .documentation-wrapper .wall:last-child {
+    margin-bottom: 0; }
+  .company-profile-wrapper .documentation-wrapper .wall h5 {
+    font-size: 13px;
+    font-weight: 100;
+    margin-bottom: 0; }
+  .company-profile-wrapper .documentation-wrapper .wall .btn-success {
+    padding: 10px 20px; }
+  .company-profile-wrapper .documentation-wrapper .wall .text-underline {
+    text-decoration: underline; }
+  .company-profile-wrapper .documentation-wrapper .wall .dropdown {
+    margin-right: 20px;
+    margin-top: 10px; }
+  .company-profile-wrapper .documentation-wrapper .wall label {
+    display: block; }
+  .company-profile-wrapper .documentation-wrapper .wall span {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 12px; }
+    .company-profile-wrapper .documentation-wrapper .wall span.text-primary {
+      font-family: "AvenirNextLTPro-Demi"; }
+  .company-profile-wrapper .documentation-wrapper .wall .contact span {
+    font-size: 10px;
+    color: #8b8b8b; }
+    .company-profile-wrapper .documentation-wrapper .wall .contact span i {
+      margin-right: 5px;
+      margin-left: 5px;
+      font-size: 10px; }
+      .company-profile-wrapper .documentation-wrapper .wall .contact span i:first-child {
+        margin-left: 0; }
+
 .company-profile-wrapper .phases-sow-wrapper h3 {
   font-family: "AvenirNextLTPro-Medium";
   font-size: 17px;

@@ -160,6 +160,67 @@
         }
     }
 
+    .documentation-wrapper {
+        .wall {
+            border: 1px solid #eee;
+            border-radius: 3px;
+            padding: 10px 20px 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            h5 {
+                font-size: 13px;
+                font-weight: 100;
+                margin-bottom: 0;
+            }
+
+            .btn-success {
+                padding: 10px 20px;
+            }
+
+            .text-underline {
+                text-decoration: underline;
+            }
+
+            .dropdown {
+                margin-right: 20px;
+                margin-top: 10px;
+            }
+
+            label {
+                display: block;
+            }
+
+            span {
+                font-family: $text-regular;
+                font-size: 12px;
+
+                &.text-primary {
+                    font-family: $text-bold;
+                }
+            }
+
+            .contact span {
+                font-size: 10px;
+                color: $text-muted;
+
+                i {
+                    margin-right: 5px;
+                    margin-left: 5px;
+                    font-size: 10px;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+
     .phases-sow-wrapper {
 
         h3 {
