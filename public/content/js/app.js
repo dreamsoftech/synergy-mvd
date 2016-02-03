@@ -748,6 +748,55 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             templateUrl: 'partials/project-profile/project-permissions.html',
             controller: 'ProjectProfilePermissionsCtrl'
         })
+        .state('company-profile', {
+            url: '/company-profile',
+            abstract: true,
+            templateUrl: 'partials/company-profile/company-profile.html',
+            controller: 'CompanyProfileCtrl',
+            data: {
+                pageName: 'Company Profile'
+            }
+        })
+        .state('company-profile.profile', {
+            url: '/profile',
+            templateUrl: 'partials/company-profile/profile.html',
+            controller: 'ComProProfileCtrl'
+        })
+        .state('company-profile.documentation', {
+            url: '/documentation',
+            templateUrl: 'partials/company-profile/documentation.html',
+            controller: 'ComProDocumentationCtrl'
+        })
+        .state('company-profile.approvals', {
+            url: '/approvals',
+            templateUrl: 'partials/company-profile/approvals.html',
+            controller: 'ComProApprovalsCtrl'
+        })
+        .state('company-profile.permissions', {
+            url: '/permissions',
+            templateUrl: 'partials/company-profile/permissions.html',
+            controller: 'ComProPermissionsCtrl'
+        })
+        .state('company-profile.templates', {
+            url: '/templates',
+            templateUrl: 'partials/company-profile/templates.html',
+            controller: 'ComProTemplatesCtrl'
+        })
+        .state('company-profile.division-cost-code', {
+            url: '/division-cost-code',
+            templateUrl: 'partials/company-profile/division-cost-code.html',
+            controller: 'ComProDivisionCostCodeCtrl'
+        })
+        .state('company-profile.project-phases-sow', {
+            url: '/project-phases-sow',
+            templateUrl: 'partials/company-profile/project-phases-sow.html',
+            controller: 'ComProProjectPhasesSowCtrl'
+        })
+        .state('company-profile.project-templates', {
+            url: '/project-templates',
+            templateUrl: 'partials/company-profile/project-templates.html',
+            controller: 'ComProProjectTemplatesCtrl'
+        })
         .state('reporting', {
             url: '/reporting',
             absolute: true,
@@ -844,7 +893,7 @@ app.constant("phases",
         {id: _.uniqueId(), name: 'Foundation'},
         {id: _.uniqueId(), name: 'Framing'},
         {
-            id: _.uniqueId(), 
+            id: _.uniqueId(),
             name: 'Roof',
             subPhases: [
                 {id: _.uniqueId(), name: 'Structural Support'},

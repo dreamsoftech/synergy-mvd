@@ -1,0 +1,78 @@
+.company-profile-top-wrapper h2 {
+  margin-top: 15px; }
+
+.company-profile-wrapper .text-regular {
+  font-family: "AvenirNextLTPro-Regular"; }
+
+.company-profile-wrapper .text-bold {
+  font-family: "AvenirNextLTPro-Demi"; }
+
+.company-profile-wrapper .text-medium {
+  font-family: "AvenirNextLTPro-Medium"; }
+
+.company-profile-wrapper .nav-tabs {
+  border: 1px solid #eee; }
+  .company-profile-wrapper .nav-tabs li a {
+    color: #8b8b8b;
+    font-size: 13px;
+    min-width: 110px;
+    text-align: center;
+    padding: 15px 30px;
+    border-top: 0; }
+  .company-profile-wrapper .nav-tabs li.active a {
+    border: 1px solid #eee;
+    border-top: 0;
+    border-bottom: 1px solid #fff;
+    border-radius: 0; }
+  .company-profile-wrapper .nav-tabs li:first-child a {
+    border-left: 0; }
+
+.company-profile-wrapper .tab-content {
+  background-color: #fff;
+  padding: 30px 20px 20px;
+  border: 1px solid #eee;
+  border-top: 0; }
+
+.company-profile-wrapper .division-cost-code-wrapper h3 {
+  font-family: "AvenirNextLTPro-Medium";
+  font-size: 17px; }
+
+.company-profile-wrapper .division-cost-code-wrapper .node-wrapper {
+  padding: 10px;
+  border-top: 1px solid #eee; }
+  .company-profile-wrapper .division-cost-code-wrapper .node-wrapper > div {
+    display: table-cell; }
+
+.company-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-handle {
+  padding: 20px 15px;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+  font-size: 13px; }
+
+.company-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-nodes .fa {
+  font-size: 13px;
+  padding-right: 0; }
+
+.company-profile-wrapper .division-cost-code-wrapper .division {
+  width: 135px; }
+
+.company-profile-wrapper .division-cost-code-wrapper .divisions-wrapper {
+  border: 1px solid #eee;
+  border-top: 0;
+  margin-top: 10px; }
+
+.company-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-node .angular-ui-tree-nodes:before {
+  height: 0; }
+
+.company-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-nodes .angular-ui-tree-nodes li {
+  border-left: 0; }
+
+.company-profile-wrapper .division-cost-code-wrapper .angular-ui-tree-nodes .angular-ui-tree-nodes li[has-child='true']:before {
+  border-top: 0; }
+
+.company-profile-wrapper .division-cost-code-wrapper .child {
+  padding-left: 110px;
+  color: #4a4a4a; }
+
+.company-profile-wrapper .division-cost-code-wrapper .collapsed {
+  background-color: #f9f9f9; }
