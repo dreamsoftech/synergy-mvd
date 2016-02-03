@@ -33,6 +33,28 @@
   border: 1px solid #eee;
   border-top: 0; }
 
+.company-profile-wrapper .templates-wrapper .item {
+  padding: 20px 30px 15px 20px;
+  border: 1px solid #eee; }
+  .company-profile-wrapper .templates-wrapper .item:not(.first) {
+    border-top: 0; }
+  .company-profile-wrapper .templates-wrapper .item label {
+    display: block; }
+  .company-profile-wrapper .templates-wrapper .item small {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 10px; }
+  .company-profile-wrapper .templates-wrapper .item .date {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 13px; }
+  .company-profile-wrapper .templates-wrapper .item .uploaded-at .text-primary,
+  .company-profile-wrapper .templates-wrapper .item .last-modified-at .text-primary {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 13px; }
+  .company-profile-wrapper .templates-wrapper .item .uploaded-at {
+    margin-right: 10px; }
+  .company-profile-wrapper .templates-wrapper .item .dropdown {
+    margin-top: 10px; }
+
 .company-profile-wrapper .division-cost-code-wrapper h3 {
   font-family: "AvenirNextLTPro-Medium";
   font-size: 17px; }

@@ -54,6 +54,47 @@
         border-top: 0;
     }
 
+    .templates-wrapper {
+        .item {
+            padding: 20px 30px 15px 20px;
+            border: 1px solid #eee;
+
+            &:not(.first) {
+                border-top: 0;
+            }
+
+            label {
+                display: block;
+            }
+
+            small {
+                font-family: $text-regular;
+                font-size: 10px;
+            }
+
+            .date {
+                font-family: $text-regular;
+                font-size: 13px;
+            }
+
+            .uploaded-at,
+            .last-modified-at {
+                .text-primary {
+                    font-family: $text-bold;
+                    font-size: 13px;
+                }
+            }
+
+            .uploaded-at {
+                margin-right: 10px;
+            }
+
+            .dropdown {
+                margin-top: 10px;
+            }
+        }
+    }
+
     .division-cost-code-wrapper {
 
         h3 {
