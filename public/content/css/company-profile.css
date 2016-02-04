@@ -33,8 +33,136 @@
   border: 1px solid #eee;
   border-top: 0; }
 
+.company-profile-wrapper .profile-wrapper .header img {
+  width: 102px;
+  height: 102px;
+  margin-right: 20px; }
+
+.company-profile-wrapper .profile-wrapper .header .project-info .name {
+  margin-top: 15px;
+  margin-bottom: 15px; }
+
+.company-profile-wrapper .profile-wrapper .header .project-info .address {
+  font-family: AvenirNextLTPro-Regular;
+  font-size: 12px; }
+
+.company-profile-wrapper .profile-wrapper .header .project-info .contact {
+  font-family: AvenirNextLTPro-Regular;
+  font-size: 11px; }
+  .company-profile-wrapper .profile-wrapper .header .project-info .contact i {
+    margin-right: 5px; }
+    .company-profile-wrapper .profile-wrapper .header .project-info .contact i.fa-link {
+      transform: rotate(90deg); }
+  .company-profile-wrapper .profile-wrapper .header .project-info .contact .text-primary {
+    font-family: AvenirNextLTPro-Demi;
+    margin-right: 10px; }
+
+.company-profile-wrapper .profile-wrapper .contact-info img {
+  width: 102px;
+  height: 102px;
+  margin-right: 20px; }
+
+.company-profile-wrapper .profile-wrapper .contact-info .name {
+  margin-top: 15px; }
+
+.company-profile-wrapper .profile-wrapper .contact-info .role {
+  font-family: AvenirNextLTPro-Regular;
+  font-size: 13px;
+  margin-bottom: 10px; }
+
+.company-profile-wrapper .profile-wrapper .contact-info .address {
+  font-family: AvenirNextLTPro-Regular;
+  font-size: 12px; }
+
+.company-profile-wrapper .profile-wrapper .contact-info .contact {
+  font-family: AvenirNextLTPro-Regular;
+  font-size: 11px; }
+  .company-profile-wrapper .profile-wrapper .contact-info .contact i {
+    margin-right: 5px; }
+    .company-profile-wrapper .profile-wrapper .contact-info .contact i.fa-phone {
+      margin-left: 10px; }
+
+.company-profile-wrapper .profile-wrapper .wall {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 20px; }
+  .company-profile-wrapper .profile-wrapper .wall:last-child {
+    margin-bottom: 0; }
+  .company-profile-wrapper .profile-wrapper .wall img.lock,
+  .company-profile-wrapper .profile-wrapper .wall img.cap {
+    width: 20px; }
+  .company-profile-wrapper .profile-wrapper .wall .title {
+    font-family: AvenirNextLTPro-Regular;
+    font-size: 14px; }
+    .company-profile-wrapper .profile-wrapper .wall .title img {
+      margin-top: -5px;
+      margin-right: 8px; }
+  .company-profile-wrapper .profile-wrapper .wall hr.mb0 {
+    margin-bottom: 0; }
+  .company-profile-wrapper .profile-wrapper .wall.billing-info .col-md-6 {
+    margin-top: 20px; }
+  .company-profile-wrapper .profile-wrapper .wall.billing-info .billing-address .name,
+  .company-profile-wrapper .profile-wrapper .wall.billing-info .credit-card-info .name {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 13px;
+    display: block; }
+  .company-profile-wrapper .profile-wrapper .wall.billing-info .billing-address .value,
+  .company-profile-wrapper .profile-wrapper .wall.billing-info .credit-card-info .value {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 12px; }
+  .company-profile-wrapper .profile-wrapper .wall.billing-info .billing-address {
+    margin-bottom: 10px;
+    margin-top: 15px; }
+  .company-profile-wrapper .profile-wrapper .wall.projects h5 {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 13px; }
+  .company-profile-wrapper .profile-wrapper .wall.projects .project-info .label {
+    margin-right: 10px; }
+  .company-profile-wrapper .profile-wrapper .wall.projects .project-info label {
+    display: block;
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 13px;
+    text-transform: uppercase; }
+  .company-profile-wrapper .profile-wrapper .wall.projects .project-info span {
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 12px; }
+  .company-profile-wrapper .profile-wrapper .wall.projects .table-responsive table thead tr th {
+    padding: 15px 20px;
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 13px;
+    color: #8b8b8b;
+    background-color: #f9f9f9; }
+  .company-profile-wrapper .profile-wrapper .wall.projects .table-responsive table tbody tr td {
+    padding: 20px;
+    font-family: "AvenirNextLTPro-Regular";
+    font-size: 12px; }
+    .company-profile-wrapper .profile-wrapper .wall.projects .table-responsive table tbody tr td.name {
+      font-family: "AvenirNextLTPro-Demi"; }
+    .company-profile-wrapper .profile-wrapper .wall.projects .table-responsive table tbody tr td.comp-date, .company-profile-wrapper .profile-wrapper .wall.projects .table-responsive table tbody tr td.ap-name {
+      font-family: "AvenirNextLTPro-Demi"; }
+
 .company-profile-wrapper .templates-wrapper .btn-success {
   padding: 10px 20px; }
+
+.company-profile-wrapper .templates-wrapper .project-info .name {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 13px; }
+
+.company-profile-wrapper .templates-wrapper .project-info .address {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 12px; }
+
+.company-profile-wrapper .templates-wrapper .project-info .contact {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 10px; }
+  .company-profile-wrapper .templates-wrapper .project-info .contact i {
+    margin-right: 5px; }
+  .company-profile-wrapper .templates-wrapper .project-info .contact .fa-link {
+    transform: rotate(90deg); }
+    .company-profile-wrapper .templates-wrapper .project-info .contact .fa-link + span {
+      margin-right: 20px; }
 
 .company-profile-wrapper .templates-wrapper .item {
   padding: 15px 30px 15px 20px;
