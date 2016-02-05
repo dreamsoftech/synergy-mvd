@@ -615,3 +615,6 @@ project-filter ul.dropdown-menu {
 .follow-up-due .date-field-wrapper > div:first-child {
     line-height: 25px;
 }
+.cap {
+    text-transform: uppercase;
+}
