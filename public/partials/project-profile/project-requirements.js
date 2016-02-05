@@ -19,36 +19,33 @@ app.controller('ProjectProfileRequirementsCtrl',
             {id: 6, name: 'Christian Peters'},
         ];
 
-        $scope.changeRole = function(selectedVal, row) {
-            row.role = _.findIndex($scope.roles, function(role) {return role.id == selectedVal;});
+        $scope.isOpened = false;
+
+        $scope.item = {};
+
+        $scope.changeRole = function(selectedVal) {
+            $scope.item.role = _.findIndex($scope.roles, function(role) {return role.id == selectedVal;});
         };
 
-        $scope.changeMember = function(selectedVal, row) {
-            row.member = _.findIndex($scope.members, function(member) {return member.id == selectedVal;});
+        $scope.changeMember = function(selectedVal) {
+            $scope.item.member = _.findIndex($scope.members, function(member) {return member.id == selectedVal;});
         };
 
         $scope.addNewRequirement = function() {
-            _.each($scope.data, function(item) {item.isEditable = false;});
-            $scope.data.push({
-                id: _.uniqueId(),
-                role: 3,
-                team_members: false,
-                rfis: false,
-                inspection_items: false,
-                punchlist_items: false,
-                schedule_modifications: false,
-                procurement_items: false,
-                bids: false,
-                purchase_orders: false,
-                change_orders: false,
-                invoices: false,
-                payment_applications: false,
-                direct_payments: false,
-                bank_draws: false,
-                documents: false,
-                isEditable: true
-            });
+            $scope.isOpened = true;
         };
+
+        $scope.cancel = function() {
+            $scope.isOpened = false;
+        }
+
+        $scope.saveRequirement = function() {
+
+            var data = angular.copy($scope.item);
+            $scope.data.push(data);
+            $scope.isOpened = false;
+        };
+
 
         $scope.data = [
             {
