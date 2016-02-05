@@ -33,6 +33,65 @@
   border: 1px solid #eee;
   border-top: 0; }
 
+.company-profile-wrapper .requirements-wrapper h3 {
+  font-family: "AvenirNextLTPro-Medium";
+  font-size: 17px; }
+
+.company-profile-wrapper .requirements-wrapper .table-responsive.approval-table table thead tr th,
+.company-profile-wrapper .requirements-wrapper .table-responsive.approval-table table tbody tr td {
+  vertical-align: middle;
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 15px; }
+
+.company-profile-wrapper .requirements-wrapper .table-responsive.approval-table table tbody tr td:first-child {
+  border-right: 1px solid #eee;
+  padding-left: 20px; }
+
+.company-profile-wrapper .requirements-wrapper .table-responsive.approval-table table thead tr th {
+  background-color: #f9f9f9; }
+  .company-profile-wrapper .requirements-wrapper .table-responsive.approval-table table thead tr th:first-child {
+    width: 300px;
+    padding-left: 20px; }
+
+.company-profile-wrapper .requirements-wrapper .table-responsive.approval-table table thead tr th:nth-child(2),
+.company-profile-wrapper .requirements-wrapper .table-responsive.approval-table table tbody tr td:nth-child(2) {
+  padding-left: 40px; }
+
+.company-profile-wrapper .requirements-wrapper .table-responsive.approval-table table .member-name {
+  font-size: 12px; }
+
+.company-profile-wrapper .requirements-wrapper .btn {
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.company-profile-wrapper .requirements-wrapper .btn-cancel {
+  margin-right: 10px; }
+
+.company-profile-wrapper .requirements-wrapper .new-requirement {
+  position: fixed;
+  top: 149px;
+  right: 36px;
+  width: 340px;
+  border: 1px solid #eee;
+  z-index: 999;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2); }
+  .company-profile-wrapper .requirements-wrapper .new-requirement .header {
+    padding: 10px 16px;
+    background-color: #f9f9f9; }
+    .company-profile-wrapper .requirements-wrapper .new-requirement .header .or {
+      margin-top: 18px;
+      margin-left: 10px;
+      margin-right: 10px;
+      font-family: "AvenirNextLTPro-Regular";
+      font-size: 11px; }
+  .company-profile-wrapper .requirements-wrapper .new-requirement .content .item {
+    padding-left: 135px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin: 0 auto;
+    border-top: 1px solid #eee; }
+
 .company-profile-wrapper .profile-wrapper .header img {
   width: 102px;
   height: 102px;
