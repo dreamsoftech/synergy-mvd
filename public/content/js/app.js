@@ -810,6 +810,14 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             templateUrl: 'partials/reporting/main.html',
             controller: 'ReportingMainCtrl'
         })
+        .state('daily-log', {
+            url: '/daily-log',
+            templateUrl: "partials/daily-log/daily-log.html",
+            controller: "DailyLogCtrl",
+            data: {
+                pageName: 'Daily Log'
+            }
+        })
         .state('sample', {
             url: '/sample',
             templateUrl: 'partials/sample/sample.html',

@@ -1780,8 +1780,9 @@ ol.unstyled { list-style: none outside none; margin-left: 0;}
 .table > tbody > tr > th,
 .table > tfoot > tr > th,
 .table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td {border-top: 1px solid #e7eaec; line-height: 1.42857;  padding: 12px; vertical-align: top;}
+.table > tbody > tr > td {border-top: 1px solid #e7eaec; line-height: 1.42857;  padding: 12px; vertical-align: top;}
+.table-condensed > tbody > tr > td {padding: 5px;}
+.table-middle-aligned > tbody > tr > td {vertical-align: middle;}
 
 /* PANELS */
 .panel.blank-panel { background: none; margin: 0;}
@@ -1872,7 +1873,7 @@ table.table-mail tr td { padding: 12px;}
 .panel-info > .panel-heading {  background-color: #23c6c8;  border-color: #23c6c8;  color: #ffffff;}
 .panel-warning { border-color: #f8ac59;}
 .panel-warning > .panel-heading {  background-color: #f8ac59;  border-color: #f8ac59; color: #ffffff;}
-.panel-danger {border-color: #ed5565;}
+.panel-danger {border-color: #e25c5c;}
 .panel-danger > .panel-heading { background-color: #ed5565;   border-color: #ed5565;  color: #ffffff;}
 .progress-bar {  background-color: #3aabd5;}
 .progress {border-radius: 0px;}
