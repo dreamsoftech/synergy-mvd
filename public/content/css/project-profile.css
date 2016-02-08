@@ -241,6 +241,38 @@
 .project-profile-wrapper .requirements-wrapper .table-responsive.approval-table table .member-name {
   font-size: 12px; }
 
+.project-profile-wrapper .requirements-wrapper .btn {
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.project-profile-wrapper .requirements-wrapper .btn-cancel {
+  margin-right: 10px; }
+
+.project-profile-wrapper .requirements-wrapper .new-requirement {
+  position: fixed;
+  top: 317px;
+  right: 36px;
+  width: 340px;
+  border: 1px solid #eee;
+  z-index: 999;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2); }
+  .project-profile-wrapper .requirements-wrapper .new-requirement .header {
+    padding: 10px 16px;
+    background-color: #f9f9f9; }
+    .project-profile-wrapper .requirements-wrapper .new-requirement .header .or {
+      margin-top: 18px;
+      margin-left: 10px;
+      margin-right: 10px;
+      font-family: "AvenirNextLTPro-Regular";
+      font-size: 11px; }
+  .project-profile-wrapper .requirements-wrapper .new-requirement .content .item {
+    padding-left: 135px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin: 0 auto;
+    border-top: 1px solid #eee; }
+
 .project-profile-wrapper .table-responsive.requirements-table table thead tr th,
 .project-profile-wrapper .table-responsive.requirements-table table tbody tr td {
   vertical-align: middle;

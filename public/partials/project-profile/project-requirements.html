@@ -5,8 +5,14 @@
                 <h3>Approval Requirements</h3>
             </div>
             <div class="col-md-6 text-right">
-                <button class="btn btn-success btn-sm" ng-click="addNewRequirement()">
+                <button class="btn btn-success btn-sm" ng-click="addNewRequirement()" ng-if="!isOpened">
                     <i class="fa fa-plus"></i> Add New
+                </button>
+                <button class="btn btn-cancel btn-sm" ng-click="cancel()" ng-if="isOpened">
+                    Cancel
+                </button>
+                <button class="btn btn-success btn-sm" ng-click="saveRequirement()" ng-if="isOpened">
+                    Save
                 </button>
             </div>
         </div>
@@ -16,14 +22,8 @@
                     <tr>
                         <th>&nbsp;</th>
                         <th class="text-muted" ng-repeat="row in data">
-                            <div ng-if="row.isEditable">
-                                <ui-select options="roles" ng-select="changeRole(selectedVal, row)"></ui-select>
-                                <ui-select options="members" ng-select="changeMember(selectedVal, row)"></ui-select>
-                            </div>
-                            <div ng-if="!row.isEditable">
-                                {{roles[row.role].name}}<br>
-                                <span class="text-primary member-name">{{members[row.member].name}}</span>
-                            </div>
+                            {{roles[row.role].name}}<br>
+                            <span class="text-primary member-name">{{members[row.member].name}}</span>
                         </th>
                     </tr>
                 </thead>
@@ -115,6 +115,63 @@
 
                 </tbody>
             </table>
+        </div>
+
+        <div class="new-requirement" ng-show="isOpened">
+            <div class="header" style="">
+                <div class="pull-left" style="width: 160px;">
+                    <ui-select options="roles" ng-select="changeRole(selectedVal)" placeholder="User Name"></ui-select>
+                </div>
+                <div class="pull-left or">or</div>
+                <div class="pull-left" style="width: 115px;">
+                    <ui-select options="members" ng-select="changeMember(selectedVal)" placeholder="Role"></ui-select>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="content">
+                <div class="item">
+                    <ui-rec-switch ng-model="item.team_members"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.rfis"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.inspection_items"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.punchlist_items"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.schedule_modifications"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.procurement_items"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.bids"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.purchase_orders"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.change_orders"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.invoices"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.payment_applications"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.direct_payments"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.bank_draws"></ui-rec-switch>
+                </div>
+                <div class="item">
+                    <ui-rec-switch ng-model="item.documents"></ui-rec-switch>
+                </div>
+            </div>
         </div>
 
         <div class="row mt30">
