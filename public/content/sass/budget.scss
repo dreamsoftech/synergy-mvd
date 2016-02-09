@@ -81,3 +81,20 @@
         }
     }
 }
+
+
+.budgets .tree-table-row {
+    & > div:not(:first-child) {
+        width: 80px;
+    }
+    @media(min-width: 1440px) {
+        & > div:not(:first-child) {
+            width: 100px;
+        }
+    }
+    @media(min-width: 1600px) {
+        & > div:not(:first-child) {
+            width: 150px;
+        }
+    }
+}
